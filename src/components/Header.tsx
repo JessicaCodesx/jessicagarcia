@@ -20,12 +20,16 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Logo/Name */}
-          <Link 
-            to="/" 
-            className="text-xl font-bold text-white hover:text-yellow-400 transition-colors"
-          >
-            Jessica Garcia
+          {/* Logo and Name */}
+          <Link to="/" className="flex items-center space-x-2 group">
+            <img 
+              src="/logo.svg" 
+              alt="JG Logo" 
+              className="w-8 h-8 transition-transform group-hover:rotate-6" 
+            />
+            <span className="text-xl font-bold text-white group-hover:text-yellow-400 transition-colors">
+              Jessica Garcia
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
