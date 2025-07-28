@@ -5,10 +5,8 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import AboutPage from './pages/AboutPage'
 import AcademicsPage from './pages/AcademicsPage'
+import ProjectsPage from './pages/ProjectsPage'
 import ContactPage from './pages/ContactPage'
-
-// Placeholder component for now - we'll build this next
-const ProjectsPage = () => <div className="pt-16 min-h-screen bg-white p-8"><h1 className="text-4xl">Projects Page Coming Soon!</h1></div>
 
 function App() {
   return (

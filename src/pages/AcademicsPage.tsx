@@ -281,6 +281,79 @@ const AcademicsPage = () => {
         </div>
       </section>
 
+      
+      {/* Certifications Section */}
+      <section className="py-20">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-black mb-12 text-center">
+            Professional <span className="text-yellow-500">Certifications</span>
+          </h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+              <div className="text-center">
+                <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🐍</span>
+                </div>
+                <h3 className="text-lg font-semibold text-black mb-2">Python Intermediate</h3>
+                <p className="text-gray-600 text-sm mb-2">SoloLearn</p>
+                <p className="text-gray-500 text-xs">June 2025</p>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+              <div className="text-center">
+                <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">☕</span>
+                </div>
+                <h3 className="text-lg font-semibold text-black mb-2">Java Intermediate</h3>
+                <p className="text-gray-600 text-sm mb-2">SoloLearn</p>
+                <p className="text-gray-500 text-xs">April 2024</p>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+              <div className="text-center">
+                <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">⚡</span>
+                </div>
+                <h3 className="text-lg font-semibold text-black mb-2">Introduction to C++</h3>
+                <p className="text-gray-600 text-sm mb-2">SoloLearn</p>
+                <p className="text-gray-500 text-xs">February 2025</p>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+              <div className="text-center">
+                <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🌐</span>
+                </div>
+                <h3 className="text-lg font-semibold text-black mb-2">Web Development</h3>
+                <p className="text-gray-600 text-sm mb-2">SoloLearn</p>
+                <p className="text-gray-500 text-xs">July 2023</p>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+              <div className="text-center">
+                <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🗄️</span>
+                </div>
+                <h3 className="text-lg font-semibold text-black mb-2">SQL Intermediate</h3>
+                <p className="text-gray-600 text-sm mb-2">SoloLearn</p>
+                <p className="text-gray-500 text-xs">July 2023</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-8">
+            <p className="text-gray-600">
+              Continuously expanding technical knowledge through professional development and online learning platforms.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Learning Philosophy */}
       <section className="bg-gray-50 py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
