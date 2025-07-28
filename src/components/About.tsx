@@ -5,7 +5,7 @@ const About = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-            About <span className="text-yellow-500">Jessica</span>
+            About <span className="text-yellow-500">Me</span>
           </h2>
           <div className="w-24 h-1 bg-yellow-500 mx-auto"></div>
         </div>
