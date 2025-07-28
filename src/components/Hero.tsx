@@ -8,7 +8,7 @@ const Hero = () => {
         {/* Profile Image */}
 <div className="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-4 border-yellow-400 shadow-xl">
   <img 
-    src="/photo.webp" 
+    src="./photo.webp" 
     alt="Jessica Garcia" 
     className="w-full h-full object-cover object-center scale-105"
     draggable="false"

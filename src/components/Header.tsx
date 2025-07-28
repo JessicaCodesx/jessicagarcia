@@ -23,7 +23,7 @@ const Header = () => {
           {/* Logo and Name */}
           <Link to="/" className="flex items-center space-x-2 group">
             <img 
-              src="/logo.svg" 
+              src="./logo.svg" 
               alt="JG Logo" 
               className="w-8 h-8 transition-transform group-hover:rotate-6" 
             />
