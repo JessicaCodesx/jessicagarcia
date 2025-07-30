@@ -6,13 +6,30 @@ const Hero = () => {
     <section className="min-h-screen flex items-center justify-center bg-black pt-16">
       <div className="max-w-4xl mx-auto px-6 text-center">
         {/* Profile Image */}
-<div className="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-4 border-yellow-400 shadow-xl">
-  <img 
-    src="./photo.webp" 
-    alt="Jessica Garcia" 
-    className="w-full h-full object-cover object-center scale-105"
-    draggable="false"
-  />
+<div className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mx-auto mb-8 rounded-full overflow-hidden border-4 border-yellow-400 shadow-xl bg-gray-900">
+  <picture>
+    <source 
+      srcSet="./photo.webp" 
+      type="image/webp"
+    />
+    <img 
+      src="./photo.webp" 
+      alt="Jessica Garcia" 
+      className="w-full h-full object-cover object-center"
+      style={{ 
+        imageRendering: 'high-quality',
+        WebkitBackfaceVisibility: 'hidden',
+        backfaceVisibility: 'hidden',
+        transform: 'translateZ(0)',
+        filter: 'contrast(1.02)'
+      }}
+      width="256"
+      height="256"
+      draggable="false"
+      loading="eager"
+      decoding="sync"
+    />
+  </picture>
 </div>
         
         {/* Main Heading */}
