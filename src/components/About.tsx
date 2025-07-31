@@ -73,7 +73,7 @@ const About = () => {
                 </div>
                 <div>
                   <p className="font-medium text-black">Student & Parent</p>
-                  <p className="text-gray-600">2022 - Present</p>
+                  <p className="text-gray-600">2020 - Present</p>
                   <p className="text-sm text-gray-500">Balancing family responsibilities while maintaining 3.7+ GPA</p>
                 </div>
                 <div>
