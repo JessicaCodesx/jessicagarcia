@@ -130,7 +130,7 @@ const About = () => {
               </div>
               <div className="mt-8 text-center">
                 <p className="text-gray-400 italic">
-                  "My diverse experiences shape how I approach problems and build solutions."
+                  My diverse experiences shape how I approach problems and build solutions.
                 </p>
               </div>
             </div>
