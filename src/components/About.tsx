@@ -84,17 +84,55 @@ const About = () => {
               </div>
             </div>
 
-            {/* Fun Facts */}
-            <div className="bg-black p-6 rounded-lg">
-              <h4 className="text-xl font-semibold text-white mb-3">
+          </div>
+        </div>
+
+        {/* Beyond Code Section - Centered */}
+        <div className="mt-20 mb-20">
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-black p-12 rounded-2xl shadow-2xl">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
                 Beyond <span className="text-yellow-400">Code</span>
-              </h4>
-              <ul className="space-y-2 text-gray-300">
-                <li>🎮 Former competitive Call of Duty player & esports org founder</li>
-                <li>🎨 Artist - painting and tattoo enthusiast</li>
-                <li>📚 Avid reader and lifelong learner</li>
-                <li>👑 Balancing mom life with crushing academic goals</li>
-              </ul>
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <span className="text-2xl">🎮</span>
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-1">Competitive Gaming</h4>
+                      <p className="text-gray-300 text-sm">Former Call of Duty player & esports org founder</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <span className="text-2xl">🎨</span>
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-1">Creative Expression</h4>
+                      <p className="text-gray-300 text-sm">Artist - painting and tattoo enthusiast</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <span className="text-2xl">📚</span>
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-1">Lifelong Learning</h4>
+                      <p className="text-gray-300 text-sm">Avid reader and continuous learner</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <span className="text-2xl">👑</span>
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-1">Multitasking Queen</h4>
+                      <p className="text-gray-300 text-sm">Balancing mom life with crushing academic goals</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-8 text-center">
+                <p className="text-gray-400 italic">
+                  "My diverse experiences shape how I approach problems and build solutions."
+                </p>
+              </div>
             </div>
           </div>
         </div>
