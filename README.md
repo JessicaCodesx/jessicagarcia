@@ -1,69 +1,96 @@
-# React + TypeScript + Vite
+# Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website built with React, TypeScript, and Vite. Features smooth animations, a clean design, and multiple pages showcasing projects, academics, and contact information.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** - UI library
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **React Router** - Client-side routing
+- **Framer Motion** - Animations
+- **Tailwind CSS** - Styling
+- **Lucide React** - Icons
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/jessicagarcia.git
+cd jessicagarcia
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Install dependencies:
+```bash
+npm install
 ```
+
+## Development
+
+Start the development server:
+```bash
+npm run dev
+```
+
+The site will be available at `http://localhost:5173`
+
+Other available commands:
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## Deployment
+
+This project is automatically deployed to GitHub Pages using GitHub Actions.
+
+### How it works:
+
+1. **Source Branch**: `main` - Contains the source code
+2. **Deployment Branch**: `gh-pages` - Contains the built static files
+3. **Automated Workflow**: When you push to `main`, GitHub Actions automatically:
+   - Builds the project
+   - Deploys the `dist` folder to the `gh-pages` branch
+   - Updates the live site
+
+### Manual Deployment (if needed):
+
+If you need to deploy manually, you can use:
+```bash
+npm run deploy
+```
+
+This will build the project and push the `dist` folder to the `gh-pages` branch.
+
+### GitHub Pages Configuration:
+
+Ensure your repository settings are configured:
+- Go to **Settings** → **Pages**
+- Set **Source** to "Deploy from a branch"
+- Select `gh-pages` branch and `/ (root)` folder
+
+## Project Structure
+
+```
+├── src/
+│   ├── components/     # Reusable React components
+│   ├── pages/          # Page components
+│   ├── assets/         # Static assets
+│   ├── App.tsx         # Main app component
+│   └── main.tsx        # Entry point
+├── public/             # Public assets
+├── dist/               # Build output (generated)
+└── .github/
+    └── workflows/      # GitHub Actions workflows
+```
+
+## Features
+
+- Responsive design for all screen sizes
+- Smooth page transitions with Framer Motion
+- Multiple pages: Home, About, Academics, Projects, Contact
+- Modern UI with Tailwind CSS
+- Fast development experience with Vite HMR
+
+## License
+
+This project is private and personal.
