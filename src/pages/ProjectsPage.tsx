@@ -2,6 +2,7 @@ import { ExternalLink, Github, Clock, CheckCircle, Users, Code, Database, Smartp
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { Link } from 'react-router-dom'
 
 const ProjectsPage = () => {
   const heroRef = useRef(null)
@@ -753,14 +754,14 @@ const ProjectsPage = () => {
               <Github className="w-5 h-5" />
               <span className="text-sm sm:text-base">View All Repositories</span>
             </motion.a>
-            <motion.a
-              href="/contact"
-              className="border-2 border-white text-white px-6 sm:px-8 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors backdrop-blur-sm min-h-[44px] w-full sm:w-auto text-sm sm:text-base"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Let's Collaborate
-            </motion.a>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                to="/contact"
+                className="border-2 border-white text-white px-6 sm:px-8 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors backdrop-blur-sm min-h-[44px] w-full sm:w-auto text-sm sm:text-base inline-block text-center"
+              >
+                Let's Collaborate
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </section>

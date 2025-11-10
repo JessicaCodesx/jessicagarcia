@@ -2,6 +2,7 @@ import { Gamepad2, Palette, BookOpen, Trophy, Heart, Zap } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { Link } from 'react-router-dom'
 
 const AboutPage = () => {
   const heroRef = useRef(null)
@@ -162,7 +163,7 @@ const AboutPage = () => {
                 team leadership, strategic thinking, and how to perform under intense pressure.
               </p>
               <p className="text-slate-700 mb-4 text-sm italic">
-                These days, you can find me trying my best to climb the ladder in League of Legends! 
+                Currently enjoying League of Legends in my free time.
               </p>
               <div className="space-y-2">
                 <div className="flex items-center">
@@ -443,6 +444,31 @@ const AboutPage = () => {
               I'm not just building software - I'm crafting solutions that matter, 
               one thoughtful line of code at a time.
             </motion.p>
+          </motion.div>
+          
+          {/* CTA Section */}
+          <motion.div 
+            className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={noteInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link 
+                to="/projects" 
+                className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-all duration-300 inline-block shadow-lg"
+              >
+                View My Projects
+              </Link>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link 
+                to="/contact" 
+                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-all duration-300 inline-block backdrop-blur-sm"
+              >
+                Let's Connect
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </section>

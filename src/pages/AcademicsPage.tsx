@@ -233,15 +233,37 @@ const AcademicsPage = () => {
                     </div>
                   </motion.div>
                   <motion.div 
-                    className="bg-purple-50/50 p-6 rounded-lg"
-                    whileHover={{ scale: 1.02 }}
+                    className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg border border-purple-200"
+                    whileHover={{ scale: 1.02, borderColor: 'rgb(168, 85, 247)' }}
+                    transition={{ duration: 0.2 }}
                   >
-                    <h4 className="text-lg font-semibold text-slate-900 mb-3">Foundation Highlights</h4>
-                    <div className="grid grid-cols-2 gap-2 text-sm text-slate-700">
-                      <div>• Data Structures I & II (90%, 82%)</div>
-                      <div>• Software Engineering (83%)</div>
-                      <div>• OOP Using C++ (80%)</div>
-                      <div>• Programming Languages (80%)</div>
+                    <h4 className="text-lg font-semibold text-slate-900 mb-4 flex items-center">
+                      <Star className="w-5 h-5 text-purple-500 mr-2" />
+                      Foundation Highlights
+                    </h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {[
+                        { course: "Data Structures I & II", grades: "90%, 82%" },
+                        { course: "Software Engineering", grades: "83%" },
+                        { course: "Object Oriented Programming", grades: "90%" },
+                        { course: "Programming Languages", grades: "80%" }
+                      ].map((item, index) => (
+                        <motion.div
+                          key={index}
+                          className="bg-white p-3 rounded-lg border-l-4 border-purple-500 shadow-sm hover:shadow-md transition-shadow"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={timelineInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                          transition={{ delay: 0.5 + index * 0.1 }}
+                          whileHover={{ x: 5, scale: 1.02 }}
+                        >
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm font-medium text-slate-900">{item.course}</span>
+                            <span className="text-sm font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                              {item.grades}
+                            </span>
+                          </div>
+                        </motion.div>
+                      ))}
                     </div>
                   </motion.div>
                 </motion.div>

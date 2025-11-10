@@ -69,14 +69,14 @@ const About = () => {
               a positive difference.
             </p>
             
-            <p className="text-lg text-slate-700 leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
               Balancing family responsibilities with my education has taught me the value of 
               focused time management, adaptability, and resourceful problem-solving. These 
               skills translate directly into my approach to development—writing clean, 
               maintainable code and building solutions that are both elegant and practical.
             </p>
 
-            <p className="text-lg text-slate-700 leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
               Currently completing my bachelor's degree and preparing for graduate studies at 
               UT Austin, I'm actively building projects that showcase my technical skills and 
               creative problem-solving abilities. I'm excited about the opportunity to contribute 
@@ -88,7 +88,7 @@ const About = () => {
           <motion.div className="space-y-8" variants={itemVariants}>
             {/* Education */}
             <div className="bg-white p-6 rounded-lg border-l-4 border-purple-500 shadow-md hover:shadow-lg transition-shadow">
-              <h4 className="text-xl font-semibold text-slate-900 mb-3">Education</h4>
+              <h4 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3">Education</h4>
               <div className="space-y-4">
                 <div>
                   <p className="font-medium text-slate-900">Master of Science, Computer Science</p>
@@ -110,7 +110,7 @@ const About = () => {
 
             {/* Experience */}
             <div className="bg-white p-6 rounded-lg border-l-4 border-purple-500 shadow-md hover:shadow-lg transition-shadow">
-              <h4 className="text-xl font-semibold text-slate-900 mb-3">Experience</h4>
+              <h4 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3">Experience</h4>
               <div className="space-y-3">
                 <div>
                   <p className="font-medium text-slate-900">Independent Software Developer</p>
@@ -235,7 +235,7 @@ const About = () => {
                   >
                     <IconComponent className="w-8 h-8 text-white" />
                   </motion.div>
-                  <h4 className="text-xl font-medium text-slate-900 mb-2">{value.title}</h4>
+                  <h4 className="text-lg sm:text-xl font-medium text-slate-900 mb-2">{value.title}</h4>
                   <p className="text-slate-600">
                     {value.text}
                   </p>

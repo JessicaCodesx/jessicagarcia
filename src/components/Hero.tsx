@@ -145,12 +145,20 @@ const Hero = () => {
         
         {/* Bio */}
         <motion.p 
-          className="text-base sm:text-lg md:text-xl text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed px-4"
+          className="text-base sm:text-lg md:text-xl text-slate-600 mb-6 max-w-2xl mx-auto leading-relaxed px-4"
           variants={itemVariants}
         >
           I create thoughtful, user-centered applications that solve real-world challenges. 
           With a passion for clean code and continuous learning, I bring a unique perspective 
           to building scalable solutions that make a meaningful impact.
+        </motion.p>
+        
+        {/* Currently */}
+        <motion.p 
+          className="text-sm sm:text-base md:text-lg text-slate-500 mb-12 max-w-2xl mx-auto leading-relaxed px-4 italic"
+          variants={itemVariants}
+        >
+          Currently building <span className="text-purple-600 font-medium">homebase</span>, a local-first family management app, while completing my bachelor's degree and preparing for graduate studies at UT Austin.
         </motion.p>
         
         {/* CTA Buttons */}
