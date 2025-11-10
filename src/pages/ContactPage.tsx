@@ -1,168 +1,286 @@
 import { Mail, Github, Linkedin, MapPin, Calendar, MessageCircle } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { useInView } from 'framer-motion'
+import { useRef } from 'react'
 
 const ContactPage = () => {
+  const heroRef = useRef(null)
+  const contactRef = useRef(null)
+  const faqRef = useRef(null)
+  const ctaRef = useRef(null)
+
+  const heroInView = useInView(heroRef, { once: true, margin: "-100px" })
+  const contactInView = useInView(contactRef, { once: true, margin: "-100px" })
+  const faqInView = useInView(faqRef, { once: true, margin: "-100px" })
+  const ctaInView = useInView(ctaRef, { once: true, margin: "-100px" })
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.6, -0.05, 0.01, 0.99],
+      },
+    },
+  }
 
   return (
     <div className="pt-16 min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-black py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Let's <span className="text-yellow-400">Connect</span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+      <section className="bg-gradient-to-br from-white via-purple-50/30 to-pink-50/30 py-20 relative overflow-hidden" ref={heroRef}>
+        {/* Background Effects */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-400/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        </div>
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <motion.h1 
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 mb-6 px-2"
+            initial={{ opacity: 0, y: 30 }}
+            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6 }}
+          >
+            Let's <motion.span 
+              className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent inline-block relative"
+              animate={heroInView ? {
+                filter: [
+                  "drop-shadow(0 0 8px rgba(168, 85, 247, 0.4))",
+                  "drop-shadow(0 0 12px rgba(168, 85, 247, 0.6))",
+                  "drop-shadow(0 0 8px rgba(168, 85, 247, 0.4))",
+                ],
+              } : {}}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              Connect
+            </motion.span>
+          </motion.h1>
+          <motion.p 
+            className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             Currently seeking software engineering opportunities! Interested in collaborating, 
             have questions about my projects, or want to discuss roles? I'd love to hear from you!
-          </p>
+          </motion.p>
         </div>
       </section>
 
       {/* Contact Content */}
-      <section className="py-20">
+      <section className="py-20" ref={contactRef}>
         <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-black mb-4">
-              Get in <span className="text-yellow-500">Touch</span>
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            animate={contactInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+              Get in <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Touch</span>
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-slate-600">
               Ready to connect? Here are the best ways to reach me:
             </p>
-          </div>
+          </motion.div>
           
           {/* Contact Methods */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <a 
-              href="mailto:jessicamhaugen14@gmail.com"
-              className="flex items-center p-6 bg-gray-50 rounded-lg hover:bg-yellow-50 hover:border-yellow-200 border border-gray-200 transition-colors group text-center flex-col"
-            >
-              <div className="bg-black p-4 rounded-lg mb-4 group-hover:bg-yellow-400 transition-colors">
-                <Mail className="w-8 h-8 text-white group-hover:text-black" />
-              </div>
-              <h3 className="font-semibold text-black mb-2">Email</h3>
-              <p className="text-gray-600 text-sm">jessicamhaugen14@gmail.com</p>
-            </a>
-
-            <a 
-              href="https://github.com/JessicaCodesx"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center p-6 bg-gray-50 rounded-lg hover:bg-yellow-50 hover:border-yellow-200 border border-gray-200 transition-colors group text-center flex-col"
-            >
-              <div className="bg-black p-4 rounded-lg mb-4 group-hover:bg-yellow-400 transition-colors">
-                <Github className="w-8 h-8 text-white group-hover:text-black" />
-              </div>
-              <h3 className="font-semibold text-black mb-2">GitHub</h3>
-              <p className="text-gray-600 text-sm">@JessicaCodesx</p>
-            </a>
-
-            <a 
-              href="https://www.linkedin.com/in/jessicagarcia5714/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center p-6 bg-gray-50 rounded-lg hover:bg-yellow-50 hover:border-yellow-200 border border-gray-200 transition-colors group text-center flex-col"
-            >
-              <div className="bg-black p-4 rounded-lg mb-4 group-hover:bg-yellow-400 transition-colors">
-                <Linkedin className="w-8 h-8 text-white group-hover:text-black" />
-              </div>
-              <h3 className="font-semibold text-black mb-2">LinkedIn</h3>
-              <p className="text-gray-600 text-sm">Networking</p>
-            </a>
-          </div>
+          <motion.div 
+            className="grid md:grid-cols-3 gap-6 mb-12"
+            variants={containerVariants}
+            initial="hidden"
+            animate={contactInView ? "visible" : "hidden"}
+          >
+            {[
+              { icon: Mail, title: "Email", desc: "jessica.garcia5714@gmail.com", href: "mailto:jessicamhaugen14@gmail.com" },
+              { icon: Github, title: "GitHub", desc: "@JessicaCodesx", href: "https://github.com/JessicaCodesx", external: true },
+              { icon: Linkedin, title: "LinkedIn", desc: "Networking", href: "https://www.linkedin.com/in/jessicagarcia5714/", external: true }
+            ].map((contact, index) => (
+              <motion.a 
+                key={index}
+                href={contact.href}
+                target={contact.external ? "_blank" : undefined}
+                rel={contact.external ? "noopener noreferrer" : undefined}
+                className="flex items-center p-6 bg-white rounded-lg hover:bg-purple-50 hover:border-purple-300 border border-purple-100 transition-colors group text-center flex-col shadow-md hover:shadow-lg"
+                variants={itemVariants}
+                whileHover={{ y: -5, scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <motion.div 
+                  className="bg-gradient-to-br from-purple-500 to-pink-500 p-4 rounded-lg mb-4 group-hover:from-purple-400 group-hover:to-pink-400 transition-colors"
+                  whileHover={{ rotate: 360, scale: 1.1 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <contact.icon className="w-8 h-8 text-white" />
+                </motion.div>
+                <h3 className="font-semibold text-slate-900 mb-2">{contact.title}</h3>
+                <p className="text-slate-600 text-sm">{contact.desc}</p>
+              </motion.a>
+            ))}
+          </motion.div>
 
           {/* Current Status - Centered */}
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-black p-8 rounded-lg text-white text-center">
-              <h3 className="text-2xl font-bold text-yellow-400 mb-6">Current Status</h3>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="flex flex-col items-center">
-                  <MapPin className="w-8 h-8 text-yellow-400 mb-2" />
-                  <span className="text-sm">London, Ontario, Canada</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <Calendar className="w-8 h-8 text-yellow-400 mb-2" />
-                  <span className="text-sm">Actively seeking opportunities</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <MessageCircle className="w-8 h-8 text-yellow-400 mb-2" />
-                  <span className="text-sm">Open to all role types</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <motion.div 
+            className="max-w-2xl mx-auto"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={contactInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <motion.div 
+              className="bg-gradient-to-br from-purple-600 to-pink-600 p-8 rounded-lg text-white text-center shadow-xl"
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <h3 className="text-2xl font-bold text-white mb-6">Current Status</h3>
+              <motion.div 
+                className="grid md:grid-cols-3 gap-6"
+                variants={containerVariants}
+                initial="hidden"
+                animate={contactInView ? "visible" : "hidden"}
+              >
+                {[
+                  { icon: MapPin, text: "London, Ontario, Canada" },
+                  { icon: Calendar, text: "Actively seeking opportunities" },
+                  { icon: MessageCircle, text: "Open to all role types" }
+                ].map((item, index) => (
+                  <motion.div 
+                    key={index}
+                    className="flex flex-col items-center"
+                    variants={itemVariants}
+                    whileHover={{ y: -5 }}
+                  >
+                    <motion.div
+                      whileHover={{ scale: 1.2, rotate: 5 }}
+                    >
+                      <item.icon className="w-8 h-8 text-white mb-2" />
+                    </motion.div>
+                    <span className="text-sm text-white/90">{item.text}</span>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-gray-50 py-20">
+      <section className="bg-gradient-to-b from-white via-purple-50/20 to-white py-20" ref={faqRef}>
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-black mb-12 text-center">
-            Frequently Asked <span className="text-yellow-500">Questions</span>
-          </h2>
+          <motion.h2 
+            className="text-3xl font-bold text-slate-900 mb-12 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={faqInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6 }}
+          >
+            Frequently Asked <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Questions</span>
+          </motion.h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-lg font-semibold text-black mb-3">Are you available for work?</h3>
-              <p className="text-gray-700">
-                Yes! I'm actively seeking software engineering opportunities and available 
-                to start immediately. Open to full-time, part-time, and contract positions.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-lg font-semibold text-black mb-3">What kind of opportunities interest you?</h3>
-              <p className="text-gray-700">
-                I'm interested in software engineering roles, internships, collaborative projects, 
-                and any opportunities to work with innovative teams on meaningful problems.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-lg font-semibold text-black mb-3">Can you work remotely?</h3>
-              <p className="text-gray-700">
-                Absolutely! I'm experienced with remote collaboration and have the discipline 
-                and communication skills needed for distributed teams.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-lg font-semibold text-black mb-3">What's your response time?</h3>
-              <p className="text-gray-700">
-                I aim to respond to all messages within 24-48 hours. For urgent matters, 
-                LinkedIn or email are the best ways to reach me quickly.
-              </p>
-            </div>
-          </div>
+          <motion.div 
+            className="grid md:grid-cols-2 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            animate={faqInView ? "visible" : "hidden"}
+          >
+            {[
+              { 
+                q: "Are you available for work?", 
+                a: "Yes! I'm actively seeking software engineering opportunities and available to start immediately. Open to full-time, part-time, and contract positions." 
+              },
+              { 
+                q: "What kind of opportunities interest you?", 
+                a: "I'm interested in software engineering roles, internships, collaborative projects, and any opportunities to work with innovative teams on meaningful problems." 
+              },
+              { 
+                q: "Can you work remotely?", 
+                a: "Absolutely! I'm experienced with remote collaboration and have the discipline and communication skills needed for distributed teams." 
+              },
+              { 
+                q: "What's your response time?", 
+                a: "I aim to respond to all messages within 24-48 hours. For urgent matters, LinkedIn or email are the best ways to reach me quickly." 
+              }
+            ].map((faq, index) => (
+              <motion.div 
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg border border-purple-100 transition-all"
+                variants={itemVariants}
+                whileHover={{ y: -5, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <h3 className="text-lg font-semibold text-slate-900 mb-3">{faq.q}</h3>
+                <p className="text-slate-700">{faq.a}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="bg-black py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Ready to <span className="text-yellow-400">Hire?</span>
-          </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+      <section className="bg-gradient-to-br from-purple-600 to-pink-600 py-20 relative overflow-hidden" ref={ctaRef}>
+        {/* Background Effects */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        </div>
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <motion.h2 
+            className="text-3xl font-bold text-white mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            animate={ctaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6 }}
+          >
+            Ready to <span className="text-white">Hire?</span>
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-white/90 mb-8 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            animate={ctaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             I'm actively seeking software engineering opportunities and excited to contribute 
             to your team. Let's discuss how I can help bring your projects to life!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+          </motion.p>
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={ctaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <motion.a
               href="mailto:jessicamhaugen14@gmail.com"
-              className="bg-yellow-400 text-black px-8 py-3 rounded-lg font-medium hover:bg-yellow-300 transition-colors inline-flex items-center justify-center space-x-2"
+              className="bg-white text-purple-600 px-6 sm:px-8 py-3 rounded-lg font-medium hover:bg-purple-50 transition-colors inline-flex items-center justify-center space-x-2 shadow-lg min-h-[44px] w-full sm:w-auto"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Mail className="w-5 h-5" />
-              <span>Send Email</span>
-            </a>
-            <a
+              <span className="text-sm sm:text-base">Send Email</span>
+            </motion.a>
+            <motion.a
               href="https://www.linkedin.com/in/jessicagarcia5714/"
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-gray-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-900 transition-colors inline-flex items-center justify-center space-x-2"
+              className="border-2 border-white text-white px-6 sm:px-8 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors inline-flex items-center justify-center space-x-2 backdrop-blur-sm min-h-[44px] w-full sm:w-auto"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Linkedin className="w-5 h-5" />
-              <span>Connect on LinkedIn</span>
-            </a>
-          </div>
+              <span className="text-sm sm:text-base">Connect on LinkedIn</span>
+            </motion.a>
+          </motion.div>
         </div>
       </section>
     </div>

@@ -1,353 +1,520 @@
 import { GraduationCap, Award, BookOpen, Target, Star, Trophy, MapPin } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { useInView } from 'framer-motion'
+import { useRef } from 'react'
 
 const AcademicsPage = () => {
+  const heroRef = useRef(null)
+  const timelineRef = useRef(null)
+  const achievementsRef = useRef(null)
+  const visionRef = useRef(null)
+  const certsRef = useRef(null)
+  const philosophyRef = useRef(null)
+
+  const heroInView = useInView(heroRef, { once: true, margin: "-100px" })
+  const timelineInView = useInView(timelineRef, { once: true, margin: "-100px" })
+  const achievementsInView = useInView(achievementsRef, { once: true, margin: "-100px" })
+  const visionInView = useInView(visionRef, { once: true, margin: "-100px" })
+  const certsInView = useInView(certsRef, { once: true, margin: "-100px" })
+  const philosophyInView = useInView(philosophyRef, { once: true, margin: "-100px" })
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.6, -0.05, 0.01, 0.99],
+      },
+    },
+  }
+
   return (
     <div className="pt-16 min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-black py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Academic <span className="text-yellow-400">Excellence</span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+      <section className="bg-gradient-to-br from-white via-purple-50/30 to-pink-50/30 py-20 relative overflow-hidden" ref={heroRef}>
+        {/* Background Effects */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-400/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        </div>
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <motion.h1 
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 mb-6 px-2"
+            initial={{ opacity: 0, y: 30 }}
+            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6 }}
+          >
+            Academic <motion.span 
+              className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent inline-block relative"
+              animate={heroInView ? {
+                filter: [
+                  "drop-shadow(0 0 8px rgba(168, 85, 247, 0.4))",
+                  "drop-shadow(0 0 12px rgba(168, 85, 247, 0.6))",
+                  "drop-shadow(0 0 8px rgba(168, 85, 247, 0.4))",
+                ],
+              } : {}}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              Excellence
+            </motion.span>
+          </motion.h1>
+          <motion.p 
+            className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             From honours diplomas to prestigious graduate programs - a journey of 
             continuous learning, exceptional performance, and relentless pursuit of knowledge.
-          </p>
+          </motion.p>
         </div>
       </section>
 
       {/* Academic Timeline */}
-      <section className="py-20">
+      <section className="py-20" ref={timelineRef}>
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-black mb-12 text-center">
-            Educational <span className="text-yellow-500">Journey</span>
-          </h2>
+          <motion.h2 
+            className="text-3xl sm:text-4xl font-bold text-slate-900 mb-12 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={timelineInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6 }}
+          >
+            Educational <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Journey</span>
+          </motion.h2>
           
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-yellow-500 h-full hidden lg:block"></div>
+            <motion.div 
+              className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-purple-600 to-pink-600 h-full hidden lg:block"
+              initial={{ scaleY: 0 }}
+              animate={timelineInView ? { scaleY: 1 } : { scaleY: 0 }}
+              transition={{ duration: 1, ease: "easeInOut" }}
+              style={{ transformOrigin: "top" }}
+            ></motion.div>
             
-            <div className="space-y-12">
+            <motion.div 
+              className="space-y-12"
+              variants={containerVariants}
+              initial="hidden"
+              animate={timelineInView ? "visible" : "hidden"}
+            >
               {/* UT Austin */}
-              <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <motion.div 
+                className="grid lg:grid-cols-2 gap-8 items-center"
+                variants={itemVariants}
+              >
                 <div className="lg:text-right lg:pr-8">
-                  <div className="bg-black text-white p-8 rounded-lg relative">
-                    <div className="absolute -right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-yellow-400 rounded-full border-4 border-white hidden lg:block"></div>
+                  <motion.div 
+                    className="bg-gradient-to-br from-purple-600 to-pink-600 text-white p-8 rounded-lg relative"
+                    whileHover={{ scale: 1.02, y: -5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <div className="absolute -right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white rounded-full border-4 border-purple-500 hidden lg:block"></div>
                     <div className="flex items-center mb-4 lg:justify-end">
-                      <MapPin className="w-6 h-6 text-yellow-400 mr-2" />
-                      <span className="text-yellow-400 font-bold">FUTURE</span>
+                      <MapPin className="w-6 h-6 text-white mr-2" />
+                      <span className="text-white font-bold">FUTURE</span>
                     </div>
-                    <h3 className="text-2xl font-bold text-yellow-400 mb-2">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
                       Master of Science, Computer Science
                     </h3>
                     <p className="text-white font-medium mb-2">University of Texas at Austin</p>
-                    <p className="text-gray-300 text-sm mb-4">January 2026 - Expected 2028</p>
+                    <p className="text-white/90 text-sm mb-4">January 2026 - Expected 2028</p>
                     <div className="flex items-center lg:justify-end mb-4">
-                      <Trophy className="w-5 h-5 text-yellow-400 mr-2" />
-                      <span className="text-yellow-400 font-medium">ACCEPTED</span>
+                      <Trophy className="w-5 h-5 text-white mr-2" />
+                      <span className="text-white font-medium">ACCEPTED</span>
                     </div>
-                    <p className="text-gray-300 leading-relaxed">
+                    <p className="text-white/90 leading-relaxed">
                       Accepted to one of the top computer science programs in the nation. 
                       Planning to focus on software engineering, distributed systems, and AI applications.
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
-                <div className="lg:pl-8">
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <h4 className="text-lg font-semibold text-black mb-3">Why UT Austin?</h4>
-                    <ul className="space-y-2 text-gray-700">
+                <motion.div 
+                  className="lg:pl-8"
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={timelineInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                  <motion.div 
+                    className="bg-purple-50/50 p-6 rounded-lg"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <h4 className="text-lg font-semibold text-slate-900 mb-3">Why UT Austin?</h4>
+                    <ul className="space-y-2 text-slate-700">
                       <li>• Top 10 CS program globally ranked</li>
                       <li>• World-class faculty in AI and systems</li>
                       <li>• Strong industry connections in Texas tech hub</li>
                       <li>• Research opportunities in cutting-edge technology</li>
                     </ul>
-                  </div>
-                </div>
-              </div>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
 
               {/* Current Bachelor's */}
-              <div className="grid lg:grid-cols-2 gap-8 items-center">
-                <div className="lg:pl-8">
-                  <div className="bg-white border-2 border-yellow-500 p-8 rounded-lg relative">
-                    <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-yellow-400 rounded-full border-4 border-white hidden lg:block"></div>
+              <motion.div 
+                className="grid lg:grid-cols-2 gap-8 items-center"
+                variants={itemVariants}
+              >
+                <motion.div 
+                  className="lg:pl-8"
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={timelineInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                  <motion.div 
+                    className="bg-white border-2 border-purple-500 p-8 rounded-lg relative shadow-lg"
+                    whileHover={{ scale: 1.02, y: -5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-purple-500 rounded-full border-4 border-white hidden lg:block"></div>
                     <div className="flex items-center mb-4">
-                      <BookOpen className="w-6 h-6 text-yellow-500 mr-2" />
-                      <span className="text-yellow-500 font-bold">IN PROGRESS</span>
+                      <BookOpen className="w-6 h-6 text-purple-500 mr-2" />
+                      <span className="text-purple-500 font-bold">IN PROGRESS</span>
                     </div>
-                    <h3 className="text-2xl font-bold text-black mb-2">
+                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">
                       Honours Bachelor of Computer Science
                     </h3>
-                    <p className="text-gray-700 font-medium mb-2">Algoma University</p>
-                    <p className="text-gray-600 text-sm mb-4">Expected December 2025</p>
+                    <p className="text-slate-700 font-medium mb-2">Algoma University</p>
+                    <p className="text-slate-600 text-sm mb-4">Expected December 2025</p>
                     <div className="flex items-center mb-4">
-                      <Star className="w-5 h-5 text-yellow-500 mr-2" />
-                      <span className="text-black font-medium">Current GPA: 3.53</span>
+                      <Star className="w-5 h-5 text-purple-500 mr-2" />
+                      <span className="text-slate-900 font-medium">Current GPA: 3.53</span>
                     </div>
-                    <p className="text-gray-700 leading-relaxed">
+                    <p className="text-slate-700 leading-relaxed">
                       Advanced coursework in algorithms, data structures, software engineering, 
                       and system design. Maintaining excellent academic standing while balancing family responsibilities.
                     </p>
-                  </div>
-                </div>
-                <div className="lg:pr-8">
-                  <div className="bg-gray-50 p-6 rounded-lg mb-4">
-                    <h4 className="text-lg font-semibold text-black mb-3">Current & Recent Courses</h4>
+                  </motion.div>
+                </motion.div>
+                <motion.div 
+                  className="lg:pr-8"
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={timelineInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                  <motion.div 
+                    className="bg-gray-50 p-6 rounded-lg mb-4"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <h4 className="text-lg font-semibold text-slate-900 mb-3">Current & Recent Courses</h4>
                     <div className="space-y-3">
-                      <div className="border-l-4 border-yellow-500 pl-4">
-                        <h5 className="font-medium text-black">Analysis of Algorithms</h5>
-                        <p className="text-sm text-gray-600">Advanced algorithmic design and complexity analysis</p>
+                      <div className="border-l-4 border-purple-500 pl-4">
+                        <h5 className="font-medium text-slate-900">Analysis of Algorithms</h5>
+                        <p className="text-sm text-slate-600">Advanced algorithmic design and complexity analysis</p>
                       </div>
-                      <div className="border-l-4 border-yellow-500 pl-4">
-                        <h5 className="font-medium text-black">Computer Organization & Architecture</h5>
-                        <p className="text-sm text-gray-600">Hardware-software interface and system architecture</p>
+                      <div className="border-l-4 border-purple-500 pl-4">
+                        <h5 className="font-medium text-slate-900">Computer Organization & Architecture</h5>
+                        <p className="text-sm text-slate-600">Hardware-software interface and system architecture</p>
                       </div>
-                      <div className="border-l-4 border-yellow-500 pl-4">
-                        <h5 className="font-medium text-black">Computer Networks</h5>
-                        <p className="text-sm text-gray-600">Network protocols, distributed systems communication</p>
+                      <div className="border-l-4 border-purple-500 pl-4">
+                        <h5 className="font-medium text-slate-900">Computer Networks</h5>
+                        <p className="text-sm text-slate-600">Network protocols, distributed systems communication</p>
+                      </div>
+                      <div className="border-l-4 border-purple-500 pl-4">
+                        <h5 className="font-medium text-slate-900">Theory of Computing</h5>
+                        <p className="text-sm text-slate-600">Formal languages, automata theory, and computational complexity</p>
                       </div>
                     </div>
-                  </div>
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <h4 className="text-lg font-semibold text-black mb-3">Foundation Highlights</h4>
-                    <div className="grid grid-cols-2 gap-2 text-sm">
+                  </motion.div>
+                  <motion.div 
+                    className="bg-purple-50/50 p-6 rounded-lg"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <h4 className="text-lg font-semibold text-slate-900 mb-3">Foundation Highlights</h4>
+                    <div className="grid grid-cols-2 gap-2 text-sm text-slate-700">
                       <div>• Data Structures I & II (90%, 82%)</div>
                       <div>• Software Engineering (83%)</div>
                       <div>• OOP Using C++ (80%)</div>
                       <div>• Programming Languages (80%)</div>
                     </div>
-                  </div>
-                </div>
-              </div>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
 
               {/* Algonquin Diploma */}
-              <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <motion.div 
+                className="grid lg:grid-cols-2 gap-8 items-center"
+                variants={itemVariants}
+              >
                 <div className="lg:text-right lg:pr-8">
-                  <div className="bg-yellow-400 text-black p-8 rounded-lg relative">
-                    <div className="absolute -right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-black rounded-full border-4 border-white hidden lg:block"></div>
+                  <motion.div 
+                    className="bg-gradient-to-br from-purple-500 to-pink-500 text-white p-8 rounded-lg relative"
+                    whileHover={{ scale: 1.02, y: -5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <div className="absolute -right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white rounded-full border-4 border-purple-500 hidden lg:block"></div>
                     <div className="flex items-center mb-4 lg:justify-end">
-                      <Award className="w-6 h-6 text-black mr-2" />
-                      <span className="text-black font-bold">COMPLETED</span>
+                      <Award className="w-6 h-6 text-white mr-2" />
+                      <span className="text-white font-bold">COMPLETED</span>
                     </div>
-                    <h3 className="text-2xl font-bold text-black mb-2">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
                       Honours Diploma, Computer Programming
                     </h3>
-                    <p className="text-black font-medium mb-2">Algonquin College</p>
-                    <p className="text-gray-800 text-sm mb-4">Graduated 2024</p>
+                    <p className="text-white font-medium mb-2">Algonquin College</p>
+                    <p className="text-white/90 text-sm mb-4">Graduated 2024</p>
                     <div className="flex items-center lg:justify-end mb-4">
-                      <Trophy className="w-5 h-5 text-black mr-2" />
-                      <span className="text-black font-medium">GPA: 3.9 • Honours Graduate</span>
+                      <Trophy className="w-5 h-5 text-white mr-2" />
+                      <span className="text-white font-medium">GPA: 3.9 • Honours Graduate</span>
                     </div>
-                    <p className="text-gray-800 leading-relaxed">
+                    <p className="text-white/90 leading-relaxed">
                       Comprehensive foundation in programming fundamentals, software development 
                       lifecycle, and practical application development. Graduated with highest honours.
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
-                <div className="lg:pl-8">
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <h4 className="text-lg font-semibold text-black mb-3">Standout Courses</h4>
+                <motion.div 
+                  className="lg:pl-8"
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={timelineInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                  <motion.div 
+                    className="bg-purple-50/50 p-6 rounded-lg"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <h4 className="text-lg font-semibold text-slate-900 mb-3">Standout Courses</h4>
                     <div className="space-y-3">
-                      <div className="border-l-4 border-yellow-500 pl-4">
-                        <h5 className="font-medium text-black">Advanced Database Topics (A)</h5>
-                        <p className="text-sm text-gray-600">Complex database design and optimization</p>
+                      <div className="border-l-4 border-purple-500 pl-4">
+                        <h5 className="font-medium text-slate-900">Advanced Database Topics (A)</h5>
+                        <p className="text-sm text-slate-600">Complex database design and optimization</p>
                       </div>
-                      <div className="border-l-4 border-yellow-500 pl-4">
-                        <h5 className="font-medium text-black">Enterprise Application Programming (A-)</h5>
-                        <p className="text-sm text-gray-600">Large-scale enterprise software development</p>
+                      <div className="border-l-4 border-purple-500 pl-4">
+                        <h5 className="font-medium text-slate-900">Enterprise Application Programming (A-)</h5>
+                        <p className="text-sm text-slate-600">Large-scale enterprise software development</p>
                       </div>
-                      <div className="border-l-4 border-yellow-500 pl-4">
-                        <h5 className="font-medium text-black">Software Development Project (A)</h5>
-                        <p className="text-sm text-gray-600">Full lifecycle software project implementation</p>
+                      <div className="border-l-4 border-purple-500 pl-4">
+                        <h5 className="font-medium text-slate-900">Software Development Project (A)</h5>
+                        <p className="text-sm text-slate-600">Full lifecycle software project implementation</p>
                       </div>
-                      <div className="border-l-4 border-yellow-500 pl-4">
-                        <h5 className="font-medium text-black">OOP with Design Patterns (A+)</h5>
-                        <p className="text-sm text-gray-600">Advanced object-oriented programming principles</p>
+                      <div className="border-l-4 border-purple-500 pl-4">
+                        <h5 className="font-medium text-slate-900">OOP with Design Patterns (A+)</h5>
+                        <p className="text-sm text-slate-600">Advanced object-oriented programming principles</p>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Academic Achievements */}
-      <section className="bg-gray-50 py-20">
+      <section className="bg-gradient-to-b from-white via-purple-50/20 to-white py-20" ref={achievementsRef}>
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-black mb-12 text-center">
-            Notable <span className="text-yellow-500">Achievements</span>
-          </h2>
+          <motion.h2 
+            className="text-3xl sm:text-4xl font-bold text-slate-900 mb-12 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={achievementsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6 }}
+          >
+            Notable <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Achievements</span>
+          </motion.h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-lg">
+          <motion.div 
+            className="grid md:grid-cols-2 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            animate={achievementsInView ? "visible" : "hidden"}
+          >
+            <motion.div 
+              className="bg-white p-8 rounded-lg shadow-lg"
+              variants={itemVariants}
+              whileHover={{ y: -5, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
               <div className="flex items-center mb-4">
-                <Trophy className="w-8 h-8 text-yellow-500 mr-3" />
-                <h3 className="text-xl font-bold text-black">Academic Excellence</h3>
+                <Trophy className="w-8 h-8 text-purple-500 mr-3" />
+                <h3 className="text-xl font-bold text-slate-900">Academic Excellence</h3>
               </div>
-              <ul className="space-y-3 text-gray-700">
+              <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start">
-                  <Star className="w-4 h-4 text-yellow-500 mr-2 mt-1 flex-shrink-0" />
+                  <Star className="w-4 h-4 text-purple-500 mr-2 mt-1 flex-shrink-0" />
                   <span>Graduated Honours from Algonquin College (3.9 GPA)</span>
                 </li>
                 <li className="flex items-start">
-                  <Star className="w-4 h-4 text-yellow-500 mr-2 mt-1 flex-shrink-0" />
+                  <Star className="w-4 h-4 text-purple-500 mr-2 mt-1 flex-shrink-0" />
                   <span>Maintaining 3.53 GPA in Honours Bachelor's program</span>
                 </li>
                 <li className="flex items-start">
-                  <Star className="w-4 h-4 text-yellow-500 mr-2 mt-1 flex-shrink-0" />
+                  <Star className="w-4 h-4 text-purple-500 mr-2 mt-1 flex-shrink-0" />
                   <span>Accepted to top-tier UT Austin CS Master's program</span>
                 </li>
                 <li className="flex items-start">
-                  <Star className="w-4 h-4 text-yellow-500 mr-2 mt-1 flex-shrink-0" />
+                  <Star className="w-4 h-4 text-purple-500 mr-2 mt-1 flex-shrink-0" />
                   <span>Dean's List recognition for academic performance</span>
                 </li>
               </ul>
-            </div>
+            </motion.div>
 
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <div className="flex items-center mb-4">
-                <Target className="w-8 h-8 text-yellow-500 mr-3" />
-                <h3 className="text-xl font-bold text-black">Balance & Dedication</h3>
-              </div>
-              <ul className="space-y-3 text-gray-700">
+            <motion.div 
+              className="bg-white p-8 rounded-lg shadow-lg"
+              variants={itemVariants}
+              whileHover={{ y: -5, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <motion.div 
+                className="flex items-center mb-4"
+                whileHover={{ x: 5 }}
+              >
+                <motion.div
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <Target className="w-8 h-8 text-purple-500 mr-3" />
+                </motion.div>
+                <h3 className="text-xl font-bold text-slate-900">Balance & Dedication</h3>
+              </motion.div>
+              <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start">
-                  <Star className="w-4 h-4 text-yellow-500 mr-2 mt-1 flex-shrink-0" />
+                  <Star className="w-4 h-4 text-purple-500 mr-2 mt-1 flex-shrink-0" />
                   <span>Achieving academic excellence while being a dedicated parent</span>
                 </li>
                 <li className="flex items-start">
-                  <Star className="w-4 h-4 text-yellow-500 mr-2 mt-1 flex-shrink-0" />
+                  <Star className="w-4 h-4 text-purple-500 mr-2 mt-1 flex-shrink-0" />
                   <span>Building and deploying personal projects alongside studies</span>
                 </li>
                 <li className="flex items-start">
-                  <Star className="w-4 h-4 text-yellow-500 mr-2 mt-1 flex-shrink-0" />
+                  <Star className="w-4 h-4 text-purple-500 mr-2 mt-1 flex-shrink-0" />
                   <span>Mastering time management and efficient learning strategies</span>
                 </li>
                 <li className="flex items-start">
-                  <Star className="w-4 h-4 text-yellow-500 mr-2 mt-1 flex-shrink-0" />
+                  <Star className="w-4 h-4 text-purple-500 mr-2 mt-1 flex-shrink-0" />
                   <span>Consistent academic performance across multiple programs</span>
                 </li>
               </ul>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Future Goals */}
-      <section className="py-20">
+      <section className="py-20" ref={visionRef}>
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-black mb-12 text-center">
-            Academic <span className="text-yellow-500">Vision</span>
-          </h2>
+          <motion.h2 
+            className="text-3xl sm:text-4xl font-bold text-slate-900 mb-12 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={visionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6 }}
+          >
+            Academic <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Vision</span>
+          </motion.h2>
           
-          <div className="bg-black rounded-lg p-8 text-white">
+          <motion.div 
+            className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg p-8 text-white"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={visionInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.6 }}
+            whileHover={{ scale: 1.02 }}
+          >
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h3 className="text-2xl font-bold text-yellow-400 mb-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">
                   Areas of Focus & Goals
                 </h3>
                 <div className="space-y-4">
-                  <div className="border-l-4 border-yellow-400 pl-4">
+                  <div className="border-l-4 border-white/50 pl-4">
                     <h4 className="font-semibold text-white">Advanced Software Engineering</h4>
-                    <p className="text-gray-300 text-sm">Scalable system design and architecture patterns</p>
+                    <p className="text-white/90 text-sm">Scalable system design and architecture patterns</p>
                   </div>
-                  <div className="border-l-4 border-yellow-400 pl-4">
+                  <div className="border-l-4 border-white/50 pl-4">
                     <h4 className="font-semibold text-white">Distributed Systems</h4>
-                    <p className="text-gray-300 text-sm">Microservices, cloud computing, and system reliability</p>
+                    <p className="text-white/90 text-sm">Microservices, cloud computing, and system reliability</p>
                   </div>
-                  <div className="border-l-4 border-yellow-400 pl-4">
+                  <div className="border-l-4 border-white/50 pl-4">
                     <h4 className="font-semibold text-white">Industry Applications</h4>
-                    <p className="text-gray-300 text-sm">Real-world problem solving through technology</p>
+                    <p className="text-white/90 text-sm">Real-world problem solving through technology</p>
                   </div>
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-yellow-400 mb-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">
                   Career Vision
                 </h3>
-                <p className="text-gray-300 leading-relaxed mb-4">
+                <p className="text-white/90 leading-relaxed mb-4">
                   My Master's program at UT Austin will deepen my technical expertise 
                   in advanced software engineering concepts while providing hands-on 
                   experience with cutting-edge technologies and industry best practices.
                 </p>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-white/90 leading-relaxed">
                   I'm focused on building the skills needed to architect and develop 
                   large-scale systems that solve meaningful problems, preparing me to 
                   contribute immediately to high-impact development teams.
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       
       {/* Certifications Section */}
-      <section className="py-20">
+      <section className="py-20" ref={certsRef}>
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-black mb-12 text-center">
-            Professional <span className="text-yellow-500">Certifications</span>
-          </h2>
+          <motion.h2 
+            className="text-3xl sm:text-4xl font-bold text-slate-900 mb-12 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={certsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6 }}
+          >
+            Professional <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Certifications</span>
+          </motion.h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-              <div className="text-center">
-                <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🐍</span>
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            variants={containerVariants}
+            initial="hidden"
+            animate={certsInView ? "visible" : "hidden"}
+          >
+            {[
+              { emoji: "🖥️", title: "System Admin", org: "Microsoft LinkedIn Learning", date: "October 2025" },
+              { emoji: "🐍", title: "Python Intermediate", org: "SoloLearn", date: "June 2025" },
+              { emoji: "☕", title: "Java Intermediate", org: "SoloLearn", date: "April 2024" },
+              { emoji: "⚡", title: "Introduction to C++", org: "SoloLearn", date: "February 2025" },
+              { emoji: "🌐", title: "Web Development", org: "SoloLearn", date: "July 2023" },
+              { emoji: "🗄️", title: "SQL Intermediate", org: "SoloLearn", date: "July 2023" }
+            ].map((cert, index) => (
+              <motion.div 
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-lg border border-purple-100 hover:border-purple-300 transition-colors"
+                variants={itemVariants}
+                whileHover={{ y: -5, scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="text-center">
+                  <motion.div 
+                    className="bg-gradient-to-br from-purple-500 to-pink-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <span className="text-2xl">{cert.emoji}</span>
+                  </motion.div>
+                  <h3 className="text-lg font-semibold text-slate-900 mb-2">{cert.title}</h3>
+                  <p className="text-slate-600 text-sm mb-2">{cert.org}</p>
+                  <p className="text-slate-500 text-xs">{cert.date}</p>
                 </div>
-                <h3 className="text-lg font-semibold text-black mb-2">Python Intermediate</h3>
-                <p className="text-gray-600 text-sm mb-2">SoloLearn</p>
-                <p className="text-gray-500 text-xs">June 2025</p>
-              </div>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-              <div className="text-center">
-                <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">☕</span>
-                </div>
-                <h3 className="text-lg font-semibold text-black mb-2">Java Intermediate</h3>
-                <p className="text-gray-600 text-sm mb-2">SoloLearn</p>
-                <p className="text-gray-500 text-xs">April 2024</p>
-              </div>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-              <div className="text-center">
-                <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">⚡</span>
-                </div>
-                <h3 className="text-lg font-semibold text-black mb-2">Introduction to C++</h3>
-                <p className="text-gray-600 text-sm mb-2">SoloLearn</p>
-                <p className="text-gray-500 text-xs">February 2025</p>
-              </div>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-              <div className="text-center">
-                <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🌐</span>
-                </div>
-                <h3 className="text-lg font-semibold text-black mb-2">Web Development</h3>
-                <p className="text-gray-600 text-sm mb-2">SoloLearn</p>
-                <p className="text-gray-500 text-xs">July 2023</p>
-              </div>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-              <div className="text-center">
-                <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🗄️</span>
-                </div>
-                <h3 className="text-lg font-semibold text-black mb-2">SQL Intermediate</h3>
-                <p className="text-gray-600 text-sm mb-2">SoloLearn</p>
-                <p className="text-gray-500 text-xs">July 2023</p>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            ))}
+          </motion.div>
 
           <div className="text-center mt-8">
-            <p className="text-gray-600">
+            <p className="text-slate-600">
               Continuously expanding technical knowledge through professional development and online learning platforms.
             </p>
           </div>
@@ -355,30 +522,42 @@ const AcademicsPage = () => {
       </section>
 
       {/* Learning Philosophy */}
-      <section className="bg-gray-50 py-20">
+      <section className="bg-gradient-to-b from-white via-purple-50/20 to-white py-20" ref={philosophyRef}>
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-black mb-8">
-            Learning <span className="text-yellow-500">Philosophy</span>
-          </h2>
-          <div className="text-lg text-gray-700 leading-relaxed space-y-6 max-w-3xl mx-auto">
-            <p>
-              Education, for me, is not just about acquiring knowledge; it's about developing 
-              the ability to think critically, solve complex problems, and adapt to an 
-              ever-changing technological landscape.
-            </p>
-            <p>
-              Every course, every project, every challenge is an opportunity to push the 
-              boundaries of what I thought possible. Whether it's mastering a new algorithm 
-              or architecting a complex system, I approach learning with curiosity, 
-              persistence, and strategic thinking.
-            </p>
-            <div className="bg-yellow-400 rounded-lg p-6 text-black">
+          <motion.h2 
+            className="text-3xl sm:text-4xl font-bold text-slate-900 mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={philosophyInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6 }}
+          >
+            Learning <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Philosophy</span>
+          </motion.h2>
+          <motion.div 
+            className="text-lg text-slate-700 leading-relaxed space-y-6 max-w-3xl mx-auto"
+            variants={containerVariants}
+            initial="hidden"
+            animate={philosophyInView ? "visible" : "hidden"}
+          >
+            {[
+              "Education, for me, is not just about acquiring knowledge; it's about developing the ability to think critically, solve complex problems, and adapt to an ever-changing technological landscape.",
+              "Every course, every project, every challenge is an opportunity to push the boundaries of what I thought possible. Whether it's mastering a new algorithm or architecting a complex system, I approach learning with curiosity, persistence, and strategic thinking."
+            ].map((text, index) => (
+              <motion.p key={index} variants={itemVariants}>
+                {text}
+              </motion.p>
+            ))}
+            <motion.div 
+              className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg p-6 text-white"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
               <p className="font-medium text-xl">
                 "The best way to predict the future is to invent it. The best way to 
                 invent it is to deeply understand the fundamentals that make it possible."
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </div>

@@ -1,7 +1,76 @@
-import { ExternalLink, Github, Clock, CheckCircle, Users, Code, Database, Smartphone } from 'lucide-react'
+import { ExternalLink, Github, Clock, CheckCircle, Users, Code, Database, Smartphone, Home } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { useInView } from 'framer-motion'
+import { useRef } from 'react'
 
 const ProjectsPage = () => {
+  const heroRef = useRef(null)
+  const overviewRef = useRef(null)
+  const projectsRef = useRef(null)
+  const ctaRef = useRef(null)
+
+  const heroInView = useInView(heroRef, { once: true, margin: "-100px" })
+  const overviewInView = useInView(overviewRef, { once: true, margin: "-100px" })
+  const projectsInView = useInView(projectsRef, { once: true, margin: "-100px" })
+  const ctaInView = useInView(ctaRef, { once: true, margin: "-100px" })
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.6, -0.05, 0.01, 0.99],
+      },
+    },
+  }
   const projects = [
+    {
+      id: 11,
+      title: "homebase",
+      category: "Mobile Application",
+      status: "in-progress",
+      deployedUrl: null,
+      githubUrl: null,
+      description: "A free, local-first family management mobile application built with React Native and Expo. Currently in TestFlight beta testing as a solo developer project. All data is stored locally on your device using SQLite - no cloud services, subscriptions, or backend infrastructure required. Privacy-focused and completely offline-first.",
+      problem: "Families need a comprehensive tool to manage household activities, schedules, meals, tasks, and health information, but existing solutions often require subscriptions, compromise privacy with cloud storage, or lack offline functionality.",
+      solution: "A completely free, local-first mobile application that stores all data on-device using SQLite. No backend infrastructure, no subscriptions, and complete privacy - all while providing comprehensive family management features that work entirely offline.",
+      techStack: {
+        frontend: ["React Native", "Expo SDK 54", "TypeScript", "Expo Router"],
+        state: ["Zustand", "AsyncStorage"],
+        database: ["SQLite (expo-sqlite)", "WAL mode"],
+        notifications: ["Expo Notifications"],
+        architecture: ["Local-first", "Offline-first", "File-based routing"],
+        features: ["Native mobile app", "Local push notifications", "Theme system"]
+      },
+      keyFeatures: [
+        "Family calendar with month/week/day views and recurring events",
+        "Task management with assignment, priorities, and due dates",
+        "Meal planning with weekly schedules and recipe integration",
+        "Grocery lists and custom list management with categories",
+        "Contact management with birthday tracking and calendar sync",
+        "Health tracking for family members with medication logs",
+        "Baby tracking for feeding, sleep, and milestone recording",
+        "Period tracking with cycle prediction and fertility awareness",
+        "Household member management (adults, children, babies, pets)",
+        "Completely offline functionality with local SQLite storage",
+        "Privacy-focused - all data stays on device",
+        "Theme customization and notification preferences"
+      ],
+      challenges: "Building a comprehensive family management app as a solo developer, implementing complex local-first architecture with SQLite, managing state across multiple interconnected features, designing intuitive mobile UX for diverse family needs, and ensuring smooth performance with large datasets stored locally.",
+      learned: "React Native and Expo development, mobile app architecture, SQLite database design and optimization, local-first application patterns, Zustand state management, Expo Router file-based navigation, mobile UX/UI design, local push notifications, and solo development project management."
+    },
     {
       id: 1,
       title: "Study Sidekick",
@@ -312,9 +381,9 @@ const ProjectsPage = () => {
       case 'completed':
         return <CheckCircle className="w-5 h-5 text-green-500" />
       case 'in-progress':
-        return <Clock className="w-5 h-5 text-yellow-500" />
+        return <Clock className="w-5 h-5 text-purple-500" />
       default:
-        return <Clock className="w-5 h-5 text-gray-400" />
+        return <Clock className="w-5 h-5 text-slate-400" />
     }
   }
 
@@ -343,6 +412,8 @@ const ProjectsPage = () => {
         return <Database className="w-6 h-6" />
       case 'Mobile Web Application':
         return <Smartphone className="w-6 h-6" />
+      case 'Mobile Application':
+        return <Home className="w-6 h-6" />
       case 'Web Development':
         return <Code className="w-6 h-6" />
       default:
@@ -353,97 +424,190 @@ const ProjectsPage = () => {
   return (
     <div className="pt-16 min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-black py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            My <span className="text-yellow-400">Projects</span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            From web applications to game development - explore the 10 projects that showcase 
+      <section className="bg-gradient-to-br from-white via-purple-50/30 to-pink-50/30 py-20 relative overflow-hidden" ref={heroRef}>
+        {/* Background Effects */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-400/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        </div>
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <motion.h1 
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 mb-6 px-2"
+            style={{ lineHeight: '1.15', paddingBottom: '0.1em' }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6 }}
+          >
+            My <motion.span 
+              className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent inline-block relative"
+              style={{ lineHeight: '1.15', paddingBottom: '0.1em' }}
+              animate={heroInView ? {
+                filter: [
+                  "drop-shadow(0 0 8px rgba(168, 85, 247, 0.4))",
+                  "drop-shadow(0 0 12px rgba(168, 85, 247, 0.6))",
+                  "drop-shadow(0 0 8px rgba(168, 85, 247, 0.4))",
+                ],
+              } : {}}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              Projects
+            </motion.span>
+          </motion.h1>
+          <motion.p 
+            className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            From web applications to mobile apps - explore the 11 projects that showcase 
             my technical skills, problem-solving abilities, and passion for creating meaningful software.
-          </p>
+          </motion.p>
         </div>
       </section>
 
       {/* Projects Overview */}
-      <section className="py-20">
+      <section className="py-20" ref={overviewRef}>
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="text-center">
-              <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="w-8 h-8 text-black" />
+          <motion.div 
+            className="grid md:grid-cols-3 gap-8 mb-16"
+            variants={containerVariants}
+            initial="hidden"
+            animate={overviewInView ? "visible" : "hidden"}
+          >
+            {[
+              { icon: CheckCircle, number: "8", label: "Completed Projects" },
+              { icon: Clock, number: "3", label: "In Development" },
+              { icon: Code, number: "30+", label: "Technologies Used" }
+            ].map((stat, index) => (
+              <motion.div 
+                key={index}
+                className="text-center"
+                variants={itemVariants}
+                whileHover={{ y: -5, scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <motion.div 
+                  className="bg-gradient-to-br from-purple-500 to-pink-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                  whileHover={{ rotate: 360, scale: 1.1 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <stat.icon className="w-8 h-8 text-white" />
+                </motion.div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">{stat.number}</h3>
+                <p className="text-slate-600">{stat.label}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Quick Jump Navigation */}
+          <motion.div 
+            className="mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={projectsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="bg-white rounded-lg p-4 sm:p-6 border border-purple-100 shadow-md">
+              <h3 className="text-base sm:text-lg font-semibold text-slate-900 mb-4">Quick Jump to Projects</h3>
+              <div className="flex flex-wrap gap-2 sm:gap-3">
+                {projects.map((project) => (
+                  <motion.button
+                    key={project.id}
+                    onClick={() => {
+                      const element = document.getElementById(`project-${project.id}`)
+                      if (element) {
+                        const headerOffset = 80
+                        const elementPosition = element.getBoundingClientRect().top
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+                        window.scrollTo({
+                          top: offsetPosition,
+                          behavior: 'smooth'
+                        })
+                      }
+                    }}
+                    className="px-3 sm:px-4 py-2 bg-gradient-to-r from-purple-50 to-pink-50 text-slate-700 rounded-lg text-xs sm:text-sm font-medium border border-purple-200 hover:border-purple-400 hover:bg-purple-100 transition-all cursor-pointer"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {project.title}
+                  </motion.button>
+                ))}
               </div>
-              <h3 className="text-2xl font-bold text-black mb-2">8</h3>
-              <p className="text-gray-600">Completed Projects</p>
             </div>
-            <div className="text-center">
-              <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-8 h-8 text-black" />
-              </div>
-              <h3 className="text-2xl font-bold text-black mb-2">2</h3>
-              <p className="text-gray-600">In Development</p>
-            </div>
-            <div className="text-center">
-              <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Code className="w-8 h-8 text-black" />
-              </div>
-              <h3 className="text-2xl font-bold text-black mb-2">25+</h3>
-              <p className="text-gray-600">Technologies Used</p>
-            </div>
-          </div>
+          </motion.div>
 
           {/* Featured Projects */}
-          <div className="space-y-16">
+          <motion.div 
+            className="space-y-16"
+            ref={projectsRef}
+            variants={containerVariants}
+            initial="hidden"
+            animate={projectsInView ? "visible" : "hidden"}
+          >
             {projects.map((project, index) => (
-              <div key={project.id} className={`${index % 2 === 1 ? 'bg-gray-50' : ''} rounded-2xl p-8`}>
+              <motion.div 
+                key={project.id}
+                id={`project-${project.id}`}
+                className={`${index % 2 === 1 ? 'bg-purple-50/30' : 'bg-white'} rounded-2xl p-4 sm:p-6 md:p-8 border border-purple-100 hover:border-purple-300 transition-colors shadow-lg hover:shadow-xl scroll-mt-24`}
+                variants={itemVariants}
+                whileHover={{ scale: 1.01 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 {/* Project Header */}
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-8">
                   <div className="flex-1">
                     <div className="flex items-center mb-4">
-                      <div className="bg-black p-2 rounded-lg mr-4">
-                        <div className="text-yellow-400">
+                      <div className="bg-gradient-to-br from-purple-500 to-pink-500 p-2 rounded-lg mr-4">
+                        <div className="text-white">
                           {getCategoryIcon(project.category)}
                         </div>
                       </div>
-                      <div>
-                        <h2 className="text-3xl font-bold text-black">{project.title}</h2>
-                        <p className="text-gray-600">{project.category}</p>
+                      <div className="min-w-0 flex-1">
+                        <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 break-words">{project.title}</h2>
+                        <p className="text-xs sm:text-sm text-slate-600">{project.category}</p>
                       </div>
                     </div>
                     <div className="flex items-center mb-4">
                       {getStatusIcon(project.status)}
-                      <span className="ml-2 text-sm font-medium text-gray-700">
+                      <span className="ml-2 text-xs sm:text-sm font-medium text-slate-700">
                         {getStatusText(project.status, project.deployedUrl)}
                       </span>
                     </div>
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex space-x-4">
+                  <div className="flex flex-wrap gap-2 sm:space-x-4">
                     {project.githubUrl && (
-                      <a
+                      <motion.a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors flex items-center space-x-2"
+                        className="bg-slate-800 text-white px-3 sm:px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors flex items-center space-x-2 min-h-[44px]"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
                       >
                         <Github className="w-4 h-4" />
-                        <span>Code</span>
-                      </a>
+                        <span className="text-sm sm:text-base">Code</span>
+                      </motion.a>
                     )}
                     {project.deployedUrl && (
-                      <a
+                      <motion.a
                         href={project.deployedUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-yellow-400 text-black px-4 py-2 rounded-lg hover:bg-yellow-300 transition-colors flex items-center space-x-2"
+                        className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 sm:px-4 py-2 rounded-lg hover:from-purple-400 hover:to-pink-400 transition-colors flex items-center space-x-2 shadow-lg min-h-[44px]"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
                       >
                         <ExternalLink className="w-4 h-4" />
-                        <span>Live Demo</span>
-                      </a>
+                        <span className="text-sm sm:text-base">Live Demo</span>
+                      </motion.a>
                     )}
                     {project.status === 'in-progress' && (
-                      <div className="bg-gray-200 text-gray-600 px-4 py-2 rounded-lg flex items-center space-x-2">
+                      <div className="bg-purple-100 text-purple-700 px-4 py-2 rounded-lg flex items-center space-x-2">
                         <Users className="w-4 h-4" />
                         <span>In Development</span>
                       </div>
@@ -452,37 +616,47 @@ const ProjectsPage = () => {
                 </div>
 
                 {/* Project Content */}
-                <div className="grid lg:grid-cols-2 gap-8">
+                <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
                   {/* Description & Problem/Solution */}
                   <div className="space-y-6">
                     <div>
-                      <h3 className="text-xl font-semibold text-black mb-3">About</h3>
-                      <p className="text-gray-700 leading-relaxed">{project.description}</p>
+                      <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3">About</h3>
+                      <p className="text-sm sm:text-base text-slate-700 leading-relaxed">{project.description}</p>
                     </div>
 
                     <div>
-                      <h3 className="text-xl font-semibold text-black mb-3">Problem & Solution</h3>
+                      <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3">Problem & Solution</h3>
                       <div className="space-y-3">
-                        <div className="border-l-4 border-red-400 pl-4">
-                          <h4 className="font-medium text-black mb-1">Problem</h4>
-                          <p className="text-gray-700 text-sm">{project.problem}</p>
+                        <div className="border-l-4 border-red-400 pl-3 sm:pl-4">
+                          <h4 className="font-medium text-slate-900 mb-1 text-sm sm:text-base">Problem</h4>
+                          <p className="text-slate-700 text-xs sm:text-sm">{project.problem}</p>
                         </div>
-                        <div className="border-l-4 border-green-400 pl-4">
-                          <h4 className="font-medium text-black mb-1">Solution</h4>
-                          <p className="text-gray-700 text-sm">{project.solution}</p>
+                        <div className="border-l-4 border-green-400 pl-3 sm:pl-4">
+                          <h4 className="font-medium text-slate-900 mb-1 text-sm sm:text-base">Solution</h4>
+                          <p className="text-slate-700 text-xs sm:text-sm">{project.solution}</p>
                         </div>
                       </div>
                     </div>
 
                     {/* Key Features */}
                     <div>
-                      <h3 className="text-xl font-semibold text-black mb-3">Key Features</h3>
+                      <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3">Key Features</h3>
                       <ul className="grid grid-cols-1 gap-2">
                         {project.keyFeatures.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-start">
-                            <span className="w-2 h-2 bg-yellow-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                            <span className="text-gray-700 text-sm">{feature}</span>
-                          </li>
+                          <motion.li 
+                            key={featureIndex} 
+                            className="flex items-start"
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={projectsInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                            transition={{ delay: 0.3 + featureIndex * 0.05 }}
+                          >
+                            <motion.span 
+                              className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"
+                              animate={{ scale: [1, 1.2, 1] }}
+                              transition={{ duration: 2, repeat: Infinity, delay: featureIndex * 0.2 }}
+                            ></motion.span>
+                            <span className="text-slate-700 text-sm">{feature}</span>
+                          </motion.li>
                         ))}
                       </ul>
                     </div>
@@ -492,21 +666,25 @@ const ProjectsPage = () => {
                   <div className="space-y-6">
                     {/* Tech Stack */}
                     <div>
-                      <h3 className="text-xl font-semibold text-black mb-3">Tech Stack</h3>
+                      <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3">Tech Stack</h3>
                       <div className="space-y-4">
                         {Object.entries(project.techStack).map(([category, technologies]) => (
                           <div key={category}>
-                            <h4 className="font-medium text-gray-800 mb-2 capitalize">
+                            <h4 className="font-medium text-slate-800 mb-2 capitalize text-sm sm:text-base">
                               {category.replace(/([A-Z])/g, ' $1').trim()}
                             </h4>
                             <div className="flex flex-wrap gap-2">
                               {technologies.map((tech, techIndex) => (
-                                <span
+                                <motion.span
                                   key={techIndex}
-                                  className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-xs font-medium"
+                                  className="bg-purple-50 text-slate-800 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-purple-200 hover:border-purple-400 hover:bg-purple-100 transition-colors"
+                                  initial={{ opacity: 0, scale: 0.8 }}
+                                  animate={projectsInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                                  transition={{ delay: 0.4 + techIndex * 0.05 }}
+                                  whileHover={{ scale: 1.1 }}
                                 >
                                   {tech}
-                                </span>
+                                </motion.span>
                               ))}
                             </div>
                           </div>
@@ -517,49 +695,73 @@ const ProjectsPage = () => {
                     {/* Challenges & Learning */}
                     <div className="space-y-4">
                       <div>
-                        <h3 className="text-lg font-semibold text-black mb-2">Challenges</h3>
-                        <p className="text-gray-700 text-sm leading-relaxed">{project.challenges}</p>
+                        <h3 className="text-base sm:text-lg font-semibold text-slate-900 mb-2">Challenges</h3>
+                        <p className="text-slate-700 text-xs sm:text-sm leading-relaxed">{project.challenges}</p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-black mb-2">What I Learned</h3>
-                        <p className="text-gray-700 text-sm leading-relaxed">{project.learned}</p>
+                        <h3 className="text-base sm:text-lg font-semibold text-slate-900 mb-2">What I Learned</h3>
+                        <p className="text-slate-700 text-xs sm:text-sm leading-relaxed">{project.learned}</p>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="bg-black py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
+      <section className="bg-gradient-to-br from-purple-600 to-pink-600 py-20 relative overflow-hidden" ref={ctaRef}>
+        {/* Background Effects */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        </div>
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <motion.h2 
+            className="text-3xl font-bold text-white mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            animate={ctaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6 }}
+          >
             Want to See More?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-white/90 mb-8 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            animate={ctaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             I'm always working on new projects and exploring different technologies. 
             Check out my GitHub for the latest updates and contributions!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+          </motion.p>
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={ctaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <motion.a
               href="https://github.com/JessicaCodesx"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-yellow-400 text-black px-8 py-3 rounded-lg font-medium hover:bg-yellow-300 transition-colors inline-flex items-center justify-center space-x-2"
+              className="bg-white text-purple-600 px-6 sm:px-8 py-3 rounded-lg font-medium hover:bg-purple-50 transition-colors inline-flex items-center justify-center space-x-2 shadow-lg min-h-[44px] w-full sm:w-auto"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Github className="w-5 h-5" />
-              <span>View All Repositories</span>
-            </a>
-            <a
+              <span className="text-sm sm:text-base">View All Repositories</span>
+            </motion.a>
+            <motion.a
               href="/contact"
-              className="border border-gray-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-900 transition-colors"
+              className="border-2 border-white text-white px-6 sm:px-8 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors backdrop-blur-sm min-h-[44px] w-full sm:w-auto text-sm sm:text-base"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               Let's Collaborate
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
         </div>
       </section>
     </div>
