@@ -1,6 +1,7 @@
 import './index.css'
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
+import { useEffect } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -11,6 +12,11 @@ import ContactPage from './pages/ContactPage'
 
 const AnimatedRoutes = () => {
   const location = useLocation()
+
+  // Scroll to top when route changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [location.pathname])
 
   const pageVariants = {
     initial: {
