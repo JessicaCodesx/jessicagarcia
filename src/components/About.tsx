@@ -98,7 +98,7 @@ const About = () => {
                 <div>
                   <p className="font-medium text-slate-900">Honours Bachelor of Computer Science</p>
                   <p className="text-slate-600">Algoma University • Expected Dec 2025</p>
-                  <p className="text-sm text-slate-500">GPA: 3.53</p>
+                  <p className="text-sm text-slate-500">GPA: 3.7</p>
                 </div>
                 <div>
                   <p className="font-medium text-slate-900">Honours Diploma, Computer Programming</p>

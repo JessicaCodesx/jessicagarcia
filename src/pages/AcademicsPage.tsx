@@ -194,7 +194,7 @@ const AcademicsPage = () => {
                     <p className="text-slate-600 text-sm mb-4">Expected December 2025</p>
                     <div className="flex items-center mb-4">
                       <Star className="w-5 h-5 text-purple-500 mr-2" />
-                      <span className="text-slate-900 font-medium">Current GPA: 3.53</span>
+                      <span className="text-slate-900 font-medium">Current GPA: 3.7</span>
                     </div>
                     <p className="text-slate-700 leading-relaxed">
                       Advanced coursework in algorithms, data structures, software engineering, 
@@ -372,7 +372,7 @@ const AcademicsPage = () => {
                 </li>
                 <li className="flex items-start">
                   <Star className="w-4 h-4 text-purple-500 mr-2 mt-1 flex-shrink-0" />
-                  <span>Maintaining 3.53 GPA in Honours Bachelor's program</span>
+                  <span>Maintaining 3.7 GPA in Honours Bachelor's program</span>
                 </li>
                 <li className="flex items-start">
                   <Star className="w-4 h-4 text-purple-500 mr-2 mt-1 flex-shrink-0" />
