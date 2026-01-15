@@ -126,25 +126,25 @@ const AcademicsPage = () => {
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
                   <motion.div 
-                    className="bg-white border-2 border-purple-500 p-8 rounded-lg relative shadow-lg"
+                    className="bg-gradient-to-br from-purple-600 to-pink-600 text-white p-8 rounded-lg relative shadow-lg"
                     whileHover={{ scale: 1.02, y: -5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-purple-500 rounded-full border-4 border-white hidden lg:block"></div>
+                    <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white rounded-full border-4 border-purple-500 hidden lg:block"></div>
                     <div className="flex items-center mb-4">
-                      <Award className="w-6 h-6 text-purple-500 mr-2" />
-                      <span className="text-purple-500 font-bold">COMPLETED</span>
+                      <Award className="w-6 h-6 text-white mr-2" />
+                      <span className="text-white font-bold">COMPLETED</span>
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
                       Honours Bachelor of Computer Science
                     </h3>
-                    <p className="text-slate-700 font-medium mb-2">Algoma University</p>
-                    <p className="text-slate-600 text-sm mb-4">December 2025</p>
+                    <p className="text-white font-medium mb-2">Algoma University</p>
+                    <p className="text-white/90 text-sm mb-4">December 2025</p>
                     <div className="flex items-center mb-4">
-                      <Star className="w-5 h-5 text-purple-500 mr-2" />
-                      <span className="text-slate-900 font-medium">GPA: 3.7</span>
+                      <Star className="w-5 h-5 text-white mr-2" />
+                      <span className="text-white font-medium">GPA: 3.7 • Graduated with Honours</span>
                     </div>
-                    <p className="text-slate-700 leading-relaxed">
+                    <p className="text-white/90 leading-relaxed">
                       Advanced coursework in algorithms, data structures, software engineering, 
                       and system design. Completed with excellent academic standing while balancing family responsibilities.
                     </p>
