@@ -1,4 +1,4 @@
-import { GraduationCap, Award, BookOpen, Target, Star, Trophy, MapPin } from 'lucide-react'
+import { Award, BookOpen, Target, Star, Trophy } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
@@ -114,58 +114,6 @@ const AcademicsPage = () => {
               initial="hidden"
               animate={timelineInView ? "visible" : "hidden"}
             >
-              {/* UT Austin */}
-              <motion.div 
-                className="grid lg:grid-cols-2 gap-8 items-center"
-                variants={itemVariants}
-              >
-                <div className="lg:text-right lg:pr-8">
-                  <motion.div 
-                    className="bg-gradient-to-br from-purple-600 to-pink-600 text-white p-8 rounded-lg relative"
-                    whileHover={{ scale: 1.02, y: -5 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <div className="absolute -right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white rounded-full border-4 border-purple-500 hidden lg:block"></div>
-                    <div className="flex items-center mb-4 lg:justify-end">
-                      <MapPin className="w-6 h-6 text-white mr-2" />
-                      <span className="text-white font-bold">FUTURE</span>
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
-                      Master of Science, Computer Science
-                    </h3>
-                    <p className="text-white font-medium mb-2">University of Texas at Austin</p>
-                    <p className="text-white/90 text-sm mb-4">January 2026 - Expected 2028</p>
-                    <div className="flex items-center lg:justify-end mb-4">
-                      <Trophy className="w-5 h-5 text-white mr-2" />
-                      <span className="text-white font-medium">ACCEPTED</span>
-                    </div>
-                    <p className="text-white/90 leading-relaxed">
-                      Accepted to one of the top computer science programs in the nation. 
-                      Planning to focus on software engineering, distributed systems, and AI applications.
-                    </p>
-                  </motion.div>
-                </div>
-                <motion.div 
-                  className="lg:pl-8"
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={timelineInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                >
-                  <motion.div 
-                    className="bg-purple-50/50 p-6 rounded-lg"
-                    whileHover={{ scale: 1.02 }}
-                  >
-                    <h4 className="text-lg font-semibold text-slate-900 mb-3">Why UT Austin?</h4>
-                    <ul className="space-y-2 text-slate-700">
-                      <li>• Top 10 CS program globally ranked</li>
-                      <li>• World-class faculty in AI and systems</li>
-                      <li>• Strong industry connections in Texas tech hub</li>
-                      <li>• Research opportunities in cutting-edge technology</li>
-                    </ul>
-                  </motion.div>
-                </motion.div>
-              </motion.div>
-
               {/* Current Bachelor's */}
               <motion.div 
                 className="grid lg:grid-cols-2 gap-8 items-center"
@@ -376,10 +324,6 @@ const AcademicsPage = () => {
                 </li>
                 <li className="flex items-start">
                   <Star className="w-4 h-4 text-purple-500 mr-2 mt-1 flex-shrink-0" />
-                  <span>Accepted to top-tier UT Austin CS Master's program</span>
-                </li>
-                <li className="flex items-start">
-                  <Star className="w-4 h-4 text-purple-500 mr-2 mt-1 flex-shrink-0" />
                   <span>Dean's List recognition for academic performance</span>
                 </li>
               </ul>
@@ -469,11 +413,6 @@ const AcademicsPage = () => {
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">
                   Career Vision
                 </h3>
-                <p className="text-white/90 leading-relaxed mb-4">
-                  My Master's program at UT Austin will deepen my technical expertise 
-                  in advanced software engineering concepts while providing hands-on 
-                  experience with cutting-edge technologies and industry best practices.
-                </p>
                 <p className="text-white/90 leading-relaxed">
                   I'm focused on building the skills needed to architect and develop 
                   large-scale systems that solve meaningful problems, preparing me to 
@@ -536,8 +475,11 @@ const AcademicsPage = () => {
           </motion.div>
 
           <div className="text-center mt-8">
-            <p className="text-slate-600">
+            <p className="text-slate-600 mb-4">
               Continuously expanding technical knowledge through professional development and online learning platforms.
+            </p>
+            <p className="text-slate-700 font-medium">
+              Currently preparing for cloud certifications to enhance my expertise in modern infrastructure and deployment technologies.
             </p>
           </div>
         </div>

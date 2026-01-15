@@ -81,7 +81,7 @@ const Footer = () => {
         >
           <div className="text-center">
             <p className="text-xs sm:text-sm text-slate-600 px-4">
-              Currently preparing to pursue Master's at UT Austin • <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-medium">Open for Work</span>
+              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-medium">Actively Seeking Opportunities</span> • Preparing for Cloud Certifications
             </p>
           </div>
         </motion.div>

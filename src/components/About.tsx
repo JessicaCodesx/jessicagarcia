@@ -77,9 +77,9 @@ const About = () => {
             </p>
 
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
-              Currently completing my bachelor's degree and preparing for graduate studies at 
-              UT Austin, I'm actively building projects that showcase my technical skills and 
-              creative problem-solving abilities. I'm excited about the opportunity to contribute 
+              Currently completing my bachelor's degree, I'm actively building projects that showcase my technical skills and 
+              creative problem-solving abilities. I'm actively seeking new opportunities and preparing for cloud certifications 
+              to expand my expertise. I'm excited about the opportunity to contribute 
               my unique perspective and collaborative spirit to forward-thinking development teams.
             </p>
           </motion.div>
@@ -90,11 +90,6 @@ const About = () => {
             <div className="bg-white p-6 rounded-lg border-l-4 border-purple-500 shadow-md hover:shadow-lg transition-shadow">
               <h4 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3">Education</h4>
               <div className="space-y-4">
-                <div>
-                  <p className="font-medium text-slate-900">Master of Science, Computer Science</p>
-                  <p className="text-slate-600">University of Texas at Austin • Jan 2026</p>
-                  <p className="text-sm text-purple-600 font-medium">Accepted</p>
-                </div>
                 <div>
                   <p className="font-medium text-slate-900">Honours Bachelor of Computer Science</p>
                   <p className="text-slate-600">Algoma University • Expected Dec 2025</p>

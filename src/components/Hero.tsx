@@ -158,7 +158,7 @@ const Hero = () => {
           className="text-sm sm:text-base md:text-lg text-slate-500 mb-12 max-w-2xl mx-auto leading-relaxed px-4 italic"
           variants={itemVariants}
         >
-          Currently building <span className="text-purple-600 font-medium">homebase</span>, a local-first family management app, while completing my bachelor's degree and preparing for graduate studies at UT Austin.
+          Currently building <span className="text-purple-600 font-medium">homebase</span>, a local-first family management app, while completing my bachelor's degree. <span className="text-purple-600 font-medium">Actively seeking opportunities</span> and preparing for cloud certifications.
         </motion.p>
         
         {/* CTA Buttons */}
