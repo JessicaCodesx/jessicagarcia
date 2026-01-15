@@ -139,7 +139,7 @@ const AcademicsPage = () => {
                       Honours Bachelor of Computer Science
                     </h3>
                     <p className="text-white font-medium mb-2">Algoma University</p>
-                    <p className="text-white/90 text-sm mb-4">December 2025</p>
+                    <p className="text-white/90 text-sm mb-4">Graduated 2025</p>
                     <div className="flex items-center mb-4">
                       <Star className="w-5 h-5 text-white mr-2" />
                       <span className="text-white font-medium">GPA: 3.7 • Graduated with Honours</span>
