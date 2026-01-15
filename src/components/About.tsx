@@ -63,24 +63,23 @@ const About = () => {
             </h3>
             
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
-              My journey into software engineering began with a curiosity about how technology 
-              could solve everyday challenges. What started as a personal interest has evolved 
-              into a dedicated pursuit of creating meaningful digital experiences that make 
-              a positive difference.
+              I'm a results-driven software engineer with a passion for building applications that solve real problems. 
+              My journey from competitive gaming leadership to software development has equipped me with exceptional 
+              problem-solving skills, the ability to work under pressure, and a collaborative mindset that drives team success.
             </p>
             
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
-              Balancing family responsibilities with my education has taught me the value of 
-              focused time management, adaptability, and resourceful problem-solving. These 
-              skills translate directly into my approach to development—writing clean, 
-              maintainable code and building solutions that are both elegant and practical.
+              With expertise in React, TypeScript, and modern web development, I specialize in creating scalable, 
+              maintainable applications. My experience managing complex projects while balancing multiple priorities 
+              has honed my ability to deliver high-quality code on time and communicate effectively with stakeholders.
             </p>
 
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
-              Currently completing my bachelor's degree, I'm actively building projects that showcase my technical skills and 
-              creative problem-solving abilities. I'm actively seeking new opportunities and preparing for cloud certifications 
-              to expand my expertise. I'm excited about the opportunity to contribute 
-              my unique perspective and collaborative spirit to forward-thinking development teams.
+              As a recent graduate with a proven track record of building production applications, I bring both 
+              technical expertise and a results-driven mindset. My experience includes full-stack development, 
+              mobile app creation, and managing complex projects from concept to deployment. I'm actively seeking 
+              software engineering roles where I can leverage my skills in React, TypeScript, and modern web 
+              technologies to deliver impactful solutions.
             </p>
           </motion.div>
 
@@ -92,8 +91,8 @@ const About = () => {
               <div className="space-y-4">
                 <div>
                   <p className="font-medium text-slate-900">Honours Bachelor of Computer Science</p>
-                  <p className="text-slate-600">Algoma University • Expected Dec 2025</p>
-                  <p className="text-sm text-slate-500">GPA: 3.7</p>
+                  <p className="text-slate-600">Algoma University • December 2025</p>
+                  <p className="text-sm text-slate-500">GPA: 3.7 • Graduated with Honours</p>
                 </div>
                 <div>
                   <p className="font-medium text-slate-900">Honours Diploma, Computer Programming</p>
@@ -105,22 +104,17 @@ const About = () => {
 
             {/* Experience */}
             <div className="bg-white p-6 rounded-lg border-l-4 border-purple-500 shadow-md hover:shadow-lg transition-shadow">
-              <h4 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3">Experience</h4>
+              <h4 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3">Professional Experience</h4>
               <div className="space-y-3">
                 <div>
-                  <p className="font-medium text-slate-900">Independent Software Developer</p>
+                  <p className="font-medium text-slate-900">Full-Stack Software Developer</p>
                   <p className="text-slate-600">2022 - Present</p>
-                  <p className="text-sm text-slate-500">Designing and deploying full-stack applications with modern web technologies</p>
+                  <p className="text-sm text-slate-500">Building production-ready web and mobile applications using React, TypeScript, and modern development practices. Delivered multiple projects from concept to deployment.</p>
                 </div>
                 <div>
-                  <p className="font-medium text-slate-900">Full-Time Student</p>
-                  <p className="text-slate-600">2022 - Present</p>
-                  <p className="text-sm text-slate-500">Maintaining strong academic performance (3.7+ GPA) while managing multiple responsibilities</p>
-                </div>
-                <div>
-                  <p className="font-medium text-slate-900">Admin Assistant</p>
+                  <p className="font-medium text-slate-900">Administrative Assistant</p>
                   <p className="text-slate-600">Citadel Mortgages • 2020 - 2024</p>
-                  <p className="text-sm text-slate-500">Provided administrative support, managed documentation, and assisted with client communications in a fast-paced mortgage environment</p>
+                  <p className="text-sm text-slate-500">Managed documentation, client communications, and administrative workflows in a fast-paced environment. Developed strong organizational and communication skills.</p>
                 </div>
               </div>
             </div>

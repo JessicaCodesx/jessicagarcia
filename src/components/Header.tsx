@@ -58,7 +58,7 @@ const Header = () => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex items-center space-x-8">
             {navigation.map((item, index) => (
               <motion.div
                 key={item.name}
@@ -88,6 +88,20 @@ const Header = () => {
                 </Link>
               </motion.div>
             ))}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5 }}
+            >
+              <Link
+                to="/contact"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:from-purple-500 hover:to-pink-500 transition-all shadow-md hover:shadow-lg"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Available for Hire
+              </Link>
+            </motion.div>
           </nav>
 
           {/* Mobile Menu Button */}

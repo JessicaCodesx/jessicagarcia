@@ -76,8 +76,9 @@ const ContactPage = () => {
             animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Currently seeking software engineering opportunities! Interested in collaborating, 
-            have questions about my projects, or want to discuss roles? I'd love to hear from you!
+            Available for immediate hire! I'm actively seeking software engineering opportunities 
+            and excited to bring my technical skills, collaborative mindset, and passion for building 
+            great products to your team. Let's discuss how I can contribute to your success.
           </motion.p>
         </div>
       </section>
@@ -199,11 +200,11 @@ const ContactPage = () => {
             {[
               { 
                 q: "Are you available for work?", 
-                a: "Yes! I'm actively seeking software engineering opportunities and available to start immediately. Open to full-time, part-time, and contract positions." 
+                a: "Yes! I'm actively seeking software engineering opportunities and available to start immediately. Open to full-time positions, contract work, and remote opportunities. Ready to contribute from day one." 
               },
               { 
-                q: "What kind of opportunities interest you?", 
-                a: "I'm interested in software engineering roles, internships, collaborative projects, and any opportunities to work with innovative teams on meaningful problems." 
+                q: "What kind of roles are you looking for?", 
+                a: "I'm seeking software engineering positions where I can leverage my full-stack development skills. Particularly interested in React/TypeScript roles, frontend development, and opportunities to work on user-facing products that make a real impact." 
               },
               { 
                 q: "Can you work remotely?", 
@@ -243,7 +244,7 @@ const ContactPage = () => {
             animate={ctaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6 }}
           >
-            Ready to <span className="text-white">Hire?</span>
+            Let's Build Something <span className="text-white">Great Together</span>
           </motion.h2>
           <motion.p 
             className="text-xl text-white/90 mb-8 max-w-2xl mx-auto"
@@ -251,8 +252,9 @@ const ContactPage = () => {
             animate={ctaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            I'm actively seeking software engineering opportunities and excited to contribute 
-            to your team. Let's discuss how I can help bring your projects to life!
+            I'm ready to hit the ground running and make an immediate impact on your team. 
+            With proven experience building production applications and a passion for continuous learning, 
+            I bring both technical expertise and a collaborative spirit to every project.
           </motion.p>
           <motion.div 
             className="flex flex-col sm:flex-row gap-4 justify-center"

@@ -95,8 +95,9 @@ const Projects = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
           />
           <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto px-4">
-            A collection of projects that demonstrate my ability to build thoughtful, 
-            user-centered applications and explore creative solutions across different domains.
+            Production-ready applications showcasing full-stack development capabilities, modern architecture patterns, 
+            and a focus on delivering exceptional user experiences. Each project demonstrates technical proficiency, 
+            problem-solving skills, and attention to detail.
           </p>
         </motion.div>
 
@@ -229,10 +230,10 @@ const Projects = () => {
           >
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10">
-              <h3 className="text-2xl font-bold text-white mb-4">Interested in seeing more?</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Ready to See More of My Work?</h3>
               <p className="text-white/90 mb-6">
-                I'm continuously building new projects and exploring emerging technologies. 
-                Check out my GitHub to see the latest work.
+                I'm actively developing new projects and continuously expanding my technical expertise. 
+                Explore my GitHub to see additional code samples, contributions, and ongoing development work.
               </p>
               <motion.a 
                 href="https://github.com/JessicaCodesx"

@@ -109,7 +109,7 @@ const AboutPage = () => {
             {[
               "My path to software engineering isn't traditional, but it's uniquely mine. As a stay-at-home mom who decided to pursue her passion for technology, I've learned that determination and strategic thinking can overcome any obstacle.",
               "The journey began when I realized I wanted to build things that matter. While balancing family responsibilities, I threw myself into computer programming at Algonquin College, graduating with honours and a 3.9 GPA. But that was just the beginning.",
-              "Now, as I complete my Honours Bachelor of Computer Science while maintaining a 3.7 GPA, I'm continuing to build my skills and expand my knowledge. Every late night study session, every complex algorithm mastered, every project deployed - it's all part of my journey of continuous growth.",
+              "Having completed my Honours Bachelor of Computer Science with a 3.7 GPA in December 2025, I'm continuing to build my skills and expand my knowledge. Every late night study session, every complex algorithm mastered, every project deployed - it's all part of my journey of continuous growth.",
               "What drives me isn't just the technical challenge (though I love that too), it's the opportunity to create solutions that make a real difference in people's lives. Whether it's building a study assistant to help students succeed or crafting engaging gaming experiences, I believe technology should serve humanity."
             ].map((text, index) => (
               <motion.p key={index} variants={itemVariants}>

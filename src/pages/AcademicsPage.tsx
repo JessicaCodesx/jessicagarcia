@@ -1,4 +1,4 @@
-import { Award, BookOpen, Target, Star, Trophy } from 'lucide-react'
+import { Award, Target, Star, Trophy } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
@@ -114,7 +114,7 @@ const AcademicsPage = () => {
               initial="hidden"
               animate={timelineInView ? "visible" : "hidden"}
             >
-              {/* Current Bachelor's */}
+              {/* Bachelor's */}
               <motion.div 
                 className="grid lg:grid-cols-2 gap-8 items-center"
                 variants={itemVariants}
@@ -132,21 +132,21 @@ const AcademicsPage = () => {
                   >
                     <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-purple-500 rounded-full border-4 border-white hidden lg:block"></div>
                     <div className="flex items-center mb-4">
-                      <BookOpen className="w-6 h-6 text-purple-500 mr-2" />
-                      <span className="text-purple-500 font-bold">IN PROGRESS</span>
+                      <Award className="w-6 h-6 text-purple-500 mr-2" />
+                      <span className="text-purple-500 font-bold">COMPLETED</span>
                     </div>
                     <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">
                       Honours Bachelor of Computer Science
                     </h3>
                     <p className="text-slate-700 font-medium mb-2">Algoma University</p>
-                    <p className="text-slate-600 text-sm mb-4">Expected December 2025</p>
+                    <p className="text-slate-600 text-sm mb-4">December 2025</p>
                     <div className="flex items-center mb-4">
                       <Star className="w-5 h-5 text-purple-500 mr-2" />
-                      <span className="text-slate-900 font-medium">Current GPA: 3.7</span>
+                      <span className="text-slate-900 font-medium">GPA: 3.7</span>
                     </div>
                     <p className="text-slate-700 leading-relaxed">
                       Advanced coursework in algorithms, data structures, software engineering, 
-                      and system design. Maintaining excellent academic standing while balancing family responsibilities.
+                      and system design. Completed with excellent academic standing while balancing family responsibilities.
                     </p>
                   </motion.div>
                 </motion.div>
@@ -160,7 +160,7 @@ const AcademicsPage = () => {
                     className="bg-gray-50 p-6 rounded-lg mb-4"
                     whileHover={{ scale: 1.02 }}
                   >
-                    <h4 className="text-lg font-semibold text-slate-900 mb-3">Current & Recent Courses</h4>
+                    <h4 className="text-lg font-semibold text-slate-900 mb-3">Key Courses</h4>
                     <div className="space-y-3">
                       <div className="border-l-4 border-purple-500 pl-4">
                         <h5 className="font-medium text-slate-900">Analysis of Algorithms</h5>
@@ -320,7 +320,7 @@ const AcademicsPage = () => {
                 </li>
                 <li className="flex items-start">
                   <Star className="w-4 h-4 text-purple-500 mr-2 mt-1 flex-shrink-0" />
-                  <span>Maintaining 3.7 GPA in Honours Bachelor's program</span>
+                  <span>Completed Honours Bachelor's program with 3.7 GPA (December 2025)</span>
                 </li>
                 <li className="flex items-start">
                   <Star className="w-4 h-4 text-purple-500 mr-2 mt-1 flex-shrink-0" />

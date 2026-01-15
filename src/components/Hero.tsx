@@ -139,8 +139,8 @@ const Hero = () => {
           className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-700 mb-8 font-light px-2"
           variants={itemVariants}
         >
-          Software Engineer &{' '}
-          <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-medium">Creative Problem Solver</span>
+          Full-Stack Software Engineer &{' '}
+          <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-medium">Product-Focused Developer</span>
         </motion.h2>
         
         {/* Bio */}
@@ -148,17 +148,37 @@ const Hero = () => {
           className="text-base sm:text-lg md:text-xl text-slate-600 mb-6 max-w-2xl mx-auto leading-relaxed px-4"
           variants={itemVariants}
         >
-          I create thoughtful, user-centered applications that solve real-world challenges. 
-          With a passion for clean code and continuous learning, I bring a unique perspective 
-          to building scalable solutions that make a meaningful impact.
+          I build scalable, production-ready applications that deliver real business value. 
+          Specializing in React, TypeScript, and modern web technologies, I combine technical 
+          excellence with user-centered design to create solutions that users love.
         </motion.p>
+        
+        {/* Availability Badge */}
+        <motion.div 
+          className="mb-6"
+          variants={itemVariants}
+        >
+          <motion.div 
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-full shadow-lg"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+            </span>
+            <span className="font-semibold text-sm sm:text-base">Available for Hire • Open to Opportunities</span>
+          </motion.div>
+        </motion.div>
         
         {/* Currently */}
         <motion.p 
-          className="text-sm sm:text-base md:text-lg text-slate-500 mb-12 max-w-2xl mx-auto leading-relaxed px-4 italic"
+          className="text-sm sm:text-base md:text-lg text-slate-500 mb-12 max-w-2xl mx-auto leading-relaxed px-4"
           variants={itemVariants}
         >
-          Currently building <span className="text-purple-600 font-medium">homebase</span>, a local-first family management app, while completing my bachelor's degree. <span className="text-purple-600 font-medium">Actively seeking opportunities</span> and preparing for cloud certifications.
+          Recent graduate with <span className="text-purple-600 font-medium">Honours Bachelor of Computer Science</span> (3.7 GPA). 
+          Currently developing <span className="text-purple-600 font-medium">homebase</span>, a production mobile app, while pursuing cloud certifications. 
+          Ready to contribute to your team immediately.
         </motion.p>
         
         {/* CTA Buttons */}
