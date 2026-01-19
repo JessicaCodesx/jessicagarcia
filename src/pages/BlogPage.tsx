@@ -114,10 +114,11 @@ const BlogPage = () => {
               {publishedPosts.map((post) => (
                 <motion.article
                   key={post.id}
-                  className="bg-white border border-purple-100 rounded-lg p-8 shadow-md hover:shadow-xl transition-all group"
+                  className="bg-white border border-purple-100 rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-2xl hover:border-purple-200 transition-all duration-300 group cursor-pointer backdrop-blur-sm"
                   variants={itemVariants}
                   whileHover={{ y: -5, scale: 1.01 }}
                 >
+                  <Link to={`/blog/${post.id}`} className="block">
                   <div className="flex flex-wrap items-center gap-4 mb-4 text-sm text-slate-600">
                     <div className="flex items-center gap-2">
                       <Calendar className="w-4 h-4" />
@@ -129,11 +130,11 @@ const BlogPage = () => {
                     </div>
                   </div>
                   
-                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4 group-hover:text-purple-600 transition-colors">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 group-hover:text-purple-600 transition-colors break-words">
                     {post.title}
                   </h2>
                   
-                  <p className="text-slate-700 leading-relaxed mb-6 text-lg">
+                  <p className="text-slate-700 leading-relaxed mb-6 text-base sm:text-lg break-words">
                     {post.excerpt}
                   </p>
                   
@@ -149,10 +150,11 @@ const BlogPage = () => {
                     ))}
                   </div>
                   
-                  <div className="flex items-center text-purple-600 font-semibold group-hover:gap-2 transition-all">
-                    <span>Read more</span>
-                    <ArrowRight className="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" />
-                  </div>
+                    <div className="flex items-center text-purple-600 font-semibold group-hover:gap-2 transition-all">
+                      <span>Read more</span>
+                      <ArrowRight className="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </Link>
                 </motion.article>
               ))}
             </motion.div>

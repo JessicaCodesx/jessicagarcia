@@ -116,25 +116,27 @@ const AcademicsPage = () => {
             >
               {/* Cloud Development Certificate */}
               <motion.div 
-                className="grid lg:grid-cols-2 gap-8 items-center"
+                className="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center"
                 variants={itemVariants}
               >
                 <div className="lg:text-right lg:pr-8">
                   <motion.div 
-                    className="bg-gradient-to-br from-blue-600 to-cyan-600 text-white p-8 rounded-lg relative"
+                    className="bg-gradient-to-br from-purple-600 via-violet-600 to-pink-600 text-white p-6 sm:p-8 rounded-xl relative shadow-2xl shadow-purple-500/30 overflow-hidden group"
                     whileHover={{ scale: 1.02, y: -5 }}
-                    transition={{ type: "spring", stiffness: 300 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   >
-                    <div className="absolute -right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white rounded-full border-4 border-blue-500 hidden lg:block"></div>
+                    {/* Animated gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-pink-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute -right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white rounded-full border-4 border-purple-400 hidden lg:block shadow-lg"></div>
                     <div className="flex items-center mb-4 lg:justify-end">
                       <Target className="w-6 h-6 text-white mr-2" />
                       <span className="text-white font-bold">IN PROGRESS</span>
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 break-words">
                       Graduate Certificate, Cloud Development & Operations
                     </h3>
-                    <p className="text-white font-medium mb-2">Algonquin College</p>
-                    <p className="text-white/90 text-sm mb-4">Expected August 2026</p>
+                    <p className="text-white font-medium mb-2 text-sm sm:text-base">Algonquin College</p>
+                    <p className="text-white/90 text-xs sm:text-sm mb-4">Expected August 2026</p>
                     <div className="flex items-center lg:justify-end mb-4">
                       <Star className="w-5 h-5 text-white mr-2" />
                       <span className="text-white font-medium">Cloud-Focused Program</span>
@@ -152,16 +154,32 @@ const AcademicsPage = () => {
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
                   <motion.div 
-                    className="bg-blue-50/50 p-6 rounded-lg"
-                    whileHover={{ scale: 1.02 }}
+                    className="bg-gradient-to-br from-purple-50/80 to-pink-50/80 p-6 rounded-xl border border-purple-100 shadow-lg backdrop-blur-sm"
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   >
-                    <h4 className="text-lg font-semibold text-slate-900 mb-3">Cloud Focus Areas</h4>
-                    <ul className="space-y-2 text-slate-700">
-                      <li>• Cloud infrastructure & architecture</li>
-                      <li>• DevOps & CI/CD pipelines</li>
-                      <li>• Containerization & orchestration</li>
-                      <li>• Cloud security & best practices</li>
-                      <li>• Serverless computing & microservices</li>
+                    <h4 className="text-lg font-semibold text-slate-900 mb-3 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Cloud Focus Areas</h4>
+                    <ul className="space-y-2.5 text-slate-700">
+                      <li className="flex items-start">
+                        <span className="text-purple-500 mr-2 mt-1">•</span>
+                        <span>Cloud infrastructure & architecture</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-500 mr-2 mt-1">•</span>
+                        <span>DevOps & CI/CD pipelines</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-500 mr-2 mt-1">•</span>
+                        <span>Containerization & orchestration</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-500 mr-2 mt-1">•</span>
+                        <span>Cloud security & best practices</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-500 mr-2 mt-1">•</span>
+                        <span>Serverless computing & microservices</span>
+                      </li>
                     </ul>
                   </motion.div>
                 </motion.div>
@@ -169,7 +187,7 @@ const AcademicsPage = () => {
 
               {/* Bachelor's */}
               <motion.div 
-                className="grid lg:grid-cols-2 gap-8 items-center"
+                className="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center"
                 variants={itemVariants}
               >
                 <motion.div 
@@ -179,11 +197,13 @@ const AcademicsPage = () => {
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
                   <motion.div 
-                    className="bg-gradient-to-br from-purple-600 to-pink-600 text-white p-8 rounded-lg relative shadow-lg"
+                    className="bg-gradient-to-br from-purple-600 via-violet-600 to-pink-600 text-white p-6 sm:p-8 rounded-xl relative shadow-2xl shadow-purple-500/30 overflow-hidden group"
                     whileHover={{ scale: 1.02, y: -5 }}
-                    transition={{ type: "spring", stiffness: 300 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   >
-                    <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white rounded-full border-4 border-purple-500 hidden lg:block"></div>
+                    {/* Animated gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-pink-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white rounded-full border-4 border-purple-400 hidden lg:block shadow-lg"></div>
                     <div className="flex items-center mb-4">
                       <Award className="w-6 h-6 text-white mr-2" />
                       <span className="text-white font-bold">COMPLETED</span>

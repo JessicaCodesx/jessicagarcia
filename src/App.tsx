@@ -10,6 +10,7 @@ import AcademicsPage from './pages/AcademicsPage'
 import ProjectsPage from './pages/ProjectsPage'
 import ContactPage from './pages/ContactPage'
 import BlogPage from './pages/BlogPage'
+import BlogPostPage from './pages/BlogPostPage'
 
 const AnimatedRoutes = () => {
   const location = useLocation()
@@ -57,6 +58,7 @@ const AnimatedRoutes = () => {
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:id" element={<BlogPostPage />} />
         </Routes>
       </motion.div>
     </AnimatePresence>

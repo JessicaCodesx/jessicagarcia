@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Gamepad2, Palette, BookOpen, Award, Lightbulb, Users, Rocket, FileDown } from 'lucide-react'
+import { Gamepad2, Palette, BookOpen, Award, Lightbulb, Users, Rocket } from 'lucide-react'
 
 const About = () => {
   const ref = useRef(null)
@@ -89,22 +89,6 @@ const About = () => {
 
           {/* Right Column - Quick Facts */}
           <motion.div className="space-y-8" variants={itemVariants}>
-            {/* Resume Download */}
-            <motion.div 
-              className="bg-gradient-to-br from-purple-600 to-pink-600 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
-              whileHover={{ scale: 1.02, y: -2 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <a
-                href="/Jessica_Garcia_Resume.pdf"
-                download="Jessica_Garcia_Resume.pdf"
-                className="flex items-center justify-center gap-3 text-white font-semibold group"
-              >
-                <FileDown className="w-6 h-6 group-hover:animate-bounce" />
-                <span className="text-lg">Download Resume</span>
-              </a>
-            </motion.div>
-
             {/* Education */}
             <div className="bg-white p-6 rounded-lg border-l-4 border-purple-500 shadow-md hover:shadow-lg transition-shadow">
               <h4 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3">Education</h4>
@@ -280,7 +264,7 @@ const About = () => {
               { 
                 category: "Frontend Development", 
                 skills: ["React", "TypeScript", "JavaScript", "Tailwind CSS", "HTML5", "CSS3"],
-                color: "from-blue-400 to-blue-500"
+                color: "from-purple-400 to-pink-500"
               },
               { 
                 category: "Backend & Cloud", 

@@ -111,10 +111,10 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div 
               key={index} 
-              className="bg-white rounded-lg overflow-hidden shadow-xl group relative"
+              className="bg-white rounded-2xl overflow-hidden shadow-xl group relative border border-purple-50"
               variants={itemVariants}
               whileHover={{ y: -10, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-purple-400/0 to-purple-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               {/* Project Header */}

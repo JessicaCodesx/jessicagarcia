@@ -1,4 +1,4 @@
-import { ArrowDown, FileDown } from 'lucide-react'
+import { ArrowDown } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
@@ -176,7 +176,7 @@ const Hero = () => {
           className="text-sm sm:text-base md:text-lg text-slate-500 mb-12 max-w-2xl mx-auto leading-relaxed px-4"
           variants={itemVariants}
         >
-          Cloud-focused software engineer with <span className="text-purple-600 font-medium">Honours Bachelor of Computer Science</span> (3.7 GPA). 
+          Cloud-focused software engineer with <span className="text-purple-600 font-medium">Honours Bachelor of Computer Science</span>. 
           Currently pursuing a <span className="text-purple-600 font-medium">Graduate Certificate in Cloud Development & Operations</span> while building production applications. 
           Ready to contribute to your team immediately.
         </motion.p>
@@ -189,27 +189,16 @@ const Hero = () => {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
             <Link 
               to="/projects" 
-              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:from-purple-500 hover:to-pink-500 transition-all duration-300 inline-block text-center w-full sm:w-auto shadow-lg shadow-purple-500/50 hover:shadow-purple-500/70 relative overflow-hidden group min-h-[44px] flex items-center justify-center"
+              className="bg-gradient-to-r from-purple-600 via-violet-600 to-pink-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:from-purple-500 hover:via-violet-500 hover:to-pink-500 transition-all duration-300 inline-block text-center w-full sm:w-auto shadow-xl shadow-purple-500/40 hover:shadow-2xl hover:shadow-purple-500/60 relative overflow-hidden group min-h-[44px] flex items-center justify-center"
             >
               <span className="relative z-10">Explore My Projects</span>
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
           </motion.div>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
-            <a 
-              href="/Jessica_Garcia_Resume.pdf"
-              download="Jessica_Garcia_Resume.pdf"
-              className="border-2 border-purple-300 text-slate-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:border-purple-500 hover:bg-purple-50 transition-all duration-300 inline-block text-center w-full sm:w-auto backdrop-blur-sm relative overflow-hidden group min-h-[44px] flex items-center justify-center gap-2"
-            >
-              <FileDown className="w-5 h-5" />
-              <span className="relative z-10">Download Resume</span>
-              <div className="absolute inset-0 bg-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </a>
-          </motion.div>
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
             <Link 
               to="/contact" 
-              className="border-2 border-purple-300 text-slate-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:border-purple-500 hover:bg-purple-50 transition-all duration-300 inline-block text-center w-full sm:w-auto backdrop-blur-sm relative overflow-hidden group min-h-[44px] flex items-center justify-center"
+              className="border-2 border-purple-300 text-slate-700 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:border-purple-500 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-300 inline-block text-center w-full sm:w-auto backdrop-blur-sm relative overflow-hidden group min-h-[44px] flex items-center justify-center shadow-md hover:shadow-lg"
             >
               <span className="relative z-10">Let's Connect</span>
               <div className="absolute inset-0 bg-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

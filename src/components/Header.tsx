@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, FileDown } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const Header = () => {
@@ -29,14 +29,14 @@ const Header = () => {
 
   return (
     <motion.header 
-      className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-500 ease-out ${
         scrolled 
-          ? 'bg-white/95 backdrop-blur-md border-purple-200 shadow-lg shadow-purple-500/10' 
-          : 'bg-white/90 backdrop-blur-sm border-purple-100'
+          ? 'bg-white/98 backdrop-blur-lg border-purple-200/50 shadow-xl shadow-purple-500/5' 
+          : 'bg-white/95 backdrop-blur-md border-purple-100/50'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
     >
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
@@ -93,22 +93,11 @@ const Header = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 }}
-              className="flex items-center gap-3"
             >
-              <motion.a
-                href="/Jessica_Garcia_Resume.pdf"
-                download="Jessica_Garcia_Resume.pdf"
-                className="flex items-center gap-2 bg-white border-2 border-purple-500 text-purple-600 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-purple-50 transition-all shadow-md hover:shadow-lg"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <FileDown className="w-4 h-4" />
-                Resume
-              </motion.a>
               <Link
                 to="/contact"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:from-purple-500 hover:to-pink-500 transition-all shadow-md hover:shadow-lg"
-                whileHover={{ scale: 1.05 }}
+                className="bg-gradient-to-r from-purple-600 via-violet-600 to-pink-600 text-white px-4 py-2 rounded-xl text-sm font-semibold hover:from-purple-500 hover:via-violet-500 hover:to-pink-500 transition-all duration-300 shadow-lg hover:shadow-xl shadow-purple-500/30 hover:shadow-purple-500/50"
+                whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Available for Hire

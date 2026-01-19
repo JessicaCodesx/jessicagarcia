@@ -1,5 +1,14 @@
 [
   {
+    "id": 9,
+    "title": "From Call of Duty to Code: How Running an Esports Org Shaped My Software Engineering Approach",
+    "excerpt": "The unexpected parallels between competitive gaming leadership and software engineering. How managing a professional Call of Duty organization taught me communication, strategy, and team dynamics that directly translate to building software with peers.",
+    "date": "2025-01-27",
+    "readTime": "7 min read",
+    "tags": ["Leadership", "Teamwork", "Career", "Esports", "Software Engineering"],
+    "published": true
+  },
+  {
     "id": 1,
     "title": "Understanding Finite Automata: A Beginner's Guide to State Machines",
     "excerpt": "Learn the fundamentals of finite automata and state machines. This guide covers deterministic finite automata (DFA), non-deterministic finite automata (NFA), and practical applications in software engineering and compiler design.",

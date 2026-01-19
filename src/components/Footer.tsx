@@ -35,8 +35,8 @@ const Footer = () => {
               href="https://github.com/JessicaCodesx"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-purple-100 p-3 rounded-lg hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 hover:text-white transition-all shadow-lg text-purple-600"
-              whileHover={{ scale: 1.1, rotate: 5 }}
+              className="bg-gradient-to-br from-purple-100 to-pink-100 p-3 rounded-xl hover:bg-gradient-to-br hover:from-purple-500 hover:via-violet-500 hover:to-pink-500 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl shadow-purple-500/20 text-purple-600"
+              whileHover={{ scale: 1.1, rotate: 5, y: -2 }}
               whileTap={{ scale: 0.9 }}
             >
               <Github className="w-5 h-5" />
@@ -45,8 +45,8 @@ const Footer = () => {
               href="https://www.linkedin.com/in/jessicagarcia5714/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-purple-100 p-3 rounded-lg hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 hover:text-white transition-all shadow-lg text-purple-600"
-              whileHover={{ scale: 1.1, rotate: -5 }}
+              className="bg-gradient-to-br from-purple-100 to-pink-100 p-3 rounded-xl hover:bg-gradient-to-br hover:from-purple-500 hover:via-violet-500 hover:to-pink-500 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl shadow-purple-500/20 text-purple-600"
+              whileHover={{ scale: 1.1, rotate: -5, y: -2 }}
               whileTap={{ scale: 0.9 }}
             >
               <Linkedin className="w-5 h-5" />

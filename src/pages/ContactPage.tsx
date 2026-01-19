@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin, MapPin, Calendar, MessageCircle, FileDown } from 'lucide-react'
+import { Mail, Github, Linkedin, MapPin, Calendar, MessageCircle } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
@@ -102,7 +102,7 @@ const ContactPage = () => {
           
           {/* Contact Methods */}
           <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+            className="grid md:grid-cols-3 gap-6 mb-12"
             variants={containerVariants}
             initial="hidden"
             animate={contactInView ? "visible" : "hidden"}
@@ -110,13 +110,11 @@ const ContactPage = () => {
             {[
               { icon: Mail, title: "Email", desc: "jessica.garcia5714@gmail.com", href: "mailto:jessica.garcia5714@gmail.com" },
               { icon: Github, title: "GitHub", desc: "@JessicaCodesx", href: "https://github.com/JessicaCodesx", external: true },
-              { icon: Linkedin, title: "LinkedIn", desc: "Networking", href: "https://www.linkedin.com/in/jessicagarcia5714/", external: true },
-              { icon: FileDown, title: "Resume", desc: "Download PDF", href: "/Jessica_Garcia_Resume.pdf", download: true }
+              { icon: Linkedin, title: "LinkedIn", desc: "Networking", href: "https://www.linkedin.com/in/jessicagarcia5714/", external: true }
             ].map((contact, index) => (
               <motion.a 
                 key={index}
                 href={contact.href}
-                download={contact.download ? "Jessica_Garcia_Resume.pdf" : undefined}
                 target={contact.external ? "_blank" : undefined}
                 rel={contact.external ? "noopener noreferrer" : undefined}
                 className="flex items-center p-6 bg-white rounded-lg hover:bg-purple-50 hover:border-purple-300 border border-purple-100 transition-colors group text-center flex-col shadow-md hover:shadow-lg"
@@ -145,11 +143,14 @@ const ContactPage = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <motion.div 
-              className="bg-gradient-to-br from-purple-600 to-pink-600 p-8 rounded-lg text-white text-center shadow-xl"
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              className="bg-gradient-to-br from-purple-600 via-violet-600 to-pink-600 p-8 rounded-2xl text-white text-center shadow-2xl shadow-purple-500/30 overflow-hidden group relative"
+              whileHover={{ scale: 1.02, y: -2 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              <h3 className="text-2xl font-bold text-white mb-6">Current Status</h3>
+              {/* Animated gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-pink-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10">
+              <h3 className="text-2xl font-bold text-white mb-6 relative z-10">Current Status</h3>
               <motion.div 
                 className="grid md:grid-cols-3 gap-6"
                 variants={containerVariants}
@@ -176,6 +177,7 @@ const ContactPage = () => {
                   </motion.div>
                 ))}
               </motion.div>
+              </div>
             </motion.div>
           </motion.div>
         </div>
