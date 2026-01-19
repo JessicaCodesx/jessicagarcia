@@ -31,8 +31,8 @@ const Header = () => {
     <motion.header 
       className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-500 ease-out ${
         scrolled 
-          ? 'bg-white/98 backdrop-blur-lg border-purple-200/50 shadow-xl shadow-purple-500/5' 
-          : 'bg-white/95 backdrop-blur-md border-purple-100/50'
+          ? 'bg-white/98 backdrop-blur-xl border-slate-200/60 shadow-2xl shadow-indigo-500/5' 
+          : 'bg-white/95 backdrop-blur-lg border-slate-100/50'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -50,10 +50,10 @@ const Header = () => {
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.6 }}
               />
-              <span className="text-lg sm:text-xl font-bold text-slate-900 group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-pink-600 group-hover:bg-clip-text group-hover:text-transparent transition-all relative">
+              <span className="text-lg sm:text-xl font-bold text-slate-900 group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:via-teal-500 group-hover:to-cyan-500 group-hover:bg-clip-text group-hover:text-transparent transition-all relative">
                 <span className="hidden sm:inline">Jessica Garcia</span>
                 <span className="sm:hidden">JG</span>
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-pink-600 group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 group-hover:w-full transition-all duration-300" />
               </span>
             </Link>
           </motion.div>
@@ -71,20 +71,20 @@ const Header = () => {
                   to={item.href}
                   className={`text-sm font-medium transition-all relative py-2 ${
                     isActive(item.href)
-                      ? 'bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent'
+                      ? 'bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent font-semibold'
                       : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
                   {item.name}
                   {isActive(item.href) && (
                     <motion.div
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-600 to-pink-600"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500"
                       layoutId="activeTab"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
                   {!isActive(item.href) && (
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-pink-600 transition-all duration-300 hover:w-full" />
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 transition-all duration-300 hover:w-full" />
                   )}
                 </Link>
               </motion.div>
@@ -96,7 +96,7 @@ const Header = () => {
             >
               <Link
                 to="/contact"
-                className="bg-gradient-to-r from-purple-600 via-violet-600 to-pink-600 text-white px-4 py-2 rounded-xl text-sm font-semibold hover:from-purple-500 hover:via-violet-500 hover:to-pink-500 transition-all duration-300 shadow-lg hover:shadow-xl shadow-purple-500/30 hover:shadow-purple-500/50"
+                className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 text-white px-4 py-2.5 rounded-xl text-sm font-semibold hover:from-indigo-500 hover:via-teal-400 hover:to-cyan-400 transition-all duration-300 shadow-lg hover:shadow-xl shadow-indigo-500/30 hover:shadow-indigo-500/50"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -108,7 +108,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <motion.button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-slate-900 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:bg-clip-text hover:text-transparent transition-all"
+            className="md:hidden text-slate-900 hover:bg-gradient-to-r hover:from-indigo-600 hover:via-teal-500 hover:to-cyan-500 hover:bg-clip-text hover:text-transparent transition-all"
             whileTap={{ scale: 0.9 }}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -119,7 +119,7 @@ const Header = () => {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              className="md:hidden border-t border-purple-100 overflow-hidden"
+              className="md:hidden border-t border-slate-200 overflow-hidden"
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
@@ -138,8 +138,8 @@ const Header = () => {
                       onClick={() => setIsMenuOpen(false)}
                       className={`block px-3 py-2 text-sm font-medium transition-colors rounded-lg ${
                         isActive(item.href)
-                          ? 'bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent bg-purple-50'
-                          : 'text-slate-600 hover:text-slate-900 hover:bg-purple-50/50'
+                          ? 'bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent bg-indigo-50 font-semibold'
+                          : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                       }`}
                     >
                       {item.name}

@@ -70,11 +70,11 @@ const Projects = () => {
   ]
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-white via-purple-50/20 to-white py-24 relative overflow-hidden" ref={ref}>
+    <section className="min-h-screen bg-gradient-to-b from-slate-50 via-indigo-50/10 to-white py-24 relative overflow-hidden" ref={ref}>
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-400/8 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-400/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }} />
       </div>
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
@@ -86,10 +86,10 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            Featured <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Projects</span>
+            Featured <span className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent">Projects</span>
           </h2>
           <motion.div 
-            className="w-24 h-1 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto mb-6"
+            className="w-24 h-1 bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 mx-auto mb-6"
             initial={{ width: 0 }}
             animate={isInView ? { width: 96 } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -111,18 +111,18 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div 
               key={index} 
-              className="bg-white rounded-2xl overflow-hidden shadow-xl group relative border border-purple-50"
+              className="bg-white rounded-2xl overflow-hidden shadow-xl group relative border border-slate-200/60"
               variants={itemVariants}
               whileHover={{ y: -10, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-400/0 to-purple-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-400/0 to-teal-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               {/* Project Header */}
-              <div className="bg-gradient-to-r from-white to-purple-50/30 p-6 border-b border-purple-100 relative z-10">
+              <div className="bg-gradient-to-r from-white to-indigo-50/20 p-6 border-b border-slate-200 relative z-10">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-3">
                     <motion.div 
-                      className="bg-gradient-to-br from-purple-500 to-pink-500 p-2 rounded-lg text-white shadow-lg"
+                      className="bg-gradient-to-br from-indigo-500 via-teal-500 to-cyan-500 p-2 rounded-lg text-white shadow-lg"
                       whileHover={{ rotate: 360, scale: 1.1 }}
                       transition={{ duration: 0.6 }}
                     >
@@ -149,7 +149,7 @@ const Projects = () => {
                     {project.liveUrl && (
                       <motion.a 
                         href={project.liveUrl}
-                        className="p-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-400 hover:to-pink-400 transition-all shadow-lg"
+                        className="p-2 bg-gradient-to-r from-indigo-500 via-teal-500 to-cyan-500 text-white rounded-lg hover:from-indigo-400 hover:via-teal-400 hover:to-cyan-400 transition-all shadow-lg"
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.1 }}
@@ -159,7 +159,7 @@ const Projects = () => {
                       </motion.a>
                     )}
                     {!project.githubUrl && !project.liveUrl && (
-                      <div className="px-3 py-2 bg-purple-100 text-purple-700 rounded-lg text-xs sm:text-sm font-medium">
+                      <div className="px-3 py-2 bg-indigo-100 text-indigo-700 rounded-lg text-xs sm:text-sm font-medium">
                         In Development
                       </div>
                     )}
@@ -183,7 +183,7 @@ const Projects = () => {
                         transition={{ delay: 0.5 + featureIndex * 0.05 }}
                       >
                         <motion.span 
-                          className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"
+                          className="w-2 h-2 bg-indigo-500 rounded-full mt-2 flex-shrink-0"
                           animate={{ scale: [1, 1.2, 1] }}
                           transition={{ duration: 2, repeat: Infinity, delay: featureIndex * 0.2 }}
                         />
@@ -200,7 +200,7 @@ const Projects = () => {
                     {project.techStack.map((tech, techIndex) => (
                       <motion.span 
                         key={techIndex}
-                        className="bg-gradient-to-r from-purple-50 to-pink-50 text-slate-800 px-3 py-1 rounded-full text-sm font-medium border border-purple-200 hover:border-purple-400 hover:bg-purple-100 transition-colors"
+                        className="bg-gradient-to-r from-indigo-50 to-teal-50 text-slate-800 px-3 py-1 rounded-full text-sm font-medium border border-indigo-200 hover:border-indigo-400 hover:bg-indigo-100 transition-colors"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                         transition={{ delay: 0.6 + techIndex * 0.05 }}
@@ -224,11 +224,11 @@ const Projects = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
         >
           <motion.div 
-            className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg p-8 inline-block shadow-2xl shadow-purple-500/30 relative overflow-hidden group"
+            className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 rounded-lg p-8 inline-block shadow-2xl shadow-indigo-500/30 relative overflow-hidden group"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-teal-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10">
               <h3 className="text-2xl font-bold text-white mb-4">Ready to See More of My Work?</h3>
               <p className="text-white/90 mb-6">
@@ -237,7 +237,7 @@ const Projects = () => {
               </p>
               <motion.a 
                 href="https://github.com/JessicaCodesx"
-                className="bg-white text-purple-600 px-8 py-3 rounded-lg font-medium hover:bg-purple-50 transition-colors inline-flex items-center space-x-2 shadow-lg"
+                className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-medium hover:bg-indigo-50 transition-colors inline-flex items-center space-x-2 shadow-lg"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}

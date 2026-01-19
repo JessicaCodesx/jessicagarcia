@@ -57,7 +57,7 @@ export const renderMarkdown = (content: string) => {
       const listItem = line.trim().slice(2)
       elements.push(
         <p key={index} className="text-slate-700 leading-relaxed mb-2 ml-4 text-sm sm:text-base break-words">
-          <span className="text-purple-600 mr-2">•</span>
+          <span className="text-indigo-600 mr-2">•</span>
           {processText(listItem)}
         </p>
       )
@@ -83,7 +83,7 @@ export const renderMarkdown = (content: string) => {
         parts.push(...processText(processedLine.slice(lastIndex, match.index)))
       }
       parts.push(
-        <code key={`code-${match.index}`} className="bg-purple-50 text-purple-600 px-1.5 py-0.5 rounded text-xs sm:text-sm font-mono break-all">
+        <code key={`code-${match.index}`} className="bg-indigo-50 text-indigo-600 px-1.5 py-0.5 rounded text-xs sm:text-sm font-mono break-all">
           {match[1]}
         </code>
       )

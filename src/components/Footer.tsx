@@ -5,10 +5,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-gradient-to-t from-white via-purple-50/30 to-white py-12 relative overflow-hidden border-t border-purple-100">
+    <footer className="bg-gradient-to-t from-white via-slate-50/50 to-white py-12 relative overflow-hidden border-t border-slate-200">
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/2 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/2 w-96 h-96 bg-indigo-400/5 rounded-full blur-3xl" />
       </div>
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <motion.div 
@@ -25,7 +25,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">Jessica Garcia</h3>
+            <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent mb-2">Jessica Garcia</h3>
             <p className="text-sm sm:text-base text-slate-600">Software Engineer crafting digital experiences</p>
           </motion.div>
 
@@ -35,7 +35,7 @@ const Footer = () => {
               href="https://github.com/JessicaCodesx"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-to-br from-purple-100 to-pink-100 p-3 rounded-xl hover:bg-gradient-to-br hover:from-purple-500 hover:via-violet-500 hover:to-pink-500 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl shadow-purple-500/20 text-purple-600"
+              className="bg-gradient-to-br from-indigo-100 to-teal-100 p-3 rounded-xl hover:bg-gradient-to-br hover:from-indigo-500 hover:via-teal-500 hover:to-cyan-500 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl shadow-indigo-500/20 text-indigo-600"
               whileHover={{ scale: 1.1, rotate: 5, y: -2 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -45,7 +45,7 @@ const Footer = () => {
               href="https://www.linkedin.com/in/jessicagarcia5714/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-to-br from-purple-100 to-pink-100 p-3 rounded-xl hover:bg-gradient-to-br hover:from-purple-500 hover:via-violet-500 hover:to-pink-500 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl shadow-purple-500/20 text-purple-600"
+              className="bg-gradient-to-br from-indigo-100 to-teal-100 p-3 rounded-xl hover:bg-gradient-to-br hover:from-indigo-500 hover:via-teal-500 hover:to-cyan-500 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl shadow-indigo-500/20 text-indigo-600"
               whileHover={{ scale: 1.1, rotate: -5, y: -2 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -73,7 +73,7 @@ const Footer = () => {
 
         {/* Divider */}
         <motion.div 
-          className="border-t border-purple-100 mt-8 pt-8"
+          className="border-t border-slate-200 mt-8 pt-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -81,7 +81,7 @@ const Footer = () => {
         >
           <div className="text-center">
             <p className="text-xs sm:text-sm text-slate-600 px-4">
-              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-medium">Actively Seeking Opportunities</span> • Cloud Development & Operations Student
+              <span className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent font-medium">Actively Seeking Opportunities</span> • Cloud Development & Operations Student
             </p>
           </div>
         </motion.div>

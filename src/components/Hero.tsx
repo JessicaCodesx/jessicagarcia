@@ -51,23 +51,23 @@ const Hero = () => {
   }
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-purple-50/30 to-pink-50/30 pt-16 relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-indigo-50/20 to-teal-50/20 pt-16 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div 
-          className="absolute w-96 h-96 bg-purple-400/20 rounded-full blur-3xl transition-all duration-1000 ease-out"
+          className="absolute w-96 h-96 bg-indigo-400/15 rounded-full blur-3xl transition-all duration-1000 ease-out"
           style={{
             left: `${mousePosition.x / 20}px`,
             top: `${mousePosition.y / 20}px`,
             transform: 'translate(-50%, -50%)',
           }}
         />
-        <div className="absolute top-20 left-10 w-72 h-72 bg-violet-400/15 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-400/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-teal-400/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
 
-      {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e9d5ff12_1px,transparent_1px),linear-gradient(to_bottom,#e9d5ff12_1px,transparent_1px)] bg-[size:24px_24px] opacity-40" />
+      {/* Modern Grid Pattern Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#cbd5e112_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e112_1px,transparent_1px)] bg-[size:32px_32px] opacity-30" />
 
       <motion.div 
         className="max-w-4xl mx-auto px-6 text-center relative z-10"
@@ -77,12 +77,12 @@ const Hero = () => {
       >
         {/* Profile Image */}
         <motion.div 
-          className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mx-auto mb-8 rounded-full overflow-hidden border-4 border-purple-500 shadow-2xl shadow-purple-500/30 bg-white relative group"
+          className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mx-auto mb-8 rounded-full overflow-hidden border-4 border-indigo-500 shadow-2xl shadow-indigo-500/20 bg-white relative group"
           variants={imageVariants}
           whileHover={{ scale: 1.05, rotate: 5 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-400/20 via-teal-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           <picture>
             <source 
               srcSet="./profile.jpg" 
@@ -106,17 +106,17 @@ const Hero = () => {
               decoding="async"
             />
           </picture>
-          <div className="absolute inset-0 border-4 border-purple-500 rounded-full animate-ping opacity-20 pointer-events-none" />
+          <div className="absolute inset-0 border-4 border-indigo-500 rounded-full animate-ping opacity-20 pointer-events-none" />
         </motion.div>
         
         {/* Main Heading */}
         <motion.h1 
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 leading-tight px-2"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 leading-tight px-2 tracking-tight"
           variants={itemVariants}
         >
           Hi, I'm{' '}
           <motion.span 
-            className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent inline-block relative"
+            className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent inline-block relative"
             animate={{
               filter: [
                 "drop-shadow(0 0 8px rgba(168, 85, 247, 0.4))",
@@ -140,7 +140,7 @@ const Hero = () => {
           variants={itemVariants}
         >
           Cloud-Focused Software Engineer &{' '}
-          <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-medium">Full-Stack Developer</span>
+          <span className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent font-medium">Full-Stack Developer</span>
         </motion.h2>
         
         {/* Bio */}
@@ -159,7 +159,7 @@ const Hero = () => {
           variants={itemVariants}
         >
           <motion.div 
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-full shadow-lg"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 text-white px-6 py-3 rounded-full shadow-lg"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
@@ -167,7 +167,7 @@ const Hero = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
             </span>
-            <span className="font-semibold text-sm sm:text-base">Available for Hire • Open to Opportunities</span>
+            <span className="font-semibold text-sm sm:text-base text-slate-600">Available for Hire • Open to Opportunities</span>
           </motion.div>
         </motion.div>
         
@@ -176,8 +176,8 @@ const Hero = () => {
           className="text-sm sm:text-base md:text-lg text-slate-500 mb-12 max-w-2xl mx-auto leading-relaxed px-4"
           variants={itemVariants}
         >
-          Cloud-focused software engineer with <span className="text-purple-600 font-medium">Honours Bachelor of Computer Science</span>. 
-          Currently pursuing a <span className="text-purple-600 font-medium">Graduate Certificate in Cloud Development & Operations</span> while building production applications. 
+          Cloud-focused software engineer with <span className="text-indigo-600 font-medium">Honours Bachelor of Computer Science</span>. 
+          Currently pursuing a <span className="text-indigo-600 font-medium">Graduate Certificate in Cloud Development & Operations</span> while building production applications. 
           Ready to contribute to your team immediately.
         </motion.p>
         
@@ -189,19 +189,19 @@ const Hero = () => {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
             <Link 
               to="/projects" 
-              className="bg-gradient-to-r from-purple-600 via-violet-600 to-pink-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:from-purple-500 hover:via-violet-500 hover:to-pink-500 transition-all duration-300 inline-block text-center w-full sm:w-auto shadow-xl shadow-purple-500/40 hover:shadow-2xl hover:shadow-purple-500/60 relative overflow-hidden group min-h-[44px] flex items-center justify-center"
+              className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold hover:from-indigo-500 hover:via-teal-400 hover:to-cyan-400 transition-all duration-300 inline-block text-center w-full sm:w-auto shadow-xl shadow-indigo-500/30 hover:shadow-2xl hover:shadow-indigo-500/50 relative overflow-hidden group min-h-[44px] flex items-center justify-center"
             >
               <span className="relative z-10">Explore My Projects</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-teal-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
           </motion.div>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
             <Link 
               to="/contact" 
-              className="border-2 border-purple-300 text-slate-700 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:border-purple-500 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-300 inline-block text-center w-full sm:w-auto backdrop-blur-sm relative overflow-hidden group min-h-[44px] flex items-center justify-center shadow-md hover:shadow-lg"
+              className="border-2 border-indigo-200 text-slate-700 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold hover:border-indigo-400 hover:bg-gradient-to-r hover:from-indigo-50 hover:via-teal-50 hover:to-cyan-50 transition-all duration-300 inline-block text-center w-full sm:w-auto backdrop-blur-sm relative overflow-hidden group min-h-[44px] flex items-center justify-center shadow-md hover:shadow-lg"
             >
               <span className="relative z-10">Let's Connect</span>
-              <div className="absolute inset-0 bg-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-50 via-teal-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
           </motion.div>
         </motion.div>
@@ -215,7 +215,7 @@ const Hero = () => {
             ease: "easeInOut",
           }}
         >
-          <ArrowDown className="w-6 h-6 text-purple-500 mx-auto" />
+          <ArrowDown className="w-6 h-6 text-indigo-500 mx-auto" />
         </motion.div>
       </motion.div>
     </section>

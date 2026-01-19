@@ -30,7 +30,7 @@ const About = () => {
   }
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-white via-purple-50/20 to-white py-24" ref={ref}>
+    <section className="min-h-screen bg-gradient-to-b from-slate-50 via-indigo-50/10 to-white py-24" ref={ref}>
       <div className="max-w-4xl mx-auto px-6">
         {/* Section Header */}
         <motion.div 
@@ -40,10 +40,10 @@ const About = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            About <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Me</span>
+            About <span className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent">Me</span>
           </h2>
           <motion.div 
-            className="w-24 h-1 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto"
+            className="w-24 h-1 bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 mx-auto"
             initial={{ width: 0 }}
             animate={isInView ? { width: 96 } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -90,13 +90,13 @@ const About = () => {
           {/* Right Column - Quick Facts */}
           <motion.div className="space-y-8" variants={itemVariants}>
             {/* Education */}
-            <div className="bg-white p-6 rounded-lg border-l-4 border-purple-500 shadow-md hover:shadow-lg transition-shadow">
+            <div className="bg-white p-6 rounded-lg border-l-4 border-indigo-500 shadow-md hover:shadow-lg transition-shadow">
               <h4 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3">Education</h4>
               <div className="space-y-4">
                 <div>
                   <p className="font-medium text-slate-900">Graduate Certificate, Cloud Development & Operations</p>
                   <p className="text-slate-600">Algonquin College • Expected August 2026</p>
-                  <p className="text-sm text-purple-600 font-medium">In Progress</p>
+                  <p className="text-sm text-indigo-600 font-medium">In Progress</p>
                 </div>
                 <div>
                   <p className="font-medium text-slate-900">Honours Bachelor of Computer Science</p>
@@ -112,7 +112,7 @@ const About = () => {
             </div>
 
             {/* Experience */}
-            <div className="bg-white p-6 rounded-lg border-l-4 border-purple-500 shadow-md hover:shadow-lg transition-shadow">
+            <div className="bg-white p-6 rounded-lg border-l-4 border-indigo-500 shadow-md hover:shadow-lg transition-shadow">
               <h4 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3">Professional Experience</h4>
               <div className="space-y-3">
                 <div>
@@ -139,7 +139,7 @@ const About = () => {
         >
           <div className="max-w-3xl mx-auto">
             <motion.div 
-              className="bg-gradient-to-br from-purple-600 to-pink-600 p-12 rounded-2xl shadow-2xl relative overflow-hidden group"
+              className="bg-gradient-to-br from-indigo-600 via-teal-500 to-cyan-500 p-12 rounded-2xl shadow-2xl relative overflow-hidden group"
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
@@ -228,7 +228,7 @@ const About = () => {
                   whileHover={{ y: -5 }}
                 >
                   <motion.div 
-                    className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-purple-500/30 group-hover:shadow-purple-500/50 transition-shadow"
+                    className="w-16 h-16 bg-gradient-to-br from-indigo-500 via-teal-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-indigo-500/30 group-hover:shadow-indigo-500/50 transition-shadow"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                   >
                     <IconComponent className="w-8 h-8 text-white" />
@@ -252,7 +252,7 @@ const About = () => {
         >
           <div className="text-center mb-12">
             <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-4">
-              Technical <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Expertise</span>
+              Technical <span className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent">Expertise</span>
             </h3>
             <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto px-4">
               A selection of technologies and tools I work with to bring ideas to life
@@ -264,7 +264,7 @@ const About = () => {
               { 
                 category: "Frontend Development", 
                 skills: ["React", "TypeScript", "JavaScript", "Tailwind CSS", "HTML5", "CSS3"],
-                color: "from-purple-400 to-pink-500"
+                color: "from-indigo-400 to-cyan-500"
               },
               { 
                 category: "Backend & Cloud", 
@@ -274,12 +274,12 @@ const About = () => {
               { 
                 category: "Game Development", 
                 skills: ["Godot Engine", "GDScript", "Game Design", "Asset Integration"],
-                color: "from-purple-400 to-purple-500"
+                color: "from-indigo-400 to-indigo-500"
               }
             ].map((category, index) => (
               <motion.div
                 key={category.category}
-                className="bg-white rounded-lg p-6 shadow-lg border border-purple-100 hover:shadow-xl hover:border-purple-300 transition-all"
+                className="bg-white rounded-lg p-6 shadow-lg border border-indigo-100 hover:shadow-xl hover:border-indigo-300 transition-all"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
@@ -290,7 +290,7 @@ const About = () => {
                   {category.skills.map((skill, skillIndex) => (
                     <motion.span
                       key={skill}
-                      className="bg-gradient-to-r from-purple-50 to-pink-50 text-slate-800 px-3 py-1.5 rounded-full text-sm font-medium border border-purple-200 hover:border-purple-400 hover:bg-purple-100 transition-colors"
+                      className="bg-gradient-to-r from-indigo-50 to-teal-50 text-slate-800 px-3 py-1.5 rounded-full text-sm font-medium border border-indigo-200 hover:border-indigo-400 hover:bg-indigo-100 transition-colors"
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                       transition={{ delay: 1 + index * 0.1 + skillIndex * 0.05 }}

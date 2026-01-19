@@ -3,7 +3,7 @@
     "id": 9,
     "title": "From Call of Duty to Code: How Running an Esports Org Shaped My Software Engineering Approach",
     "excerpt": "The unexpected parallels between competitive gaming leadership and software engineering. How managing a professional Call of Duty organization taught me communication, strategy, and team dynamics that directly translate to building software with peers.",
-    "date": "2025-01-27",
+    "date": "2026-01-10",
     "readTime": "7 min read",
     "tags": ["Leadership", "Teamwork", "Career", "Esports", "Software Engineering"],
     "published": true
@@ -12,7 +12,7 @@
     "id": 1,
     "title": "Understanding Finite Automata: A Beginner's Guide to State Machines",
     "excerpt": "Learn the fundamentals of finite automata and state machines. This guide covers deterministic finite automata (DFA), non-deterministic finite automata (NFA), and practical applications in software engineering and compiler design.",
-    "date": "2025-01-25",
+    "date": "2025-12-15",
     "readTime": "8 min read",
     "tags": ["Computer Science", "Theory of Computing", "Algorithms", "State Machines"],
     "published": true
@@ -21,7 +21,7 @@
     "id": 2,
     "title": "Recursion Explained: From Basics to Advanced Patterns",
     "excerpt": "A comprehensive guide to understanding recursion in programming. Learn recursive thinking, common patterns, when to use recursion vs iteration, and how to avoid stack overflow errors. Includes examples in JavaScript and Python.",
-    "date": "2025-01-22",
+    "date": "2025-11-20",
     "readTime": "10 min read",
     "tags": ["Programming", "Algorithms", "Data Structures", "JavaScript", "Python"],
     "published": true
@@ -30,7 +30,7 @@
     "id": 3,
     "title": "Time Complexity and Big O Notation: A Practical Guide",
     "excerpt": "Master Big O notation and time complexity analysis. Learn how to analyze algorithm efficiency, compare different approaches, and optimize your code. Essential knowledge for technical interviews and efficient programming.",
-    "date": "2025-01-20",
+    "date": "2025-11-05",
     "readTime": "9 min read",
     "tags": ["Algorithms", "Data Structures", "Computer Science", "Interview Prep"],
     "published": true
@@ -39,7 +39,7 @@
     "id": 4,
     "title": "Understanding REST APIs: Design Principles and Best Practices",
     "excerpt": "Learn how to design and implement RESTful APIs. This guide covers HTTP methods, status codes, resource naming conventions, authentication, and common patterns for building scalable web APIs.",
-    "date": "2025-01-18",
+    "date": "2025-10-18",
     "readTime": "7 min read",
     "tags": ["Web Development", "API Design", "Backend Development", "REST"],
     "published": true
@@ -48,7 +48,7 @@
     "id": 5,
     "title": "React Hooks Deep Dive: useState, useEffect, and Custom Hooks",
     "excerpt": "Master React Hooks with practical examples. Learn useState for state management, useEffect for side effects, and how to create reusable custom hooks. Includes common patterns and best practices for modern React development.",
-    "date": "2025-01-15",
+    "date": "2025-10-05",
     "readTime": "8 min read",
     "tags": ["React", "Frontend Development", "JavaScript", "Web Development"],
     "published": true
@@ -57,7 +57,7 @@
     "id": 6,
     "title": "Database Normalization: From First to Third Normal Form",
     "excerpt": "Understand database normalization and why it matters. Learn about 1NF, 2NF, and 3NF with practical examples. Discover how proper normalization reduces data redundancy and improves database performance.",
-    "date": "2025-01-12",
+    "date": "2025-09-25",
     "readTime": "6 min read",
     "tags": ["Database Design", "SQL", "Data Modeling", "Backend Development"],
     "published": true
@@ -66,7 +66,7 @@
     "id": 7,
     "title": "Building My First Production Mobile App: Lessons Learned",
     "excerpt": "Reflecting on the journey of building homebase, a local-first family management app, and the technical decisions that shaped its architecture.",
-    "date": "2025-01-10",
+    "date": "2025-09-15",
     "readTime": "5 min read",
     "tags": ["Mobile Development", "React Native", "Local-First", "Projects"],
     "published": true
@@ -75,7 +75,7 @@
     "id": 8,
     "title": "Why I'm Pursuing Cloud Development & Operations",
     "excerpt": "Exploring my decision to specialize in cloud technologies and how it aligns with the future of software engineering.",
-    "date": "2025-01-08",
+    "date": "2025-09-10",
     "readTime": "4 min read",
     "tags": ["Cloud Computing", "Career", "Education", "DevOps"],
     "published": true

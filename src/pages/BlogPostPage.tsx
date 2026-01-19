@@ -16,10 +16,10 @@ const BlogPostPage = () => {
 
   if (!post) {
     return (
-      <div className="pt-16 min-h-screen bg-white flex items-center justify-center">
+      <div className="pt-16 min-h-screen bg-slate-50 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-3xl font-bold text-slate-900 mb-4">Post Not Found</h1>
-          <Link to="/blog" className="text-purple-600 hover:text-purple-700">
+          <Link to="/blog" className="text-indigo-600 hover:text-indigo-700">
             ← Back to Blog
           </Link>
         </div>
@@ -1562,7 +1562,7 @@ The next time someone dismisses gaming as "just playing video games," remember: 
   }
 
   return (
-    <div className="pt-16 min-h-screen bg-white">
+    <div className="pt-16 min-h-screen bg-slate-50">
       <SEOHead
         title={post.title}
         description={post.excerpt}
@@ -1573,7 +1573,7 @@ The next time someone dismisses gaming as "just playing video games," remember: 
       <div className="max-w-4xl mx-auto px-6 pt-8">
         <Link
           to="/blog"
-          className="inline-flex items-center gap-2 text-purple-600 hover:text-purple-700 font-medium mb-8"
+          className="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-medium mb-8"
         >
           <ArrowLeft className="w-5 h-5" />
           Back to Blog
@@ -1581,7 +1581,7 @@ The next time someone dismisses gaming as "just playing video games," remember: 
       </div>
 
       {/* Article Header */}
-      <section className="bg-gradient-to-br from-white via-purple-50/30 to-pink-50/30 py-12 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-slate-50 via-indigo-50/20 to-teal-50/20 py-12 relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1607,7 +1607,7 @@ The next time someone dismisses gaming as "just playing video games," remember: 
               {post.tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="bg-gradient-to-r from-purple-50 to-pink-50 text-purple-700 px-3 py-1 rounded-full text-sm font-medium border border-purple-200"
+                  className="bg-gradient-to-r from-indigo-50 to-teal-50 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium border border-indigo-200"
                 >
                   <Tag className="w-3 h-3 inline mr-1" />
                   {tag}

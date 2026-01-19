@@ -42,7 +42,7 @@ const BlogPage = () => {
   }
 
   return (
-    <div className="pt-16 min-h-screen bg-white">
+    <div className="pt-16 min-h-screen bg-slate-50">
       <SEOHead
         title="Software Engineering Blog"
         description="Technical blog posts on computer science fundamentals, programming concepts, algorithms, and software engineering. Learn about finite automata, recursion, Big O notation, React, APIs, and more."
@@ -50,10 +50,10 @@ const BlogPage = () => {
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-white via-purple-50/30 to-pink-50/30 py-20 relative overflow-hidden" ref={heroRef}>
+      <section className="bg-gradient-to-br from-slate-50 via-indigo-50/20 to-teal-50/20 py-20 relative overflow-hidden" ref={heroRef}>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-400/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-400/8 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-400/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <motion.h1 
@@ -64,12 +64,12 @@ const BlogPage = () => {
           >
             Thoughts &{' '}
             <motion.span 
-              className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent inline-block relative"
+              className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent inline-block relative"
               animate={heroInView ? {
                 filter: [
-                  "drop-shadow(0 0 8px rgba(168, 85, 247, 0.4))",
-                  "drop-shadow(0 0 12px rgba(168, 85, 247, 0.6))",
-                  "drop-shadow(0 0 8px rgba(168, 85, 247, 0.4))",
+                  "drop-shadow(0 0 8px rgba(79, 70, 229, 0.4))",
+                  "drop-shadow(0 0 12px rgba(6, 182, 212, 0.6))",
+                  "drop-shadow(0 0 8px rgba(79, 70, 229, 0.4))",
                 ],
               } : {}}
               transition={{
@@ -114,7 +114,7 @@ const BlogPage = () => {
               {publishedPosts.map((post) => (
                 <motion.article
                   key={post.id}
-                  className="bg-white border border-purple-100 rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-2xl hover:border-purple-200 transition-all duration-300 group cursor-pointer backdrop-blur-sm"
+                  className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-2xl hover:border-indigo-200 transition-all duration-300 group cursor-pointer backdrop-blur-sm"
                   variants={itemVariants}
                   whileHover={{ y: -5, scale: 1.01 }}
                 >
@@ -130,7 +130,7 @@ const BlogPage = () => {
                     </div>
                   </div>
                   
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 group-hover:text-purple-600 transition-colors break-words">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 group-hover:text-indigo-600 transition-colors break-words">
                     {post.title}
                   </h2>
                   
@@ -142,7 +142,7 @@ const BlogPage = () => {
                     {post.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="bg-gradient-to-r from-purple-50 to-pink-50 text-purple-700 px-3 py-1 rounded-full text-sm font-medium border border-purple-200"
+                        className="bg-gradient-to-r from-indigo-50 to-teal-50 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium border border-indigo-200"
                       >
                         <Tag className="w-3 h-3 inline mr-1" />
                         {tag}
@@ -150,7 +150,7 @@ const BlogPage = () => {
                     ))}
                   </div>
                   
-                    <div className="flex items-center text-purple-600 font-semibold group-hover:gap-2 transition-all">
+                    <div className="flex items-center text-indigo-600 font-semibold group-hover:gap-2 transition-all">
                       <span>Read more</span>
                       <ArrowRight className="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" />
                     </div>

@@ -42,13 +42,13 @@ const AboutPage = () => {
   }
 
   return (
-    <div className="pt-16 min-h-screen bg-white">
+    <div className="pt-16 min-h-screen bg-slate-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-white via-purple-50/30 to-pink-50/30 py-20 relative overflow-hidden" ref={heroRef}>
+      <section className="bg-gradient-to-br from-slate-50 via-indigo-50/20 to-teal-50/20 py-20 relative overflow-hidden" ref={heroRef}>
         {/* Background Effects */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-400/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-400/8 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-400/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <motion.h1 
@@ -59,12 +59,12 @@ const AboutPage = () => {
           >
             Beyond the{' '}
             <motion.span 
-              className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent inline-block relative"
+              className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent inline-block relative"
               animate={heroInView ? {
                 filter: [
-                  "drop-shadow(0 0 8px rgba(168, 85, 247, 0.4))",
-                  "drop-shadow(0 0 12px rgba(168, 85, 247, 0.6))",
-                  "drop-shadow(0 0 8px rgba(168, 85, 247, 0.4))",
+                  "drop-shadow(0 0 8px rgba(79, 70, 229, 0.4))",
+                  "drop-shadow(0 0 12px rgba(6, 182, 212, 0.6))",
+                  "drop-shadow(0 0 8px rgba(79, 70, 229, 0.4))",
                 ],
               } : {}}
               transition={{
@@ -98,7 +98,7 @@ const AboutPage = () => {
             animate={journeyInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6 }}
           >
-            My <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Journey</span>
+            My <span className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent">Journey</span>
           </motion.h2>
           <motion.div 
             className="space-y-8 text-lg text-slate-700 leading-relaxed"
@@ -121,7 +121,7 @@ const AboutPage = () => {
       </section>
 
       {/* Interests Grid */}
-      <section className="bg-gradient-to-b from-white via-purple-50/20 to-white py-20" ref={interestsRef}>
+      <section className="bg-gradient-to-b from-slate-50 via-indigo-50/10 to-white py-20" ref={interestsRef}>
         <div className="max-w-6xl mx-auto px-6">
           <motion.h2 
             className="text-3xl sm:text-4xl font-bold text-slate-900 mb-12 text-center"
@@ -129,7 +129,7 @@ const AboutPage = () => {
             animate={interestsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6 }}
           >
-            What Makes Me <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Tick</span>
+            What Makes Me <span className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent">Tick</span>
           </motion.h2>
           
           <motion.div 
@@ -140,7 +140,7 @@ const AboutPage = () => {
           >
             {/* Gaming & Esports */}
             <motion.div 
-              className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-purple-500 hover:shadow-xl transition-shadow"
+              className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-indigo-500 hover:shadow-xl transition-shadow"
               variants={itemVariants}
               whileHover={{ y: -5, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
@@ -153,7 +153,7 @@ const AboutPage = () => {
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <Gamepad2 className="w-8 h-8 text-purple-500 mr-3" />
+                  <Gamepad2 className="w-8 h-8 text-indigo-500 mr-3" />
                 </motion.div>
                 <h3 className="text-xl sm:text-2xl font-bold text-slate-900">Gaming & Esports</h3>
               </motion.div>
@@ -167,15 +167,15 @@ const AboutPage = () => {
               </p>
               <div className="space-y-2">
                 <div className="flex items-center">
-                  <Trophy className="w-4 h-4 text-purple-500 mr-2" />
+                  <Trophy className="w-4 h-4 text-indigo-500 mr-2" />
                   <span className="text-sm text-slate-600">6+ years competitive COD player (2014-2020)</span>
                 </div>
                 <div className="flex items-center">
-                  <Trophy className="w-4 h-4 text-purple-500 mr-2" />
+                  <Trophy className="w-4 h-4 text-indigo-500 mr-2" />
                   <span className="text-sm text-slate-600">Esports organization founder & leader</span>
                 </div>
                 <div className="flex items-center">
-                  <Trophy className="w-4 h-4 text-purple-500 mr-2" />
+                  <Trophy className="w-4 h-4 text-indigo-500 mr-2" />
                   <span className="text-sm text-slate-600">Current League of Legends enthusiast</span>
                 </div>
               </div>
@@ -183,7 +183,7 @@ const AboutPage = () => {
 
             {/* Art & Creativity */}
             <motion.div 
-              className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-purple-500 hover:shadow-xl transition-shadow"
+              className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-indigo-500 hover:shadow-xl transition-shadow"
               variants={itemVariants}
               whileHover={{ y: -5, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
@@ -196,7 +196,7 @@ const AboutPage = () => {
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <Palette className="w-8 h-8 text-purple-500 mr-3" />
+                  <Palette className="w-8 h-8 text-indigo-500 mr-3" />
                 </motion.div>
                 <h3 className="text-xl sm:text-2xl font-bold text-slate-900">Art & Expression</h3>
               </motion.div>
@@ -206,15 +206,15 @@ const AboutPage = () => {
               </p>
               <div className="space-y-2">
                 <div className="flex items-center">
-                  <Palette className="w-4 h-4 text-purple-500 mr-2" />
+                  <Palette className="w-4 h-4 text-indigo-500 mr-2" />
                   <span className="text-sm text-slate-600">Painting & visual arts</span>
                 </div>
                 <div className="flex items-center">
-                  <Palette className="w-4 h-4 text-purple-500 mr-2" />
+                  <Palette className="w-4 h-4 text-indigo-500 mr-2" />
                   <span className="text-sm text-slate-600">Tattoo artistry exploration</span>
                 </div>
                 <div className="flex items-center">
-                  <Palette className="w-4 h-4 text-purple-500 mr-2" />
+                  <Palette className="w-4 h-4 text-indigo-500 mr-2" />
                   <span className="text-sm text-slate-600">Creative problem-solving</span>
                 </div>
               </div>
@@ -222,7 +222,7 @@ const AboutPage = () => {
 
             {/* Learning & Growth */}
             <motion.div 
-              className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-purple-500 hover:shadow-xl transition-shadow"
+              className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-indigo-500 hover:shadow-xl transition-shadow"
               variants={itemVariants}
               whileHover={{ y: -5, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
@@ -235,7 +235,7 @@ const AboutPage = () => {
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <BookOpen className="w-8 h-8 text-purple-500 mr-3" />
+                  <BookOpen className="w-8 h-8 text-indigo-500 mr-3" />
                 </motion.div>
                 <h3 className="text-xl sm:text-2xl font-bold text-slate-900">Continuous Learning</h3>
               </motion.div>
@@ -245,15 +245,15 @@ const AboutPage = () => {
               </p>
               <div className="space-y-2">
                 <div className="flex items-center">
-                  <BookOpen className="w-4 h-4 text-purple-500 mr-2" />
+                  <BookOpen className="w-4 h-4 text-indigo-500 mr-2" />
                   <span className="text-sm text-slate-600">Technology exploration</span>
                 </div>
                 <div className="flex items-center">
-                  <BookOpen className="w-4 h-4 text-purple-500 mr-2" />
+                  <BookOpen className="w-4 h-4 text-indigo-500 mr-2" />
                   <span className="text-sm text-slate-600">Avid reader</span>
                 </div>
                 <div className="flex items-center">
-                  <BookOpen className="w-4 h-4 text-purple-500 mr-2" />
+                  <BookOpen className="w-4 h-4 text-indigo-500 mr-2" />
                   <span className="text-sm text-slate-600">Self-directed learning</span>
                 </div>
               </div>
@@ -271,11 +271,11 @@ const AboutPage = () => {
             animate={leadershipInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6 }}
           >
-            Leadership <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Experience</span>
+            Leadership <span className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent">Experience</span>
           </motion.h2>
           
           <motion.div 
-            className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg p-8 text-white"
+            className="bg-gradient-to-br from-indigo-600 via-teal-500 to-cyan-500 rounded-lg p-8 text-white"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={leadershipInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.6 }}
@@ -327,7 +327,7 @@ const AboutPage = () => {
       </section>
 
       {/* Values & Philosophy */}
-      <section className="bg-gradient-to-b from-white via-purple-50/20 to-white py-20" ref={philosophyRef}>
+      <section className="bg-gradient-to-b from-slate-50 via-indigo-50/10 to-white py-20" ref={philosophyRef}>
         <div className="max-w-4xl mx-auto px-6">
           <motion.h2 
             className="text-4xl font-bold text-slate-900 mb-12 text-center"
@@ -335,7 +335,7 @@ const AboutPage = () => {
             animate={philosophyInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6 }}
           >
-            My <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Philosophy</span>
+            My <span className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent">Philosophy</span>
           </motion.h2>
           
           <motion.div 
@@ -358,7 +358,7 @@ const AboutPage = () => {
                   <motion.div
                     whileHover={{ scale: 1.2, rotate: 5 }}
                   >
-                    <item.icon className="w-6 h-6 text-purple-500 mt-1 flex-shrink-0" />
+                    <item.icon className="w-6 h-6 text-indigo-500 mt-1 flex-shrink-0" />
                   </motion.div>
                   <div>
                     <h3 className="text-xl font-semibold text-slate-900 mb-2">{item.title}</h3>
@@ -382,7 +382,7 @@ const AboutPage = () => {
                   <motion.div
                     whileHover={{ scale: 1.2, rotate: 5 }}
                   >
-                    <item.icon className="w-6 h-6 text-purple-500 mt-1 flex-shrink-0" />
+                    <item.icon className="w-6 h-6 text-indigo-500 mt-1 flex-shrink-0" />
                   </motion.div>
                   <div>
                     <h3 className="text-xl font-semibold text-slate-900 mb-2">{item.title}</h3>
@@ -396,7 +396,7 @@ const AboutPage = () => {
       </section>
 
       {/* Personal Note */}
-      <section className="bg-gradient-to-br from-purple-600 to-pink-600 py-20 relative overflow-hidden" ref={noteRef}>
+      <section className="bg-gradient-to-br from-indigo-600 via-teal-500 to-cyan-500 py-20 relative overflow-hidden" ref={noteRef}>
         {/* Background Effects */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse" />
@@ -456,7 +456,7 @@ const AboutPage = () => {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link 
                 to="/projects" 
-                className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-all duration-300 inline-block shadow-lg"
+                className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-all duration-300 inline-block shadow-lg"
               >
                 View My Projects
               </Link>

@@ -41,13 +41,13 @@ const AcademicsPage = () => {
   }
 
   return (
-    <div className="pt-16 min-h-screen bg-white">
+    <div className="pt-16 min-h-screen bg-slate-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-white via-purple-50/30 to-pink-50/30 py-20 relative overflow-hidden" ref={heroRef}>
+      <section className="bg-gradient-to-br from-slate-50 via-indigo-50/20 to-teal-50/20 py-20 relative overflow-hidden" ref={heroRef}>
         {/* Background Effects */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-400/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-400/8 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-400/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <motion.h1 
@@ -57,12 +57,12 @@ const AcademicsPage = () => {
             transition={{ duration: 0.6 }}
           >
             Academic <motion.span 
-              className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent inline-block relative"
+              className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent inline-block relative"
               animate={heroInView ? {
                 filter: [
-                  "drop-shadow(0 0 8px rgba(168, 85, 247, 0.4))",
-                  "drop-shadow(0 0 12px rgba(168, 85, 247, 0.6))",
-                  "drop-shadow(0 0 8px rgba(168, 85, 247, 0.4))",
+                  "drop-shadow(0 0 8px rgba(79, 70, 229, 0.4))",
+                  "drop-shadow(0 0 12px rgba(6, 182, 212, 0.6))",
+                  "drop-shadow(0 0 8px rgba(79, 70, 229, 0.4))",
                 ],
               } : {}}
               transition={{
@@ -95,13 +95,13 @@ const AcademicsPage = () => {
             animate={timelineInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6 }}
           >
-            Educational <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Journey</span>
+            Educational <span className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent">Journey</span>
           </motion.h2>
           
           <div className="relative">
             {/* Timeline Line */}
             <motion.div 
-              className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-purple-600 to-pink-600 h-full hidden lg:block"
+              className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-indigo-600 via-teal-500 to-cyan-500 h-full hidden lg:block"
               initial={{ scaleY: 0 }}
               animate={timelineInView ? { scaleY: 1 } : { scaleY: 0 }}
               transition={{ duration: 1, ease: "easeInOut" }}
@@ -121,13 +121,13 @@ const AcademicsPage = () => {
               >
                 <div className="lg:text-right lg:pr-8">
                   <motion.div 
-                    className="bg-gradient-to-br from-purple-600 via-violet-600 to-pink-600 text-white p-6 sm:p-8 rounded-xl relative shadow-2xl shadow-purple-500/30 overflow-hidden group"
+                    className="bg-gradient-to-br from-indigo-600 via-teal-500 to-cyan-500 text-white p-6 sm:p-8 rounded-xl relative shadow-2xl shadow-indigo-500/30 overflow-hidden group"
                     whileHover={{ scale: 1.02, y: -5 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   >
                     {/* Animated gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-pink-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="absolute -right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white rounded-full border-4 border-purple-400 hidden lg:block shadow-lg"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-400/20 via-teal-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute -right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white rounded-full border-4 border-indigo-400 hidden lg:block shadow-lg"></div>
                     <div className="flex items-center mb-4 lg:justify-end">
                       <Target className="w-6 h-6 text-white mr-2" />
                       <span className="text-white font-bold">IN PROGRESS</span>
@@ -154,30 +154,30 @@ const AcademicsPage = () => {
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
                   <motion.div 
-                    className="bg-gradient-to-br from-purple-50/80 to-pink-50/80 p-6 rounded-xl border border-purple-100 shadow-lg backdrop-blur-sm"
+                    className="bg-gradient-to-br from-indigo-50/80 to-teal-50/80 p-6 rounded-xl border border-indigo-100 shadow-lg backdrop-blur-sm"
                     whileHover={{ scale: 1.02, y: -2 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   >
-                    <h4 className="text-lg font-semibold text-slate-900 mb-3 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Cloud Focus Areas</h4>
+                    <h4 className="text-lg font-semibold text-slate-900 mb-3 bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent">Cloud Focus Areas</h4>
                     <ul className="space-y-2.5 text-slate-700">
                       <li className="flex items-start">
-                        <span className="text-purple-500 mr-2 mt-1">•</span>
+                        <span className="text-indigo-500 mr-2 mt-1">•</span>
                         <span>Cloud infrastructure & architecture</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-purple-500 mr-2 mt-1">•</span>
+                        <span className="text-indigo-500 mr-2 mt-1">•</span>
                         <span>DevOps & CI/CD pipelines</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-purple-500 mr-2 mt-1">•</span>
+                        <span className="text-indigo-500 mr-2 mt-1">•</span>
                         <span>Containerization & orchestration</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-purple-500 mr-2 mt-1">•</span>
+                        <span className="text-indigo-500 mr-2 mt-1">•</span>
                         <span>Cloud security & best practices</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-purple-500 mr-2 mt-1">•</span>
+                        <span className="text-indigo-500 mr-2 mt-1">•</span>
                         <span>Serverless computing & microservices</span>
                       </li>
                     </ul>
@@ -197,13 +197,13 @@ const AcademicsPage = () => {
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
                   <motion.div 
-                    className="bg-gradient-to-br from-purple-600 via-violet-600 to-pink-600 text-white p-6 sm:p-8 rounded-xl relative shadow-2xl shadow-purple-500/30 overflow-hidden group"
+                    className="bg-gradient-to-br from-indigo-600 via-teal-500 to-cyan-500 text-white p-6 sm:p-8 rounded-xl relative shadow-2xl shadow-indigo-500/30 overflow-hidden group"
                     whileHover={{ scale: 1.02, y: -5 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   >
                     {/* Animated gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-pink-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white rounded-full border-4 border-purple-400 hidden lg:block shadow-lg"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-400/20 via-teal-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white rounded-full border-4 border-indigo-400 hidden lg:block shadow-lg"></div>
                     <div className="flex items-center mb-4">
                       <Award className="w-6 h-6 text-white mr-2" />
                       <span className="text-white font-bold">COMPLETED</span>
@@ -235,31 +235,31 @@ const AcademicsPage = () => {
                   >
                     <h4 className="text-lg font-semibold text-slate-900 mb-3">Key Courses</h4>
                     <div className="space-y-3">
-                      <div className="border-l-4 border-purple-500 pl-4">
+                      <div className="border-l-4 border-indigo-500 pl-4">
                         <h5 className="font-medium text-slate-900">Analysis of Algorithms</h5>
                         <p className="text-sm text-slate-600">Advanced algorithmic design and complexity analysis</p>
                       </div>
-                      <div className="border-l-4 border-purple-500 pl-4">
+                      <div className="border-l-4 border-indigo-500 pl-4">
                         <h5 className="font-medium text-slate-900">Computer Organization & Architecture</h5>
                         <p className="text-sm text-slate-600">Hardware-software interface and system architecture</p>
                       </div>
-                      <div className="border-l-4 border-purple-500 pl-4">
+                      <div className="border-l-4 border-indigo-500 pl-4">
                         <h5 className="font-medium text-slate-900">Computer Networks</h5>
                         <p className="text-sm text-slate-600">Network protocols, distributed systems communication</p>
                       </div>
-                      <div className="border-l-4 border-purple-500 pl-4">
+                      <div className="border-l-4 border-indigo-500 pl-4">
                         <h5 className="font-medium text-slate-900">Theory of Computing</h5>
                         <p className="text-sm text-slate-600">Formal languages, automata theory, and computational complexity</p>
                       </div>
                     </div>
                   </motion.div>
                   <motion.div 
-                    className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg border border-purple-200"
+                    className="bg-gradient-to-br from-indigo-50 to-teal-50 p-6 rounded-lg border border-indigo-200"
                     whileHover={{ scale: 1.02, borderColor: 'rgb(168, 85, 247)' }}
                     transition={{ duration: 0.2 }}
                   >
                     <h4 className="text-lg font-semibold text-slate-900 mb-4 flex items-center">
-                      <Star className="w-5 h-5 text-purple-500 mr-2" />
+                      <Star className="w-5 h-5 text-indigo-500 mr-2" />
                       Foundation Highlights
                     </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -271,7 +271,7 @@ const AcademicsPage = () => {
                       ].map((item, index) => (
                         <motion.div
                           key={index}
-                          className="bg-white p-3 rounded-lg border-l-4 border-purple-500 shadow-sm hover:shadow-md transition-shadow"
+                          className="bg-white p-3 rounded-lg border-l-4 border-indigo-500 shadow-sm hover:shadow-md transition-shadow"
                           initial={{ opacity: 0, x: -20 }}
                           animate={timelineInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                           transition={{ delay: 0.5 + index * 0.1 }}
@@ -279,7 +279,7 @@ const AcademicsPage = () => {
                         >
                           <div className="flex items-center justify-between">
                             <span className="text-sm font-medium text-slate-900">{item.course}</span>
-                            <span className="text-sm font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                            <span className="text-sm font-semibold bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent">
                               {item.grades}
                             </span>
                           </div>
@@ -297,11 +297,11 @@ const AcademicsPage = () => {
               >
                 <div className="lg:text-right lg:pr-8">
                   <motion.div 
-                    className="bg-gradient-to-br from-purple-500 to-pink-500 text-white p-8 rounded-lg relative"
+                    className="bg-gradient-to-br from-indigo-500 via-teal-500 to-cyan-500 text-white p-8 rounded-lg relative"
                     whileHover={{ scale: 1.02, y: -5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <div className="absolute -right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white rounded-full border-4 border-purple-500 hidden lg:block"></div>
+                    <div className="absolute -right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white rounded-full border-4 border-indigo-500 hidden lg:block"></div>
                     <div className="flex items-center mb-4 lg:justify-end">
                       <Award className="w-6 h-6 text-white mr-2" />
                       <span className="text-white font-bold">COMPLETED</span>
@@ -328,24 +328,24 @@ const AcademicsPage = () => {
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
                   <motion.div 
-                    className="bg-purple-50/50 p-6 rounded-lg"
+                    className="bg-indigo-50/50 p-6 rounded-lg"
                     whileHover={{ scale: 1.02 }}
                   >
                     <h4 className="text-lg font-semibold text-slate-900 mb-3">Standout Courses</h4>
                     <div className="space-y-3">
-                      <div className="border-l-4 border-purple-500 pl-4">
+                      <div className="border-l-4 border-indigo-500 pl-4">
                         <h5 className="font-medium text-slate-900">Advanced Database Topics (A)</h5>
                         <p className="text-sm text-slate-600">Complex database design and optimization</p>
                       </div>
-                      <div className="border-l-4 border-purple-500 pl-4">
+                      <div className="border-l-4 border-indigo-500 pl-4">
                         <h5 className="font-medium text-slate-900">Enterprise Application Programming (A-)</h5>
                         <p className="text-sm text-slate-600">Large-scale enterprise software development</p>
                       </div>
-                      <div className="border-l-4 border-purple-500 pl-4">
+                      <div className="border-l-4 border-indigo-500 pl-4">
                         <h5 className="font-medium text-slate-900">Software Development Project (A)</h5>
                         <p className="text-sm text-slate-600">Full lifecycle software project implementation</p>
                       </div>
-                      <div className="border-l-4 border-purple-500 pl-4">
+                      <div className="border-l-4 border-indigo-500 pl-4">
                         <h5 className="font-medium text-slate-900">OOP with Design Patterns (A+)</h5>
                         <p className="text-sm text-slate-600">Advanced object-oriented programming principles</p>
                       </div>
@@ -359,7 +359,7 @@ const AcademicsPage = () => {
       </section>
 
       {/* Academic Achievements */}
-      <section className="bg-gradient-to-b from-white via-purple-50/20 to-white py-20" ref={achievementsRef}>
+      <section className="bg-gradient-to-b from-slate-50 via-indigo-50/10 to-white py-20" ref={achievementsRef}>
         <div className="max-w-4xl mx-auto px-6">
           <motion.h2 
             className="text-3xl sm:text-4xl font-bold text-slate-900 mb-12 text-center"
@@ -367,7 +367,7 @@ const AcademicsPage = () => {
             animate={achievementsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6 }}
           >
-            Notable <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Achievements</span>
+            Notable <span className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent">Achievements</span>
           </motion.h2>
           
           <motion.div 
@@ -383,20 +383,20 @@ const AcademicsPage = () => {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="flex items-center mb-4">
-                <Trophy className="w-8 h-8 text-purple-500 mr-3" />
+                <Trophy className="w-8 h-8 text-indigo-500 mr-3" />
                 <h3 className="text-xl font-bold text-slate-900">Academic Excellence</h3>
               </div>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start">
-                  <Star className="w-4 h-4 text-purple-500 mr-2 mt-1 flex-shrink-0" />
+                  <Star className="w-4 h-4 text-indigo-500 mr-2 mt-1 flex-shrink-0" />
                   <span>Graduated Honours from Algonquin College (3.9 GPA)</span>
                 </li>
                 <li className="flex items-start">
-                  <Star className="w-4 h-4 text-purple-500 mr-2 mt-1 flex-shrink-0" />
+                  <Star className="w-4 h-4 text-indigo-500 mr-2 mt-1 flex-shrink-0" />
                   <span>Completed Honours Bachelor's program with 3.7 GPA (December 2025)</span>
                 </li>
                 <li className="flex items-start">
-                  <Star className="w-4 h-4 text-purple-500 mr-2 mt-1 flex-shrink-0" />
+                  <Star className="w-4 h-4 text-indigo-500 mr-2 mt-1 flex-shrink-0" />
                   <span>Dean's List recognition for academic performance</span>
                 </li>
               </ul>
@@ -416,25 +416,25 @@ const AcademicsPage = () => {
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <Target className="w-8 h-8 text-purple-500 mr-3" />
+                  <Target className="w-8 h-8 text-indigo-500 mr-3" />
                 </motion.div>
                 <h3 className="text-xl font-bold text-slate-900">Balance & Dedication</h3>
               </motion.div>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start">
-                  <Star className="w-4 h-4 text-purple-500 mr-2 mt-1 flex-shrink-0" />
+                  <Star className="w-4 h-4 text-indigo-500 mr-2 mt-1 flex-shrink-0" />
                   <span>Achieving academic excellence while being a dedicated parent</span>
                 </li>
                 <li className="flex items-start">
-                  <Star className="w-4 h-4 text-purple-500 mr-2 mt-1 flex-shrink-0" />
+                  <Star className="w-4 h-4 text-indigo-500 mr-2 mt-1 flex-shrink-0" />
                   <span>Building and deploying personal projects alongside studies</span>
                 </li>
                 <li className="flex items-start">
-                  <Star className="w-4 h-4 text-purple-500 mr-2 mt-1 flex-shrink-0" />
+                  <Star className="w-4 h-4 text-indigo-500 mr-2 mt-1 flex-shrink-0" />
                   <span>Mastering time management and efficient learning strategies</span>
                 </li>
                 <li className="flex items-start">
-                  <Star className="w-4 h-4 text-purple-500 mr-2 mt-1 flex-shrink-0" />
+                  <Star className="w-4 h-4 text-indigo-500 mr-2 mt-1 flex-shrink-0" />
                   <span>Consistent academic performance across multiple programs</span>
                 </li>
               </ul>
@@ -452,11 +452,11 @@ const AcademicsPage = () => {
             animate={visionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6 }}
           >
-            Academic <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Vision</span>
+            Academic <span className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent">Vision</span>
           </motion.h2>
           
           <motion.div 
-            className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg p-8 text-white"
+            className="bg-gradient-to-br from-indigo-600 via-teal-500 to-cyan-500 rounded-lg p-8 text-white"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={visionInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.6 }}
@@ -508,7 +508,7 @@ const AcademicsPage = () => {
             animate={certsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6 }}
           >
-            Professional <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Certifications</span>
+            Professional <span className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent">Certifications</span>
           </motion.h2>
           
           <motion.div 
@@ -527,14 +527,14 @@ const AcademicsPage = () => {
             ].map((cert, index) => (
               <motion.div 
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-lg border border-purple-100 hover:border-purple-300 transition-colors"
+                className="bg-white p-6 rounded-lg shadow-lg border border-indigo-100 hover:border-indigo-300 transition-colors"
                 variants={itemVariants}
                 whileHover={{ y: -5, scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <div className="text-center">
                   <motion.div 
-                    className="bg-gradient-to-br from-purple-500 to-pink-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                    className="bg-gradient-to-br from-indigo-500 via-teal-500 to-cyan-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.6 }}
                   >
@@ -561,7 +561,7 @@ const AcademicsPage = () => {
       </section>
 
       {/* Learning Philosophy */}
-      <section className="bg-gradient-to-b from-white via-purple-50/20 to-white py-20" ref={philosophyRef}>
+      <section className="bg-gradient-to-b from-slate-50 via-indigo-50/10 to-white py-20" ref={philosophyRef}>
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.h2 
             className="text-3xl sm:text-4xl font-bold text-slate-900 mb-8"
@@ -569,7 +569,7 @@ const AcademicsPage = () => {
             animate={philosophyInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6 }}
           >
-            Learning <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Philosophy</span>
+            Learning <span className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent">Philosophy</span>
           </motion.h2>
           <motion.div 
             className="text-lg text-slate-700 leading-relaxed space-y-6 max-w-3xl mx-auto"
@@ -586,7 +586,7 @@ const AcademicsPage = () => {
               </motion.p>
             ))}
             <motion.div 
-              className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg p-6 text-white"
+              className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 rounded-lg p-6 text-white"
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}

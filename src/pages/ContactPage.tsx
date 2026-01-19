@@ -37,13 +37,13 @@ const ContactPage = () => {
   }
 
   return (
-    <div className="pt-16 min-h-screen bg-white">
+    <div className="pt-16 min-h-screen bg-slate-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-white via-purple-50/30 to-pink-50/30 py-20 relative overflow-hidden" ref={heroRef}>
+      <section className="bg-gradient-to-br from-slate-50 via-indigo-50/20 to-teal-50/20 py-20 relative overflow-hidden" ref={heroRef}>
         {/* Background Effects */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-400/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-400/8 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-400/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <motion.h1 
@@ -53,12 +53,12 @@ const ContactPage = () => {
             transition={{ duration: 0.6 }}
           >
             Let's <motion.span 
-              className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent inline-block relative"
+              className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent inline-block relative"
               animate={heroInView ? {
                 filter: [
-                  "drop-shadow(0 0 8px rgba(168, 85, 247, 0.4))",
-                  "drop-shadow(0 0 12px rgba(168, 85, 247, 0.6))",
-                  "drop-shadow(0 0 8px rgba(168, 85, 247, 0.4))",
+                  "drop-shadow(0 0 8px rgba(79, 70, 229, 0.4))",
+                  "drop-shadow(0 0 12px rgba(6, 182, 212, 0.6))",
+                  "drop-shadow(0 0 8px rgba(79, 70, 229, 0.4))",
                 ],
               } : {}}
               transition={{
@@ -93,7 +93,7 @@ const ContactPage = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Get in <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Touch</span>
+              Get in <span className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent">Touch</span>
             </h2>
             <p className="text-lg text-slate-600">
               Ready to connect? Here are the best ways to reach me:
@@ -117,13 +117,13 @@ const ContactPage = () => {
                 href={contact.href}
                 target={contact.external ? "_blank" : undefined}
                 rel={contact.external ? "noopener noreferrer" : undefined}
-                className="flex items-center p-6 bg-white rounded-lg hover:bg-purple-50 hover:border-purple-300 border border-purple-100 transition-colors group text-center flex-col shadow-md hover:shadow-lg"
+                className="flex items-center p-6 bg-white rounded-lg hover:bg-indigo-50 hover:border-indigo-300 border border-slate-200 transition-colors group text-center flex-col shadow-md hover:shadow-lg"
                 variants={itemVariants}
                 whileHover={{ y: -5, scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <motion.div 
-                  className="bg-gradient-to-br from-purple-500 to-pink-500 p-4 rounded-lg mb-4 group-hover:from-purple-400 group-hover:to-pink-400 transition-colors"
+                  className="bg-gradient-to-br from-indigo-500 via-teal-500 to-cyan-500 p-4 rounded-lg mb-4 group-hover:from-indigo-400 group-hover:via-teal-400 group-hover:to-cyan-400 transition-colors"
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
                 >
@@ -143,12 +143,12 @@ const ContactPage = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <motion.div 
-              className="bg-gradient-to-br from-purple-600 via-violet-600 to-pink-600 p-8 rounded-2xl text-white text-center shadow-2xl shadow-purple-500/30 overflow-hidden group relative"
+              className="bg-gradient-to-br from-indigo-600 via-teal-500 to-cyan-500 p-8 rounded-2xl text-white text-center shadow-2xl shadow-indigo-500/30 overflow-hidden group relative"
               whileHover={{ scale: 1.02, y: -2 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               {/* Animated gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-pink-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-400/20 via-teal-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10">
               <h3 className="text-2xl font-bold text-white mb-6 relative z-10">Current Status</h3>
               <motion.div 
@@ -184,7 +184,7 @@ const ContactPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-gradient-to-b from-white via-purple-50/20 to-white py-20" ref={faqRef}>
+      <section className="bg-gradient-to-b from-slate-50 via-indigo-50/10 to-white py-20" ref={faqRef}>
         <div className="max-w-4xl mx-auto px-6">
           <motion.h2 
             className="text-3xl font-bold text-slate-900 mb-12 text-center"
@@ -192,7 +192,7 @@ const ContactPage = () => {
             animate={faqInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6 }}
           >
-            Frequently Asked <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Questions</span>
+            Frequently Asked <span className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent">Questions</span>
           </motion.h2>
           
           <motion.div 
@@ -221,7 +221,7 @@ const ContactPage = () => {
             ].map((faq, index) => (
               <motion.div 
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg border border-purple-100 transition-all"
+                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg border border-slate-200 transition-all"
                 variants={itemVariants}
                 whileHover={{ y: -5, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -235,7 +235,7 @@ const ContactPage = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="bg-gradient-to-br from-purple-600 to-pink-600 py-20 relative overflow-hidden" ref={ctaRef}>
+      <section className="bg-gradient-to-br from-indigo-600 via-teal-500 to-cyan-500 py-20 relative overflow-hidden" ref={ctaRef}>
         {/* Background Effects */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse" />
@@ -268,7 +268,7 @@ const ContactPage = () => {
           >
             <motion.a
               href="mailto:jessicamhaugen14@gmail.com"
-              className="bg-white text-purple-600 px-6 sm:px-8 py-3 rounded-lg font-medium hover:bg-purple-50 transition-colors inline-flex items-center justify-center space-x-2 shadow-lg min-h-[44px] w-full sm:w-auto"
+              className="bg-white text-indigo-600 px-6 sm:px-8 py-3 rounded-lg font-medium hover:bg-indigo-50 transition-colors inline-flex items-center justify-center space-x-2 shadow-lg min-h-[44px] w-full sm:w-auto"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

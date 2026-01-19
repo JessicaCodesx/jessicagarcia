@@ -382,7 +382,7 @@ const ProjectsPage = () => {
       case 'completed':
         return <CheckCircle className="w-5 h-5 text-green-500" />
       case 'in-progress':
-        return <Clock className="w-5 h-5 text-purple-500" />
+        return <Clock className="w-5 h-5 text-indigo-500" />
       default:
         return <Clock className="w-5 h-5 text-slate-400" />
     }
@@ -423,13 +423,13 @@ const ProjectsPage = () => {
   }
 
   return (
-    <div className="pt-16 min-h-screen bg-white">
+    <div className="pt-16 min-h-screen bg-slate-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-white via-purple-50/30 to-pink-50/30 py-20 relative overflow-hidden" ref={heroRef}>
+      <section className="bg-gradient-to-br from-slate-50 via-indigo-50/20 to-teal-50/20 py-20 relative overflow-hidden" ref={heroRef}>
         {/* Background Effects */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-400/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-400/8 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-400/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <motion.h1 
@@ -440,13 +440,13 @@ const ProjectsPage = () => {
             transition={{ duration: 0.6 }}
           >
             My <motion.span 
-              className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent inline-block relative"
+              className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent inline-block relative"
               style={{ lineHeight: '1.15', paddingBottom: '0.1em' }}
               animate={heroInView ? {
                 filter: [
-                  "drop-shadow(0 0 8px rgba(168, 85, 247, 0.4))",
-                  "drop-shadow(0 0 12px rgba(168, 85, 247, 0.6))",
-                  "drop-shadow(0 0 8px rgba(168, 85, 247, 0.4))",
+                  "drop-shadow(0 0 8px rgba(79, 70, 229, 0.4))",
+                  "drop-shadow(0 0 12px rgba(6, 182, 212, 0.6))",
+                  "drop-shadow(0 0 8px rgba(79, 70, 229, 0.4))",
                 ],
               } : {}}
               transition={{
@@ -492,7 +492,7 @@ const ProjectsPage = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <motion.div 
-                  className="bg-gradient-to-br from-purple-500 to-pink-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                  className="bg-gradient-to-br from-indigo-500 via-teal-500 to-cyan-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
                 >
@@ -511,7 +511,7 @@ const ProjectsPage = () => {
             animate={projectsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="bg-white rounded-lg p-4 sm:p-6 border border-purple-100 shadow-md">
+            <div className="bg-white rounded-lg p-4 sm:p-6 border border-slate-200 shadow-md">
               <h3 className="text-base sm:text-lg font-semibold text-slate-900 mb-4">Quick Jump to Projects</h3>
               <div className="flex flex-wrap gap-2 sm:gap-3">
                 {projects.map((project) => (
@@ -529,7 +529,7 @@ const ProjectsPage = () => {
                         })
                       }
                     }}
-                    className="px-3 sm:px-4 py-2 bg-gradient-to-r from-purple-50 to-pink-50 text-slate-700 rounded-lg text-xs sm:text-sm font-medium border border-purple-200 hover:border-purple-400 hover:bg-purple-100 transition-all cursor-pointer"
+                    className="px-3 sm:px-4 py-2 bg-gradient-to-r from-indigo-50 to-teal-50 text-slate-700 rounded-lg text-xs sm:text-sm font-medium border border-indigo-200 hover:border-indigo-400 hover:bg-indigo-100 transition-all cursor-pointer"
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -552,7 +552,7 @@ const ProjectsPage = () => {
               <motion.div 
                 key={project.id}
                 id={`project-${project.id}`}
-                className={`${index % 2 === 1 ? 'bg-purple-50/30' : 'bg-white'} rounded-2xl p-4 sm:p-6 md:p-8 border border-purple-100 hover:border-purple-300 transition-colors shadow-lg hover:shadow-xl scroll-mt-24`}
+                className={`${index % 2 === 1 ? 'bg-indigo-50/30' : 'bg-white'} rounded-2xl p-4 sm:p-6 md:p-8 border border-slate-200 hover:border-indigo-300 transition-colors shadow-lg hover:shadow-xl scroll-mt-24`}
                 variants={itemVariants}
                 whileHover={{ scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -561,7 +561,7 @@ const ProjectsPage = () => {
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-8">
                   <div className="flex-1">
                     <div className="flex items-center mb-4">
-                      <div className="bg-gradient-to-br from-purple-500 to-pink-500 p-2 rounded-lg mr-4">
+                      <div className="bg-gradient-to-br from-indigo-500 via-teal-500 to-cyan-500 p-2 rounded-lg mr-4">
                         <div className="text-white">
                           {getCategoryIcon(project.category)}
                         </div>
@@ -599,7 +599,7 @@ const ProjectsPage = () => {
                         href={project.deployedUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 sm:px-4 py-2 rounded-lg hover:from-purple-400 hover:to-pink-400 transition-colors flex items-center space-x-2 shadow-lg min-h-[44px]"
+                        className="bg-gradient-to-r from-indigo-500 via-teal-500 to-cyan-500 text-white px-3 sm:px-4 py-2 rounded-lg hover:from-indigo-400 hover:via-teal-400 hover:to-cyan-400 transition-colors flex items-center space-x-2 shadow-lg min-h-[44px]"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
@@ -608,7 +608,7 @@ const ProjectsPage = () => {
                       </motion.a>
                     )}
                     {project.status === 'in-progress' && (
-                      <div className="bg-purple-100 text-purple-700 px-4 py-2 rounded-lg flex items-center space-x-2">
+                      <div className="bg-indigo-100 text-indigo-700 px-4 py-2 rounded-lg flex items-center space-x-2">
                         <Users className="w-4 h-4" />
                         <span>In Development</span>
                       </div>
@@ -652,7 +652,7 @@ const ProjectsPage = () => {
                             transition={{ delay: 0.3 + featureIndex * 0.05 }}
                           >
                             <motion.span 
-                              className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"
+                              className="w-2 h-2 bg-indigo-500 rounded-full mt-2 mr-3 flex-shrink-0"
                               animate={{ scale: [1, 1.2, 1] }}
                               transition={{ duration: 2, repeat: Infinity, delay: featureIndex * 0.2 }}
                             ></motion.span>
@@ -678,7 +678,7 @@ const ProjectsPage = () => {
                               {technologies.map((tech, techIndex) => (
                                 <motion.span
                                   key={techIndex}
-                                  className="bg-purple-50 text-slate-800 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-purple-200 hover:border-purple-400 hover:bg-purple-100 transition-colors"
+                                  className="bg-indigo-50 text-slate-800 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-indigo-200 hover:border-indigo-400 hover:bg-indigo-100 transition-colors"
                                   initial={{ opacity: 0, scale: 0.8 }}
                                   animate={projectsInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                                   transition={{ delay: 0.4 + techIndex * 0.05 }}
@@ -713,7 +713,7 @@ const ProjectsPage = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="bg-gradient-to-br from-purple-600 to-pink-600 py-20 relative overflow-hidden" ref={ctaRef}>
+      <section className="bg-gradient-to-br from-indigo-600 via-teal-500 to-cyan-500 py-20 relative overflow-hidden" ref={ctaRef}>
         {/* Background Effects */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse" />
@@ -747,7 +747,7 @@ const ProjectsPage = () => {
               href="https://github.com/JessicaCodesx"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-purple-600 px-6 sm:px-8 py-3 rounded-lg font-medium hover:bg-purple-50 transition-colors inline-flex items-center justify-center space-x-2 shadow-lg min-h-[44px] w-full sm:w-auto"
+              className="bg-white text-indigo-600 px-6 sm:px-8 py-3 rounded-lg font-medium hover:bg-indigo-50 transition-colors inline-flex items-center justify-center space-x-2 shadow-lg min-h-[44px] w-full sm:w-auto"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
