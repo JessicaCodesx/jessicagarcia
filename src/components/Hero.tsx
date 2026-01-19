@@ -139,8 +139,8 @@ const Hero = () => {
           className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-700 mb-8 font-light px-2"
           variants={itemVariants}
         >
-          Full-Stack Software Engineer &{' '}
-          <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-medium">Product-Focused Developer</span>
+          Cloud-Focused Software Engineer &{' '}
+          <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-medium">Full-Stack Developer</span>
         </motion.h2>
         
         {/* Bio */}
@@ -176,8 +176,8 @@ const Hero = () => {
           className="text-sm sm:text-base md:text-lg text-slate-500 mb-12 max-w-2xl mx-auto leading-relaxed px-4"
           variants={itemVariants}
         >
-          Recent graduate with <span className="text-purple-600 font-medium">Honours Bachelor of Computer Science</span> (3.7 GPA). 
-          Currently developing <span className="text-purple-600 font-medium">homebase</span>, a production mobile app, while pursuing cloud certifications. 
+          Cloud-focused software engineer with <span className="text-purple-600 font-medium">Honours Bachelor of Computer Science</span> (3.7 GPA). 
+          Currently pursuing a <span className="text-purple-600 font-medium">Graduate Certificate in Cloud Development & Operations</span> while building production applications. 
           Ready to contribute to your team immediately.
         </motion.p>
         

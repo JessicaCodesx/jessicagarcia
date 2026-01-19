@@ -63,23 +63,27 @@ const About = () => {
             </h3>
             
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
-              I'm a results-driven software engineer with a passion for building applications that solve real problems. 
+              I'm a cloud-focused software engineer with a passion for building scalable applications that solve real problems. 
               My journey from competitive gaming leadership to software development has equipped me with exceptional 
               problem-solving skills, the ability to work under pressure, and a collaborative mindset that drives team success.
             </p>
             
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
               With expertise in React, TypeScript, and modern web development, I specialize in creating scalable, 
-              maintainable applications. My experience managing complex projects while balancing multiple priorities 
-              has honed my ability to deliver high-quality code on time and communicate effectively with stakeholders.
+              cloud-ready applications. Currently advancing my skills in cloud infrastructure, DevOps practices, and 
+              containerization through a specialized graduate certificate program. My experience managing complex projects 
+              while balancing multiple priorities has honed my ability to deliver high-quality code on time and communicate 
+              effectively with stakeholders.
             </p>
 
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
-              As a recent graduate with a proven track record of building production applications, I bring both 
-              technical expertise and a results-driven mindset. My experience includes full-stack development, 
-              mobile app creation, and managing complex projects from concept to deployment. I'm actively seeking 
-              software engineering roles where I can leverage my skills in React, TypeScript, and modern web 
-              technologies to deliver impactful solutions.
+              As a cloud-focused software engineer with a proven track record of building production applications, 
+              I bring both technical expertise and a results-driven mindset. Currently pursuing a Graduate Certificate 
+              in Cloud Development & Operations, I'm expanding my expertise in cloud infrastructure, DevOps, and 
+              modern deployment strategies. My experience includes full-stack development, mobile app creation, and 
+              managing complex projects from concept to deployment. I'm actively seeking software engineering roles 
+              where I can leverage my skills in React, TypeScript, cloud technologies, and modern web development 
+              to deliver scalable, impactful solutions.
             </p>
           </motion.div>
 
@@ -89,6 +93,11 @@ const About = () => {
             <div className="bg-white p-6 rounded-lg border-l-4 border-purple-500 shadow-md hover:shadow-lg transition-shadow">
               <h4 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3">Education</h4>
               <div className="space-y-4">
+                <div>
+                  <p className="font-medium text-slate-900">Graduate Certificate, Cloud Development & Operations</p>
+                  <p className="text-slate-600">Algonquin College • Expected August 2026</p>
+                  <p className="text-sm text-purple-600 font-medium">In Progress</p>
+                </div>
                 <div>
                   <p className="font-medium text-slate-900">Honours Bachelor of Computer Science</p>
                   <p className="text-slate-600">Algoma University • December 2025</p>
@@ -258,8 +267,8 @@ const About = () => {
                 color: "from-blue-400 to-blue-500"
               },
               { 
-                category: "Backend & Tools", 
-                skills: ["Node.js", "Firebase", "IndexedDB", "Git", "Vite", "REST APIs"],
+                category: "Backend & Cloud", 
+                skills: ["Node.js", "Firebase", "AWS (Learning)", "Docker (Learning)", "Git", "CI/CD", "REST APIs"],
                 color: "from-green-400 to-green-500"
               },
               { 

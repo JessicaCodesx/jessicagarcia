@@ -114,6 +114,59 @@ const AcademicsPage = () => {
               initial="hidden"
               animate={timelineInView ? "visible" : "hidden"}
             >
+              {/* Cloud Development Certificate */}
+              <motion.div 
+                className="grid lg:grid-cols-2 gap-8 items-center"
+                variants={itemVariants}
+              >
+                <div className="lg:text-right lg:pr-8">
+                  <motion.div 
+                    className="bg-gradient-to-br from-blue-600 to-cyan-600 text-white p-8 rounded-lg relative"
+                    whileHover={{ scale: 1.02, y: -5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <div className="absolute -right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white rounded-full border-4 border-blue-500 hidden lg:block"></div>
+                    <div className="flex items-center mb-4 lg:justify-end">
+                      <Target className="w-6 h-6 text-white mr-2" />
+                      <span className="text-white font-bold">IN PROGRESS</span>
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                      Graduate Certificate, Cloud Development & Operations
+                    </h3>
+                    <p className="text-white font-medium mb-2">Algonquin College</p>
+                    <p className="text-white/90 text-sm mb-4">Expected August 2026</p>
+                    <div className="flex items-center lg:justify-end mb-4">
+                      <Star className="w-5 h-5 text-white mr-2" />
+                      <span className="text-white font-medium">Cloud-Focused Program</span>
+                    </div>
+                    <p className="text-white/90 leading-relaxed">
+                      Specialized program in cloud infrastructure, DevOps practices, containerization, 
+                      and modern deployment strategies. Building expertise in AWS, Azure, and cloud-native architectures.
+                    </p>
+                  </motion.div>
+                </div>
+                <motion.div 
+                  className="lg:pl-8"
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={timelineInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                  <motion.div 
+                    className="bg-blue-50/50 p-6 rounded-lg"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <h4 className="text-lg font-semibold text-slate-900 mb-3">Cloud Focus Areas</h4>
+                    <ul className="space-y-2 text-slate-700">
+                      <li>• Cloud infrastructure & architecture</li>
+                      <li>• DevOps & CI/CD pipelines</li>
+                      <li>• Containerization & orchestration</li>
+                      <li>• Cloud security & best practices</li>
+                      <li>• Serverless computing & microservices</li>
+                    </ul>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
+
               {/* Bachelor's */}
               <motion.div 
                 className="grid lg:grid-cols-2 gap-8 items-center"
@@ -396,16 +449,16 @@ const AcademicsPage = () => {
                 </h3>
                 <div className="space-y-4">
                   <div className="border-l-4 border-white/50 pl-4">
-                    <h4 className="font-semibold text-white">Advanced Software Engineering</h4>
-                    <p className="text-white/90 text-sm">Scalable system design and architecture patterns</p>
+                    <h4 className="font-semibold text-white">Cloud Infrastructure & DevOps</h4>
+                    <p className="text-white/90 text-sm">Building expertise in cloud platforms, containerization, and CI/CD pipelines</p>
                   </div>
                   <div className="border-l-4 border-white/50 pl-4">
-                    <h4 className="font-semibold text-white">Distributed Systems</h4>
-                    <p className="text-white/90 text-sm">Microservices, cloud computing, and system reliability</p>
+                    <h4 className="font-semibold text-white">Scalable System Architecture</h4>
+                    <p className="text-white/90 text-sm">Designing cloud-native applications and distributed systems</p>
                   </div>
                   <div className="border-l-4 border-white/50 pl-4">
-                    <h4 className="font-semibold text-white">Industry Applications</h4>
-                    <p className="text-white/90 text-sm">Real-world problem solving through technology</p>
+                    <h4 className="font-semibold text-white">Modern Deployment Strategies</h4>
+                    <p className="text-white/90 text-sm">Serverless computing, microservices, and cloud security best practices</p>
                   </div>
                 </div>
               </div>
@@ -414,9 +467,10 @@ const AcademicsPage = () => {
                   Career Vision
                 </h3>
                 <p className="text-white/90 leading-relaxed">
-                  I'm focused on building the skills needed to architect and develop 
-                  large-scale systems that solve meaningful problems, preparing me to 
-                  contribute immediately to high-impact development teams.
+                  Through my graduate certificate program in Cloud Development & Operations, I'm building 
+                  the skills needed to architect and deploy cloud-native systems that solve meaningful problems. 
+                  This specialized training, combined with my full-stack development experience, positions me 
+                  to contribute immediately to high-impact teams building scalable, modern applications.
                 </p>
               </div>
             </div>
@@ -479,7 +533,8 @@ const AcademicsPage = () => {
               Continuously expanding technical knowledge through professional development and online learning platforms.
             </p>
             <p className="text-slate-700 font-medium">
-              Currently preparing for cloud certifications to enhance my expertise in modern infrastructure and deployment technologies.
+              Currently pursuing a Graduate Certificate in Cloud Development & Operations, building expertise in cloud infrastructure, 
+              DevOps practices, containerization, and modern deployment strategies to become a cloud-native engineer.
             </p>
           </div>
         </div>
