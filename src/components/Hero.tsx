@@ -1,4 +1,4 @@
-import { ArrowDown } from 'lucide-react'
+import { ArrowDown, FileDown } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
@@ -194,6 +194,17 @@ const Hero = () => {
               <span className="relative z-10">Explore My Projects</span>
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
+            <a 
+              href="/Jessica_Garcia_Resume.pdf"
+              download="Jessica_Garcia_Resume.pdf"
+              className="border-2 border-purple-300 text-slate-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:border-purple-500 hover:bg-purple-50 transition-all duration-300 inline-block text-center w-full sm:w-auto backdrop-blur-sm relative overflow-hidden group min-h-[44px] flex items-center justify-center gap-2"
+            >
+              <FileDown className="w-5 h-5" />
+              <span className="relative z-10">Download Resume</span>
+              <div className="absolute inset-0 bg-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </a>
           </motion.div>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
             <Link 

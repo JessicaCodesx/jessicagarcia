@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jessicacodesx.github.io/jessicagarcia/sitemap.xml

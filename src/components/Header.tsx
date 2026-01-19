@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, FileDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const Header = () => {
@@ -21,6 +21,7 @@ const Header = () => {
     { name: 'About', href: '/about' },
     { name: 'Academics', href: '/academics' },
     { name: 'Projects', href: '/projects' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
   ]
 
@@ -92,7 +93,18 @@ const Header = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 }}
+              className="flex items-center gap-3"
             >
+              <motion.a
+                href="/Jessica_Garcia_Resume.pdf"
+                download="Jessica_Garcia_Resume.pdf"
+                className="flex items-center gap-2 bg-white border-2 border-purple-500 text-purple-600 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-purple-50 transition-all shadow-md hover:shadow-lg"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <FileDown className="w-4 h-4" />
+                Resume
+              </motion.a>
               <Link
                 to="/contact"
                 className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:from-purple-500 hover:to-pink-500 transition-all shadow-md hover:shadow-lg"

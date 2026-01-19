@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin, MapPin, Calendar, MessageCircle } from 'lucide-react'
+import { Mail, Github, Linkedin, MapPin, Calendar, MessageCircle, FileDown } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
@@ -102,19 +102,21 @@ const ContactPage = () => {
           
           {/* Contact Methods */}
           <motion.div 
-            className="grid md:grid-cols-3 gap-6 mb-12"
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
             variants={containerVariants}
             initial="hidden"
             animate={contactInView ? "visible" : "hidden"}
           >
             {[
-              { icon: Mail, title: "Email", desc: "jessica.garcia5714@gmail.com", href: "mailto:jessicamhaugen14@gmail.com" },
+              { icon: Mail, title: "Email", desc: "jessica.garcia5714@gmail.com", href: "mailto:jessica.garcia5714@gmail.com" },
               { icon: Github, title: "GitHub", desc: "@JessicaCodesx", href: "https://github.com/JessicaCodesx", external: true },
-              { icon: Linkedin, title: "LinkedIn", desc: "Networking", href: "https://www.linkedin.com/in/jessicagarcia5714/", external: true }
+              { icon: Linkedin, title: "LinkedIn", desc: "Networking", href: "https://www.linkedin.com/in/jessicagarcia5714/", external: true },
+              { icon: FileDown, title: "Resume", desc: "Download PDF", href: "/Jessica_Garcia_Resume.pdf", download: true }
             ].map((contact, index) => (
               <motion.a 
                 key={index}
                 href={contact.href}
+                download={contact.download ? "Jessica_Garcia_Resume.pdf" : undefined}
                 target={contact.external ? "_blank" : undefined}
                 rel={contact.external ? "noopener noreferrer" : undefined}
                 className="flex items-center p-6 bg-white rounded-lg hover:bg-purple-50 hover:border-purple-300 border border-purple-100 transition-colors group text-center flex-col shadow-md hover:shadow-lg"
