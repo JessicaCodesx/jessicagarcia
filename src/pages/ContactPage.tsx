@@ -76,9 +76,9 @@ const ContactPage = () => {
             animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Available for immediate hire! I'm actively seeking software engineering opportunities 
-            and excited to bring my technical skills, collaborative mindset, and passion for building 
-            great products to your team. Let's discuss how I can contribute to your success.
+            Open to software engineering roles and social media management contracts. I'm excited to bring 
+            technical skills, clear communication, and a collaborative mindset to your team or brand. 
+            Let's discuss how I can contribute.
           </motion.p>
         </div>
       </section>
@@ -204,11 +204,15 @@ const ContactPage = () => {
             {[
               { 
                 q: "Are you available for work?", 
-                a: "Yes! I'm actively seeking software engineering opportunities and available to start immediately. Open to full-time positions, contract work, and remote opportunities. Ready to contribute from day one." 
+                a: "Yes! I'm actively seeking software engineering opportunities and open to social media management contracts. Available for full-time, contract, and remote work. Ready to contribute from day one." 
               },
               { 
                 q: "What kind of roles are you looking for?", 
-                a: "I'm seeking software engineering positions where I can leverage my full-stack development skills. Particularly interested in React/TypeScript roles, frontend development, and opportunities to work on user-facing products that make a real impact." 
+                a: "Primarily software engineering — React/TypeScript, full-stack, and user-facing products. I also take on social media management contracts where web development training (HTML/CSS, layout, UX) supports content planning and brand consistency." 
+              },
+              { 
+                q: "Do you offer social media management?", 
+                a: "Yes, on a contract basis. I bring content planning, brand voice, and design awareness from my computer programming diploma and web development courses — the same attention to structure and clarity I use in software projects." 
               },
               { 
                 q: "Can you work remotely?", 

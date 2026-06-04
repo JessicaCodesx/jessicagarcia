@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Gamepad2, Palette, BookOpen, Award, Lightbulb, Users, Rocket } from 'lucide-react'
+import { Gamepad2, Palette, BookOpen, Award, Lightbulb, Users, Rocket, Share2 } from 'lucide-react'
 
 const About = () => {
   const ref = useRef(null)
@@ -63,27 +63,24 @@ const About = () => {
             </h3>
             
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
-              I'm a cloud-focused software engineer with a passion for building scalable applications that solve real problems. 
+              I'm a software engineer with a passion for building scalable applications that solve real problems. 
               My journey from competitive gaming leadership to software development has equipped me with exceptional 
               problem-solving skills, the ability to work under pressure, and a collaborative mindset that drives team success.
             </p>
             
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
-              With expertise in React, TypeScript, and modern web development, I specialize in creating scalable, 
-              cloud-ready applications. Currently advancing my skills in cloud infrastructure, DevOps practices, and 
-              containerization through a specialized graduate certificate program. My experience managing complex projects 
-              while balancing multiple priorities has honed my ability to deliver high-quality code on time and communicate 
-              effectively with stakeholders.
+              With expertise in React, TypeScript, and modern web development, I specialize in creating production-ready 
+              full-stack applications. My Honours Bachelor of Computer Science and Honours Diploma in Computer Programming 
+              gave me strong foundations in algorithms, software engineering, and practical development. Experience managing 
+              complex projects while balancing multiple priorities has honed my ability to deliver high-quality code on time 
+              and communicate effectively with stakeholders.
             </p>
 
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
-              As a cloud-focused software engineer with a proven track record of building production applications, 
-              I bring both technical expertise and a results-driven mindset. Currently pursuing a Graduate Certificate 
-              in Cloud Development & Operations, I'm expanding my expertise in cloud infrastructure, DevOps, and 
-              modern deployment strategies. My experience includes full-stack development, mobile app creation, and 
-              managing complex projects from concept to deployment. I'm actively seeking software engineering roles 
-              where I can leverage my skills in React, TypeScript, cloud technologies, and modern web development 
-              to deliver scalable, impactful solutions.
+              I'm actively seeking software engineering roles where I can leverage React, TypeScript, and full-stack skills 
+              to deliver impactful solutions. I also offer social media management for brands that want a technical partner 
+              who understands web design, content structure, and audience-focused digital experiences from hands-on web 
+              development coursework.
             </p>
           </motion.div>
 
@@ -93,11 +90,6 @@ const About = () => {
             <div className="bg-white p-6 rounded-lg border-l-4 border-indigo-500 shadow-md hover:shadow-lg transition-shadow">
               <h4 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3">Education</h4>
               <div className="space-y-4">
-                <div>
-                  <p className="font-medium text-slate-900">Graduate Certificate, Cloud Development & Operations</p>
-                  <p className="text-slate-600">Algonquin College • Expected August 2026</p>
-                  <p className="text-sm text-indigo-600 font-medium">In Progress</p>
-                </div>
                 <div>
                   <p className="font-medium text-slate-900">Honours Bachelor of Computer Science</p>
                   <p className="text-slate-600">Algoma University • December 2025</p>
@@ -128,6 +120,47 @@ const About = () => {
               </div>
             </div>
           </motion.div>
+        </motion.div>
+
+        {/* Social Media Management */}
+        <motion.div
+          className="mt-16 bg-white p-8 rounded-xl border border-indigo-100 shadow-md"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6, delay: 0.35 }}
+        >
+          <div className="flex items-start gap-4 mb-4">
+            <div className="p-3 bg-gradient-to-br from-indigo-500 via-teal-500 to-cyan-500 rounded-lg flex-shrink-0">
+              <Share2 className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-2">
+                Social Media Management
+              </h3>
+              <p className="text-base text-slate-700 leading-relaxed">
+                Open to contract work helping brands grow their online presence. My computer programming diploma 
+                included web development, HTML/CSS, responsive design, and user-centered interface work — skills I 
+                apply to content planning, visual consistency, and clear messaging across platforms.
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-2 mt-2">
+            {[
+              'Content planning',
+              'Brand voice & messaging',
+              'HTML/CSS & layout basics',
+              'Responsive design principles',
+              'Visual consistency',
+              'Audience-focused UX',
+            ].map((skill) => (
+              <span
+                key={skill}
+                className="bg-indigo-50 text-slate-800 px-3 py-1.5 rounded-full text-sm font-medium border border-indigo-200"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
         </motion.div>
 
         {/* Beyond Code Section - Centered */}
@@ -259,22 +292,23 @@ const About = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { 
                 category: "Frontend Development", 
                 skills: ["React", "TypeScript", "JavaScript", "Tailwind CSS", "HTML5", "CSS3"],
-                color: "from-indigo-400 to-cyan-500"
               },
               { 
-                category: "Backend & Cloud", 
-                skills: ["Node.js", "Firebase", "AWS (Learning)", "Docker (Learning)", "Git", "CI/CD", "REST APIs"],
-                color: "from-green-400 to-green-500"
+                category: "Backend & APIs", 
+                skills: ["Node.js", "Firebase", "Git", "REST APIs", "SQL", "CI/CD"],
+              },
+              { 
+                category: "Digital Content & Social", 
+                skills: ["Content planning", "Brand messaging", "Web layout (HTML/CSS)", "Responsive design", "Visual consistency"],
               },
               { 
                 category: "Game Development", 
                 skills: ["Godot Engine", "GDScript", "Game Design", "Asset Integration"],
-                color: "from-indigo-400 to-indigo-500"
               }
             ].map((category, index) => (
               <motion.div

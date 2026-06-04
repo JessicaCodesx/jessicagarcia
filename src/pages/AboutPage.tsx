@@ -1,4 +1,4 @@
-import { Gamepad2, Palette, BookOpen, Trophy, Heart, Zap } from 'lucide-react'
+import { Gamepad2, Palette, BookOpen, Trophy, Heart, Zap, Share2 } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
@@ -83,8 +83,8 @@ const AboutPage = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             From competitive gaming to academic excellence, from artistic expression to 
-            entrepreneurial leadership - discover the diverse experiences that shape 
-            my approach to software engineering.
+            digital content — discover the experiences that shape my approach as a 
+            software engineer and social media collaborator.
           </motion.p>
         </div>
       </section>
@@ -177,6 +177,46 @@ const AboutPage = () => {
                 <div className="flex items-center">
                   <Trophy className="w-4 h-4 text-indigo-500 mr-2" />
                   <span className="text-sm text-slate-600">Current League of Legends enthusiast</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Social Media Management */}
+            <motion.div 
+              className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-teal-500 hover:shadow-xl transition-shadow"
+              variants={itemVariants}
+              whileHover={{ y: -5, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <motion.div 
+                className="flex items-center mb-4"
+                whileHover={{ x: 5 }}
+              >
+                <motion.div
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <Share2 className="w-8 h-8 text-teal-600 mr-3" />
+                </motion.div>
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900">Social Media Management</h3>
+              </motion.div>
+              <p className="text-slate-700 mb-4">
+                Open to contract work for brands that want organized, on-brand social presence. 
+                My web development education — HTML/CSS, responsive design, and user-focused interfaces — 
+                translates into thoughtful content structure, visual consistency, and clear messaging.
+              </p>
+              <div className="space-y-2">
+                <div className="flex items-center">
+                  <Share2 className="w-4 h-4 text-teal-600 mr-2" />
+                  <span className="text-sm text-slate-600">Content planning & scheduling support</span>
+                </div>
+                <div className="flex items-center">
+                  <Share2 className="w-4 h-4 text-teal-600 mr-2" />
+                  <span className="text-sm text-slate-600">Brand voice and platform-appropriate copy</span>
+                </div>
+                <div className="flex items-center">
+                  <Share2 className="w-4 h-4 text-teal-600 mr-2" />
+                  <span className="text-sm text-slate-600">Layout & design awareness from web dev courses</span>
                 </div>
               </div>
             </motion.div>

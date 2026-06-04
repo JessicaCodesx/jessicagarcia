@@ -80,8 +80,8 @@ const AcademicsPage = () => {
             animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            From honours diplomas to prestigious graduate programs - a journey of 
-            continuous learning, exceptional performance, and relentless pursuit of knowledge.
+            From honours diplomas to a computer science degree — a journey of 
+            continuous learning, exceptional performance, and practical skill-building.
           </motion.p>
         </div>
       </section>
@@ -114,77 +114,6 @@ const AcademicsPage = () => {
               initial="hidden"
               animate={timelineInView ? "visible" : "hidden"}
             >
-              {/* Cloud Development Certificate */}
-              <motion.div 
-                className="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center"
-                variants={itemVariants}
-              >
-                <div className="lg:text-right lg:pr-8">
-                  <motion.div 
-                    className="bg-gradient-to-br from-indigo-600 via-teal-500 to-cyan-500 text-white p-6 sm:p-8 rounded-xl relative shadow-2xl shadow-indigo-500/30 overflow-hidden group"
-                    whileHover={{ scale: 1.02, y: -5 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  >
-                    {/* Animated gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-400/20 via-teal-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="absolute -right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white rounded-full border-4 border-indigo-400 hidden lg:block shadow-lg"></div>
-                    <div className="flex items-center mb-4 lg:justify-end">
-                      <Target className="w-6 h-6 text-white mr-2" />
-                      <span className="text-white font-bold">IN PROGRESS</span>
-                    </div>
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 break-words">
-                      Graduate Certificate, Cloud Development & Operations
-                    </h3>
-                    <p className="text-white font-medium mb-2 text-sm sm:text-base">Algonquin College</p>
-                    <p className="text-white/90 text-xs sm:text-sm mb-4">Expected August 2026</p>
-                    <div className="flex items-center lg:justify-end mb-4">
-                      <Star className="w-5 h-5 text-white mr-2" />
-                      <span className="text-white font-medium">Cloud-Focused Program</span>
-                    </div>
-                    <p className="text-white/90 leading-relaxed">
-                      Specialized program in cloud infrastructure, DevOps practices, containerization, 
-                      and modern deployment strategies. Building expertise in AWS, Azure, and cloud-native architectures.
-                    </p>
-                  </motion.div>
-                </div>
-                <motion.div 
-                  className="lg:pl-8"
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={timelineInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                >
-                  <motion.div 
-                    className="bg-gradient-to-br from-indigo-50/80 to-teal-50/80 p-6 rounded-xl border border-indigo-100 shadow-lg backdrop-blur-sm"
-                    whileHover={{ scale: 1.02, y: -2 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  >
-                    <h4 className="text-lg font-semibold text-slate-900 mb-3 bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent">Cloud Focus Areas</h4>
-                    <ul className="space-y-2.5 text-slate-700">
-                      <li className="flex items-start">
-                        <span className="text-indigo-500 mr-2 mt-1">•</span>
-                        <span>Cloud infrastructure & architecture</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-indigo-500 mr-2 mt-1">•</span>
-                        <span>DevOps & CI/CD pipelines</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-indigo-500 mr-2 mt-1">•</span>
-                        <span>Containerization & orchestration</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-indigo-500 mr-2 mt-1">•</span>
-                        <span>Cloud security & best practices</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-indigo-500 mr-2 mt-1">•</span>
-                        <span>Serverless computing & microservices</span>
-                      </li>
-                    </ul>
-                  </motion.div>
-                </motion.div>
-              </motion.div>
-
               {/* Bachelor's */}
               <motion.div 
                 className="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center"
@@ -358,6 +287,33 @@ const AcademicsPage = () => {
         </div>
       </section>
 
+      {/* Social Media & Web Development Skills */}
+      <section className="py-16 bg-gradient-to-b from-white via-indigo-50/10 to-slate-50">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 text-center">
+            Social Media Management <span className="bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent">Foundations</span>
+          </h2>
+          <p className="text-slate-700 leading-relaxed text-center max-w-3xl mx-auto mb-8">
+            Contract-ready social media support grounded in formal web development education — not guesswork. 
+            My Honours Diploma in Computer Programming and Web Development certification covered building for real users: 
+            structure, readability, responsive layout, and consistent visual design.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {[
+              { title: 'Web Development (SoloLearn)', detail: 'HTML, CSS, and site structure for platform-native content' },
+              { title: 'Interface & UX awareness', detail: 'User-centered design principles from programming coursework' },
+              { title: 'Content & brand consistency', detail: 'Clear messaging aligned with visual hierarchy and layout' },
+              { title: 'Technical reliability', detail: 'Organized workflows and attention to detail from software projects' },
+            ].map((item) => (
+              <div key={item.title} className="bg-white p-5 rounded-lg border border-indigo-100 shadow-sm">
+                <h3 className="font-semibold text-slate-900 mb-1">{item.title}</h3>
+                <p className="text-sm text-slate-600">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Academic Achievements */}
       <section className="bg-gradient-to-b from-slate-50 via-indigo-50/10 to-white py-20" ref={achievementsRef}>
         <div className="max-w-4xl mx-auto px-6">
@@ -469,16 +425,16 @@ const AcademicsPage = () => {
                 </h3>
                 <div className="space-y-4">
                   <div className="border-l-4 border-white/50 pl-4">
-                    <h4 className="font-semibold text-white">Cloud Infrastructure & DevOps</h4>
-                    <p className="text-white/90 text-sm">Building expertise in cloud platforms, containerization, and CI/CD pipelines</p>
+                    <h4 className="font-semibold text-white">Full-Stack Software Engineering</h4>
+                    <p className="text-white/90 text-sm">React, TypeScript, APIs, databases, and shipping production applications</p>
                   </div>
                   <div className="border-l-4 border-white/50 pl-4">
-                    <h4 className="font-semibold text-white">Scalable System Architecture</h4>
-                    <p className="text-white/90 text-sm">Designing cloud-native applications and distributed systems</p>
+                    <h4 className="font-semibold text-white">Algorithms & System Design</h4>
+                    <p className="text-white/90 text-sm">Strong CS fundamentals from honours bachelor's coursework</p>
                   </div>
                   <div className="border-l-4 border-white/50 pl-4">
-                    <h4 className="font-semibold text-white">Modern Deployment Strategies</h4>
-                    <p className="text-white/90 text-sm">Serverless computing, microservices, and cloud security best practices</p>
+                    <h4 className="font-semibold text-white">Social Media & Digital Content</h4>
+                    <p className="text-white/90 text-sm">Web development training applied to content, layout, UX, and brand consistency</p>
                   </div>
                 </div>
               </div>
@@ -487,10 +443,10 @@ const AcademicsPage = () => {
                   Career Vision
                 </h3>
                 <p className="text-white/90 leading-relaxed">
-                  Through my graduate certificate program in Cloud Development & Operations, I'm building 
-                  the skills needed to architect and deploy cloud-native systems that solve meaningful problems. 
-                  This specialized training, combined with my full-stack development experience, positions me 
-                  to contribute immediately to high-impact teams building scalable, modern applications.
+                  With a completed Honours Bachelor of Computer Science and years of hands-on project work, 
+                  I'm focused on software engineering roles where I can build reliable, user-centered products. 
+                  For social media management contracts, I bring the same rigor — structured content, clear 
+                  messaging, and design awareness from web development courses in my programming diploma.
                 </p>
               </div>
             </div>
@@ -553,8 +509,8 @@ const AcademicsPage = () => {
               Continuously expanding technical knowledge through professional development and online learning platforms.
             </p>
             <p className="text-slate-700 font-medium">
-              Currently pursuing a Graduate Certificate in Cloud Development & Operations, building expertise in cloud infrastructure, 
-              DevOps practices, containerization, and modern deployment strategies to become a cloud-native engineer.
+              Web Development certification (SoloLearn) and diploma coursework in HTML, CSS, and interface design 
+              support social media management work alongside my software engineering focus.
             </p>
           </div>
         </div>

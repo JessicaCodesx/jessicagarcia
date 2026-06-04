@@ -46,11 +46,8 @@ This project is automatically deployed to GitHub Pages using GitHub Actions.
 ### How it works:
 
 1. **Source Branch**: `main` - Contains the source code
-2. **Deployment Branch**: `gh-pages` - Contains the built static files
-3. **Automated Workflow**: When you push to `main`, GitHub Actions automatically:
-   - Builds the project
-   - Deploys the `dist` folder to the `gh-pages` branch
-   - Updates the live site
+2. **Automated Workflow**: When you push to `main`, GitHub Actions builds the project and deploys the `dist` folder to GitHub Pages
+3. **Vite base path**: `vite.config.ts` sets `base: '/jessicagarcia/'` so assets load correctly at `https://jessicacodesx.github.io/jessicagarcia/`
 
 ### Manual Deployment (if needed):
 
@@ -63,10 +60,12 @@ This will build the project and push the `dist` folder to the `gh-pages` branch.
 
 ### GitHub Pages Configuration:
 
-Ensure your repository settings are configured:
-- Go to **Settings** → **Pages**
-- Set **Source** to "Deploy from a branch"
-- Select `gh-pages` branch and `/ (root)` folder
+The live site must serve the **built** `dist` output, not the source files on `main`.
+
+1. Go to **Settings** → **Pages**
+2. Under **Build and deployment**, set **Source** to **GitHub Actions** (not "Deploy from a branch" on `main`)
+
+If Pages is set to publish from the `main` branch, the site will load `/src/main.tsx` in the browser and show a blank page with 404 errors. The workflow in `.github/workflows/deploy.yml` builds the app and deploys the `dist` folder automatically on each push to `main`.
 
 ## Project Structure
 

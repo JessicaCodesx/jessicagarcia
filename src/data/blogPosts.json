@@ -70,14 +70,5 @@
     "readTime": "5 min read",
     "tags": ["Mobile Development", "React Native", "Local-First", "Projects"],
     "published": true
-  },
-  {
-    "id": 8,
-    "title": "Why I'm Pursuing Cloud Development & Operations",
-    "excerpt": "Exploring my decision to specialize in cloud technologies and how it aligns with the future of software engineering.",
-    "date": "2025-09-10",
-    "readTime": "4 min read",
-    "tags": ["Cloud Computing", "Career", "Education", "DevOps"],
-    "published": true
   }
 ]

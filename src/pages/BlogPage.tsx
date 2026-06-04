@@ -88,7 +88,7 @@ const BlogPage = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             Sharing technical insights, career reflections, and lessons learned from building software 
-            and pursuing cloud development.
+            and growing as a software engineer.
           </motion.p>
         </div>
       </section>
